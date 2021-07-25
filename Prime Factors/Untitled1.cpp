@@ -1,18 +1,43 @@
-#include<iostream>
+#include <iostream>
+#include <math.h>
+#include <vector>
 using namespace std;
 
-int primeFactorsNaiveApproach( int num, int *p ) {
-    p[0] = 1;
-    int count = 1;
-    for(int i = 2 ; i < num; i++){
-        if( )
-        p[count]
-    }
+void printVector(vector <int> *vect) {
+   for (auto i = vect->begin(); i != vect->end(); ++i) {
+      cout << *i << " ";
+   }
 }
 
-int main(){
-    int input, arr[100];
-    cout<<"Enter the number : ";
-    cin>>input;
-    cout<<primeFactors(input, arr);
+vector <int> primeFactorsNaiveApproach(int num) {
+   vector <int> primeFactors;
+
+   while (num % 2 == 0) {
+      primeFactors.push_back(2);
+      num /= 2;
+   }
+
+   for (int i = 3; i <= sqrt(num); i += 2) {
+      while (num % i == 0) {
+         primeFactors.push_back(i);
+         num /= i;
+      }
+   }
+
+   if (num > 2) {
+      primeFactors.push_back(num);
+   }
+
+   return(primeFactors);
+}
+
+int main() {
+   vector <int> v1;
+   int          input;
+
+   cout << "Enter the number : ";
+   cin >> input;
+   v1 = primeFactorsNaiveApproach(input);
+   printVector(&v1);
+   return(0);
 }
