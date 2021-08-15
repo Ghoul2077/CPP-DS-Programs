@@ -52,7 +52,10 @@ public:
    }
 
    /**
-    * @brief      Constructs a new instance of linked list.
+    * @brief      Constructs a new instance of linked list from given pointer
+    *             which we treat as head of another linked list and length that
+    *             needs to be copied ahead of the head, if not given copied
+    *             until null.
     *
     * @param      head    The head
     * @param[in]  length  The length (Optional)
@@ -191,18 +194,14 @@ public:
     *
     * @param      ll   Sub linked list parameter used for recursive call
     */
-   void sort(const LinkedList *ll = NULL) {
-      if ((ll == NULL && this->length > 1) || ll != NULL && ll->length > 1) {
+   void sort() {
+      if (this->length > 1) {
          Node *middlePtr     = NULL;
-         int  halfListLength = floor(ll == NULL ? this->length / 2 : ll->length / 2);
+         int  halfListLength = floor(this->length / 2);
 
          for (int i = 0; i < halfListLength; i++) {
             if (middlePtr == NULL) {
-               if (ll == NULL) {
-                  middlePtr = this->head;
-               } else {
-                  middlePtr = ll->head;
-               }
+               middlePtr = this->head;
             } else {
                middlePtr = middlePtr->next;
             }
