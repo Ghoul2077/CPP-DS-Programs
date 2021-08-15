@@ -11,7 +11,6 @@ void printArr(int arr[], int size) {
 void merge(int arr[], int start1, int end1, int start2, int end2) {
    int i = start1;
    int j = start2;
-   int k;
    int counter   = 0;
    int size      = end2 - start1 + 1;
    int *finalArr = new int[size];
