@@ -16,7 +16,7 @@ void merge(int *arr, int start1, int stop1, int start2, int stop2) {
    int counter = 0;
 
    while (i <= stop1 && j <= stop2) {
-      if (arr[i] < arr[j]) {
+      if (arr[i] <= arr[j]) {
          newArr[counter++] = arr[i++];
       } else {
          newArr[counter++] = arr[j++];

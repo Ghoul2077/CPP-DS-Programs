@@ -31,21 +31,18 @@ void merge(int arr[], int start1, int end1, int start2, int end2) {
    int *finalArr = new int[size];
 
    while (i <= end1 && j <= end2) {
-      if (arr[i] < arr[j]) {
+      if (arr[i] <= arr[j]) {
          finalArr[counter++] = arr[i++];
       } else {
          finalArr[counter++] = arr[j++];
       }
    }
 
-   if (i <= end1) {
-      while (i <= end1) {
-         finalArr[counter++] = arr[i++];
-      }
-   } else {
-      while (j <= end2) {
-         finalArr[counter++] = arr[j++];
-      }
+   while (i <= end1) {
+      finalArr[counter++] = arr[i++];
+   }
+   while (j <= end2) {
+      finalArr[counter++] = arr[j++];
    }
 
    for (int m = start1; m < start1 + size; m++) {
@@ -139,7 +136,7 @@ int findRepeatingNumber(int *arr, int size) {
  * @brief      Finds the repeating number in a given array where conditions are
  *             that array will contain every number of 0 to max of array and out
  *             of those one number will repeat n times. The following algo takes
- *             O(n) time complexity and Q(1) space complexity using hare and 
+ *             O(n) time complexity and Q(1) space complexity using hare and
  *             tortoise method.
  *
  * @param      arr   The arr

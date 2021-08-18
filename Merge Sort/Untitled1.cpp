@@ -9,28 +9,24 @@ void printArr(int arr[], int size) {
 }
 
 void merge(int arr[], int start1, int end1, int start2, int end2) {
-   int i = start1;
-   int j = start2;
+   int *finalArr = new int[size];
+   int i = start1, j = start2;
    int counter   = 0;
    int size      = end2 - start1 + 1;
-   int *finalArr = new int[size];
 
    while (i <= end1 && j <= end2) {
-      if (arr[i] < arr[j]) {
+      if (arr[i] <= arr[j]) {
          finalArr[counter++] = arr[i++];
       } else {
          finalArr[counter++] = arr[j++];
       }
    }
 
-   if (i <= end1) {
-      while (i <= end1) {
-         finalArr[counter++] = arr[i++];
-      }
-   } else {
-      while (j <= end2) {
-         finalArr[counter++] = arr[j++];
-      }
+   while (i <= end1) {
+      finalArr[counter++] = arr[i++];
+   }
+   while (j <= end2) {
+      finalArr[counter++] = arr[j++];
    }
 
    for (int m = start1; m < start1 + size; m++) {
