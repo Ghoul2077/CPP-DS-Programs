@@ -31,7 +31,7 @@ int binarySearchIterative(int *arr, int size, int toSearch) {
       int start = 0, end = size - 1;
 
       while (start <= end) {
-         int mid = start + end / 2;
+         int mid = (start + end) / 2;
 
          if (arr[mid] == toSearch) {
             return(mid);
@@ -55,7 +55,7 @@ int binarySearchReccursive(int *arr, int size, int start, int end, int toSearch)
          return(-1);
       }
 
-      int mid = start + end / 2;
+      int mid = (start + end) / 2;
       if (arr[mid] == toSearch) {
          return(mid);
       } else if (arr[mid] < toSearch) {
