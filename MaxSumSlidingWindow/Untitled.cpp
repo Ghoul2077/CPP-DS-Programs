@@ -24,7 +24,7 @@ int maxSumOfKElementsNaive(int *arr, int size, int k) {
             currSum += arr[j];
          }
       } else {
-         continue;
+         break;
       }
       if (currSum > maxSum) {
          maxSum = currSum;
