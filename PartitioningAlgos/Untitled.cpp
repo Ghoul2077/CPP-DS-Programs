@@ -73,7 +73,7 @@ int lomutoPartition(int *arr, int start, int stop) {
    int pivot = arr[stop];
    int i     = start - 1;
 
-   for (int j = start; j < stop - 1; j++) {
+   for (int j = start; j <= stop - 1; j++) {
       if (arr[j] < pivot) {
          i++;
          swap(arr[i], arr[j]);
@@ -108,7 +108,7 @@ int hoarePartition(int *arr, int start, int stop) {
          j--;
       } while (arr[j] > pivot);
       if (i >= j) {
-         return(j + 1);
+         return(j);
       }
       swap(arr[i], arr[j]);
    }
