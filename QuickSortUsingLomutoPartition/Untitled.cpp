@@ -1,6 +1,6 @@
 #include <iostream>
 #include <math.h>
-#include <vector>
+#include <experimental/random>
 #include <limits>
 using namespace std;
 
@@ -31,8 +31,17 @@ int lomutoPartition(int *arr, int start, int stop) {
    return(i + 1);
 }
 
+int lomutoPartitionOptimized(int *arr, int start, int stop) {
+   int randNum = std::experimental::randint(start, stop);
+
+   swap(arr[stop], arr[randNum]);
+   return(lomutoPartition(arr, start, stop));
+}
+
 /**
- * @brief      Quick sort using lomuto partition in O(nlogn) time complexity
+ * @brief      Quick sort using lomuto partition in O(nlogn) average time 
+ *             complexity and O(n^2) in worst case when not using optimised
+ *             partitioning which chooses pivot at random.
  *
  * @param      arr    The arr
  * @param[in]  start  The start
@@ -40,7 +49,7 @@ int lomutoPartition(int *arr, int start, int stop) {
  */
 void quickSortLomuto(int *arr, int start, int stop) {
    if (start < stop) {
-      int pivotIndex = lomutoPartition(arr, start, stop);
+      int pivotIndex = lomutoPartitionOptimized(arr, start, stop);
       quickSortLomuto(arr, start, pivotIndex - 1);
       quickSortLomuto(arr, pivotIndex + 1, stop);
    }

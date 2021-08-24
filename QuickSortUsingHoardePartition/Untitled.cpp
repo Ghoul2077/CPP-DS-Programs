@@ -1,7 +1,7 @@
 #include <iostream>
 #include <math.h>
-#include <vector>
 #include <limits>
+#include <experimental/random>
 using namespace std;
 
 void printArr(int *arr, int size) {
@@ -35,9 +35,18 @@ int hoardePartition(int *arr, int start, int stop) {
    }
 }
 
+int hoardePartitionOptimized(int *arr, int start, int stop) {
+   int randNum = std::experimental::randint(start, stop);
+
+   swap(arr[stop], arr[randNum]);
+   return(hoardePartition(arr, start, stop));
+}
+
 /**
  * @brief      Quick sort using hoarde partition in O(nlogn) time complexity.
- *             Better than lomuto partitioning method
+ *             Better than lomuto partitioning method, found to be around 3 times
+ *             faster. It has O(n^2) time complexity in worst case if not used
+ *             optimised partitioning i.e choosing pivot at random.
  *
  * @param      arr    The arr
  * @param[in]  start  The start
@@ -45,8 +54,8 @@ int hoardePartition(int *arr, int start, int stop) {
  */
 void quickSortHoarde(int *arr, int start, int stop) {
    if (start < stop) {
-      int pivotIndex = hoardePartition(arr, start, stop);
-      quickSortHoarde(arr, start, pivotIndex - 1);
+      int pivotIndex = hoardePartitionOptimized(arr, start, stop);
+      quickSortHoarde(arr, start, pivotIndex);
       quickSortHoarde(arr, pivotIndex + 1, stop);
    }
 }
