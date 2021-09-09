@@ -9,10 +9,10 @@ void printArr(int arr[], int size) {
 }
 
 void merge(int arr[], int start1, int end1, int start2, int end2) {
+   int size = end2 - start1 + 1;
    int *finalArr = new int[size];
    int i = start1, j = start2;
-   int counter   = 0;
-   int size      = end2 - start1 + 1;
+   int counter = 0;
 
    while (i <= end1 && j <= end2) {
       if (arr[i] <= arr[j]) {
