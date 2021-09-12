@@ -60,6 +60,7 @@ float medianOfRowSortedMatrixNaive(vector <vector <int> > *arr) {
  *
  * @return     Median of the matrix
  */
+// TODO: Make this algorithm work for even number of elements
 float medianOfRowSortedMatrix(vector <vector <int> > *arr) {
    int    min = arr->begin()->front(), max = arr->begin()->back();
    bigInt numberOfColumns = (*arr)[0].size();
