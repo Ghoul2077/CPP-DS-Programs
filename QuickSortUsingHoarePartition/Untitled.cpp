@@ -17,7 +17,7 @@ void swap(int&num1, int&num2) {
    num2 = temp;
 }
 
-int hoardePartition(int *arr, int start, int stop) {
+int hoarePartition(int *arr, int start, int stop) {
    int pivot = arr[start];
    int i = start - 1, j = stop + 1;
 
@@ -35,11 +35,11 @@ int hoardePartition(int *arr, int start, int stop) {
    }
 }
 
-int hoardePartitionOptimized(int *arr, int start, int stop) {
+int hoarePartitionOptimized(int *arr, int start, int stop) {
    int randNum = std::experimental::randint(start, stop);
 
    swap(arr[stop], arr[randNum]);
-   return(hoardePartition(arr, start, stop));
+   return(hoarePartition(arr, start, stop));
 }
 
 /**
@@ -54,7 +54,7 @@ int hoardePartitionOptimized(int *arr, int start, int stop) {
  */
 void quickSortHoarde(int *arr, int start, int stop) {
    if (start < stop) {
-      int pivotIndex = hoardePartitionOptimized(arr, start, stop);
+      int pivotIndex = hoarePartitionOptimized(arr, start, stop);
       quickSortHoarde(arr, start, pivotIndex);
       quickSortHoarde(arr, pivotIndex + 1, stop);
    }
