@@ -8,7 +8,7 @@ using namespace std;
 void reverseArray(int *arr, int size) {
    for (int i = 0; i < size / 2; i++) {
       int indexToSwap = size - i - 1;
-      swap(arr, indexToSwap, i);
+      swap(arr[indexToSwap], arr[i]);
    }
 }
 

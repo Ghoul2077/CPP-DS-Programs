@@ -4,6 +4,8 @@
 #include <bits/stdc++.h>
 using namespace std;
 
+typedef long long unsigned int bigInt;
+
 void printArr(vector <pair <int, int> > *arr) {
    for (auto i = arr->begin(); i < arr->end(); i++) {
       cout << i->first << " " << i->second;
@@ -34,7 +36,7 @@ vector <pair <int, int> > mergeInterval(vector <pair <int, int> > arr) {
    vector <pair <int, int> > mergedArr;
    int res = 0;
 
-   for (int i = 1; i < arr.size(); i++) {
+   for (bigInt i = 1; i < arr.size(); i++) {
       pair <int, int> *val1 = &arr[res];
       pair <int, int> *val2 = &arr[i];
 
