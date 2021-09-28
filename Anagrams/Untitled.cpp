@@ -2,6 +2,8 @@
 #include <bits/stdc++.h>
 using namespace std;
 
+typedef long long unsigned int bigInt;
+
 /**
  * @brief      Determines if given 2 strings are anagram in O(nlogn) time
  *             complexity and Q(1) space complexity.
@@ -31,7 +33,11 @@ bool isAnagramNaive(string& str1, string& str2) {
 
 /**
  * @brief      Determines if given 2 strings are anagram in O(n) time
- *             complexity and O(n) space complexity.
+ *             complexity and Q(128) space complexity. It does this by
+ *             incrementing frequency when encountering character in string 1
+ *             and decrementing counter when encountering character in string 2.
+ *             The hypothesis is that if strings are anagram then the above
+ *             method will yeild 0 for each value of count array.
  *
  * @param      str1  The string 1
  * @param      str2  The string 2
@@ -44,16 +50,22 @@ bool isAnagram(string& str1, string& str2) {
       return (false);
    }
 
-   unordered_set<char> alphabetSet1(str1.begin(), str1.end());
-   unordered_set<char> alphabetSet2(str2.begin(), str2.end());
+   int count[128] = { 0 };
 
-   if(alphabetSet1 == alphabetSet2) {
-      cout << "True";
-      return (true);
-   } else {
-      cout << "False";
-      return (false);
+   for (bigInt i = 0; i < str1.size(); i++) {
+      int asciiVal1 = (int)str1[i];
+      int asciiVal2 = (int)str2[i];
+      count[asciiVal1]++;
+      count[asciiVal2]--;
    }
+
+   for (int i = 0; i < 128; i++) {
+      if (count[i] != 0) {
+         return (false);
+      }
+   }
+
+   return (true);
 }
 
 int main() {
