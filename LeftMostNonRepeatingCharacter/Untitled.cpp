@@ -12,7 +12,7 @@ typedef long long unsigned int bigInt;
  *
  * @return     First non repeating character if any, otherwise return " ".
  */
-char leftMostNonRepeatingCharacterNaive(string &str) {
+char leftMostNonRepeatingCharacterNaive(string& str) {
    for (bigInt i = 0; i < str.size(); i++) {
       bool isRepeating = false;
 
@@ -32,31 +32,43 @@ char leftMostNonRepeatingCharacterNaive(string &str) {
 /**
  * @brief      Finds the first non repeating character in a given string in
  *             O(n) time complexity and Q(128) space complexity. It does this
- *             by traversing the array from the right and talking an account of
- *             all the values that have been visited in a boolean array of size
- *             128.
+ *             by filling array of 128 values with -1 (indicating not yet 
+ *             encountered) and then traversing the string storing index value
+ *             instead of -1 for first occurance otherwise -2 if already
+ *             encountered. Now we just have to find the minimum of first
+ *             occurances index values in the array & we get our answer.
  *
  * @param[in]  str   The string
  *
  * @return     First non repeating character if any, otherwise return " ".
  */
-string leftMostNonRepeatingCharacterEfficient1(string &str) {
-   bool isVisited[128];
+char leftMostNonRepeatingCharacterEfficient1(string& str) {
+   int firstInstances[128], asiiValOfFirstNonRepeatingChar = INT_MAX;
 
-   fill(isVisited, isVisited + 128, false);
+   fill(firstInstances, firstInstances + 128, -1);
 
-   string firstNonRepeatingChar = " ";
-
-   for (int i = str.size() - 1; i >= 0; i--) {
+   for (bigInt i = 0; i < str.size(); i++) {
       int asciiVal = (int)str[i];
 
-      if (!isVisited[asciiVal]) {
-         firstNonRepeatingChar = str[i];
-         isVisited[asciiVal]   = true;
+      if (firstInstances[asciiVal] == -1) {
+         firstInstances[asciiVal] = i;
+      } else {
+         firstInstances[asciiVal] = -2;
       }
    }
 
-   return (firstNonRepeatingChar);
+   for (int i = 0; i < 128; i++) {
+      if (firstInstances[i] >= 0) {
+         asiiValOfFirstNonRepeatingChar = min(asiiValOfFirstNonRepeatingChar,
+                                              firstInstances[i]);
+      }
+   }
+
+   if (asiiValOfFirstNonRepeatingChar != INT_MAX) {
+      return (str[asiiValOfFirstNonRepeatingChar]);
+   } else {
+      return (' ');
+   }
 }
 
 /**
@@ -71,7 +83,7 @@ string leftMostNonRepeatingCharacterEfficient1(string &str) {
  *
  * @return     First non repeating character if any, otherwise return " ".
  */
-char leftMostNonRepeatingCharacterEfficient2(string &str) {
+char leftMostNonRepeatingCharacterEfficient2(string& str) {
    int count[128] = { 0 };
 
    for (bigInt i = 0; i < str.size(); i++) {
@@ -81,6 +93,7 @@ char leftMostNonRepeatingCharacterEfficient2(string &str) {
 
    for (bigInt i = 0; i < str.size(); i++) {
       int asciiVal = (int)str[i];
+
       if (count[asciiVal] == 1) {
          return (str[i]);
       }
@@ -97,7 +110,7 @@ int main() {
    for (int i = 0; i < testCases; i++) {
       string str;
       getline(cin, str);
-      cout << leftMostNonRepeatingCharacterEfficient2(str);
+      cout << leftMostNonRepeatingCharacterEfficient1(str);
       cout << endl;
    }
 
