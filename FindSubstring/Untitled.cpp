@@ -110,9 +110,50 @@ void subStringUsingRabinKarp(string& str, string& pattern) {
    }
 }
 
-// TODO: To be done after LPS Array Problem
-void knuthMorisPrattAlgorithmForSubstring(string &str, string &pattern) {
+vector<bigInt>lspArrayOptimized(string& str) {
+   bigInt len = 0, i = 1;
+   vector<bigInt> answer;
 
+   answer.push_back(0);
+
+   while (i < str.size()) {
+      if (str[i] == str[len]) {
+         answer.push_back(++len);
+         i++;
+      } else {
+         if (len == 0) {
+            answer.push_back(0);
+            i++;
+         } else {
+            len = answer[len - 1];
+         }
+      }
+   }
+
+   return (answer);
+}
+
+void knuthMorisPrattAlgorithmForSubstring(string& str, string& pattern) {
+   bigInt i = 0, j = 0;
+   vector<bigInt> lpsArray = lspArrayOptimized(str);
+
+   while (i < str.size()) {
+      if (str[i] == pattern[j]) {
+         i++;
+         j++;
+      }
+
+      if (j == pattern.size()) {
+         cout << i - j << ", ";
+         j = lpsArray[j - 1];
+      } else if ((i < str.size()) && (pattern[j] != str[i])) {
+         if (j == 0) {
+            i++;
+         } else {
+            j = lpsArray[j - 1];
+         }
+      }
+   }
 }
 
 int main() {
