@@ -147,13 +147,13 @@ bool containsLoopOptimized(Node *head) {
  * @return     True if loop is found, false otherwise
  */
 bool containsLoopEfficient(Node *head) {
-   unordered_set<Node *> vistiedNodes;
+   unordered_set<Node *> visitedNodes;
    Node *curr = head;
    bool loopFound = false;
 
    while(curr != NULL) {
-      if(vistiedNodes.count(curr) == 0) {
-         vistiedNodes.insert(curr);
+      if(visitedNodes.count(curr) == 0) {
+         visitedNodes.insert(curr);
          curr = curr->next;
       } else {
          cout << "Loop found" << endl;
