@@ -129,6 +129,10 @@ Node *segregateEvenAndOddInLL(Node *head) {
       curr = next;
    }
 
+   if(evenHead == NULL || oddHead == NULL) {
+      return head;
+   }
+
    evenTail->next = oddHead;
    oddTail->next = NULL;
 
