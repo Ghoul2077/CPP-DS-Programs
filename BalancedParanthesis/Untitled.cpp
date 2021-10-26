@@ -5,6 +5,13 @@ using namespace std;
 typedef long long unsigned int bigInt;
 #define mod 1000000007;
 
+/**
+ * @brief      Finds if given set of paranthesis are balanced or not, by which
+ *             we mean that the bracket opened at last should be closed first
+ *             and all bracket must be closed to call the brackets balanced. 
+ *
+ * @param[in]  brackets  The brackets
+ */
 void areBracketsBalanced(string brackets) {
    if(brackets.size() % 2 != 0) {
       cout << "No";
