@@ -5,7 +5,7 @@ using namespace std;
 
 class Stack {
 private:
-   list<int> head;
+   list<int> stack;
 
 public:
    void initialize() {
@@ -20,23 +20,23 @@ public:
 
    void push(int data) {
       try {
-         head.push_front(data);
+         stack.push_front(data);
       } catch(bad_alloc& badAlloc) {
          cout << badAlloc.what();
       }
    }
 
    void pop() {
-      if(head.size() != 0) {
-         head.erase(head.begin());
+      if(stack.size() != 0) {
+         stack.erase(stack.begin());
       } else {
          cout << "Stack underflow";
       }
    }
 
    int top() {
-      if(head.size() != 0) {
-         return head.front();
+      if(stack.size() != 0) {
+         return stack.front();
       } else {
          cout << "Stack is empty";
          return -1;
@@ -44,18 +44,18 @@ public:
    }
 
    bool isEmpty() {
-      return head.size() == 0 ? true : false;
+      return stack.size() == 0 ? true : false;
    }
 
    void print() {
-      for(auto i = head.begin(); i != head.end(); i++) {
+      for(auto i = stack.begin(); i != stack.end(); i++) {
          cout << *i << " ";
       }
       cout << endl;
    }
 
    int size() {
-      return head.size();
+      return stack.size();
    }
 };
 
