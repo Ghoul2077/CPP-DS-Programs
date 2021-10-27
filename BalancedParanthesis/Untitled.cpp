@@ -8,7 +8,8 @@ typedef long long unsigned int bigInt;
 /**
  * @brief      Finds if given set of paranthesis are balanced or not, by which
  *             we mean that the bracket opened at last should be closed first
- *             and all bracket must be closed to call the brackets balanced. 
+ *             and all bracket must be closed to call the brackets balanced.
+ *             It's time complexity is O(n) and it's space complexity is Q(n).
  *
  * @param[in]  brackets  The brackets
  */
