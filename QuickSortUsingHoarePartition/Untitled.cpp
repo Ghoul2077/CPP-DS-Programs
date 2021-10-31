@@ -38,7 +38,7 @@ int hoarePartition(int *arr, int start, int stop) {
 int hoarePartitionOptimized(int *arr, int start, int stop) {
    int randNum = std::experimental::randint(start, stop);
 
-   swap(arr[stop], arr[randNum]);
+   swap(arr[start], arr[randNum]);
    return(hoarePartition(arr, start, stop));
 }
 
