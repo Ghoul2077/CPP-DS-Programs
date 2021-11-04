@@ -13,7 +13,7 @@ typedef long long unsigned int bigInt;
  * @param[in]  size  The size
  */
 void findNextGreaterElementsNaive(int *arr, int size) {
-   for(int i = size - 1; i >= 0; i--) {
+   for(int i = 0; i < size; i++) {
       int j;
       for(j = i + 1; j < size; j++) {
          if(arr[j] > arr[i]) {
@@ -36,6 +36,7 @@ void findNextGreaterElementsNaive(int *arr, int size) {
  * @param[in]  size  The size
  */
 void findNextGreaterElements(int *arr, int size) {
+   vector<int> reverseArr(size);
    stack<int> st;
 
    for(int i = size - 1; i >= 0; i--) {
@@ -43,8 +44,14 @@ void findNextGreaterElements(int *arr, int size) {
          st.pop();
       }
       int biggerElem = st.empty() ? -1 : st.top();
-      cout << biggerElem << " ";
+      reverseArr.push_back(biggerElem);
       st.push(arr[i]);
+   }
+
+   reverse(reverseArr.begin(), reverseArr.end());
+
+   for(int i = 0; i < size; i++) {
+      cout << reverseArr[i] << " ";
    }
 }
 
