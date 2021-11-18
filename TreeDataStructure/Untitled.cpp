@@ -21,13 +21,31 @@ class Tree {
 private:
    Node *root;
 
-   void printTree(Node *root = NULL) {
+   void printInorder(Node *root = NULL) {
       if (root == NULL) {
          return;
       }
-      printTree(root->left);
+      printInorder(root->left);
       cout << root->data << " ";
-      printTree(root->right);
+      printInorder(root->right);
+   }
+
+   void printPostorder(Node *root = NULL) {
+      if (root == NULL) {
+         return;
+      }
+      printPostorder(root->left);
+      printPostorder(root->right);
+      cout << root->data << " ";
+   }
+
+   void printPreorder(Node *root = NULL) {
+      if (root == NULL) {
+         return;
+      }
+      cout << root->data << " ";
+      printPreorder(root->left);
+      printPreorder(root->right);
    }
 
    Node* push(Node *root, int data) {
@@ -66,7 +84,7 @@ public:
    }
 
    void print() {
-      printTree(root);
+      printInorder(root);
    }
 
    void insert(int data) {
