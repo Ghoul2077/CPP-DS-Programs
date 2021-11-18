@@ -21,33 +21,6 @@ class Tree {
 private:
    Node *root;
 
-   void printInorder(Node *root = NULL) {
-      if (root == NULL) {
-         return;
-      }
-      printInorder(root->left);
-      cout << root->data << " ";
-      printInorder(root->right);
-   }
-
-   void printPostorder(Node *root = NULL) {
-      if (root == NULL) {
-         return;
-      }
-      printPostorder(root->left);
-      printPostorder(root->right);
-      cout << root->data << " ";
-   }
-
-   void printPreorder(Node *root = NULL) {
-      if (root == NULL) {
-         return;
-      }
-      cout << root->data << " ";
-      printPreorder(root->left);
-      printPreorder(root->right);
-   }
-
    Node* push(Node *root, int data) {
       if (root == NULL) {
          Node *newNode = new Node(data);
@@ -61,6 +34,24 @@ private:
       }
 
       return (root);
+   }
+
+   /**
+    * @brief      Prints the nodes at distance k from the root. It's time
+    *             time complexity is O(n) and space complexity is O(h).
+    *
+    * @param      root  The root
+    * @param[in]  k     Distance from root
+    */
+   void printNodesAtDistanceKMain(Node *root, int k) {
+      if (root == NULL) {
+         return;
+      } else if (k == 0) {
+         cout << root->data << " ";
+      } else {
+         printNodesAtDistanceKMain(root->left,  k - 1);
+         printNodesAtDistanceKMain(root->right, k - 1);
+      }
    }
 
 public:
@@ -83,8 +74,8 @@ public:
       }
    }
 
-   void print() {
-      printInorder(root);
+   void printNodesAtDistanceK(int k) {
+      printNodesAtDistanceKMain(root, k);
    }
 
    void insert(int data) {
@@ -101,7 +92,7 @@ int main() {
    for (int i = 0; i < testCases; i++) {
       Tree *t = new Tree();
       t->initialize();
-      t->print();
+      t->printNodesAtDistanceK(1);
       cout << endl;
    }
    return (0);
