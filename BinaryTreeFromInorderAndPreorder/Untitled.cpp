@@ -34,7 +34,7 @@ private:
     *             arrays. The idea behind is that we use preorder to get the
     *             parent elements (eg: first element of preorder is always root
     *             of the tree) and inorder to get the left and right nodes. It's
-    *             time complexity is O(n) and it's space complexity is Q(h).
+    *             time complexity is O(n^2) and it's space complexity is Q(h).
     *
     * @param      inorder       The inorder
     * @param      preorder      The preorder
