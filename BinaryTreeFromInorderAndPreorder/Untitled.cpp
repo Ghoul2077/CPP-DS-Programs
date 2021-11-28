@@ -73,6 +73,49 @@ private:
       return (root);
    }
 
+   /**
+    * @brief      Constructs a binary tree from given inorder and preorder
+    *             arrays. The idea behind is that we use preorder to get the
+    *             parent elements (eg: first element of preorder is always root
+    *             of the tree) and inorder to get the left and right nodes. It's
+    *             time complexity is O(n) and it's space complexity is Q(h). We
+    *             use some pre computations to convert inorder array to hashmap
+    *             which reduces work done per reccursive call to O(1).
+    *
+    * @param      inorder       The inorder
+    * @param      preorder      The preorder
+    * @param[in]  inorderStart  The inorder start
+    * @param[in]  inorderEnd    The inorder end
+    *
+    * @return     Root of the binary tree
+    */
+   Node* postorderTraversalFromInorderAndPreorderOptimized(
+      unordered_map<int, int>& inorderHashmap,
+      int                     *preorder,
+      int                      inorderStart,
+      int                      inorderEnd)
+   {
+      if (inorderStart > inorderEnd) {
+         return (NULL);
+      }
+      static int preorderIndex = 0;
+      Node *root               = new Node(preorder[preorderIndex++]);
+
+      int inIndex = inorderHashmap[root->data];
+
+      root->left = postorderTraversalFromInorderAndPreorderOptimized(
+         inorderHashmap,
+         preorder,
+         inorderStart,
+         inIndex - 1);
+      root->right = postorderTraversalFromInorderAndPreorderOptimized(
+         inorderHashmap,
+         preorder,
+         inIndex + 1,
+         inorderEnd);
+      return (root);
+   }
+
 public:
    Tree() {
       root = NULL;
@@ -83,10 +126,15 @@ public:
    }
 
    void solve(int *inorder, int *preorder, int size) {
-      root = postorderTraversalFromInorderAndPreorder(inorder,
-                                                      preorder,
-                                                      0,
-                                                      size - 1);
+      unordered_map<int, int> arrayToHashMap;
+
+      for (int i = 0; i < size; i++) {
+         arrayToHashMap.insert({ inorder[i], i });
+      }
+      root = postorderTraversalFromInorderAndPreorderOptimized(arrayToHashMap,
+                                                               preorder,
+                                                               0,
+                                                               size - 1);
       printPostorder(root);
    }
 };
