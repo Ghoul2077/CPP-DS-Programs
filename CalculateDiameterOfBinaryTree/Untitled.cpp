@@ -62,7 +62,7 @@ private:
     *
     * @param      root  The root
     *
-    * @return     The diameter of tree naive.
+    * @return     The diameter of tree.
     */
    int getDiameterOfTreeNaive(Node *root) {
       if (root == NULL) {
@@ -85,9 +85,10 @@ private:
     *             stored them in a map which essentially removes the need of
     *             calculating height in each reccusive call.
     *
-    * @param      root  The root
+    * @param      root             The root
+    * @param[in]  nodeToHeightMap  The node to height map for memoization
     *
-    * @return     The diameter of tree naive.
+    * @return     The diameter of tree.
     */
    int getDiameterOfTree(
       Node                     *root,
@@ -111,9 +112,10 @@ private:
     *             to the function. It's time comlpexity is O(n) and it's space
     *             complexity is Q(h).
     *
-    * @param      root  The root
+    * @param      root      The root of the tree
+    * @param      diameter  The diameter variable to store the final diameter
     *
-    * @return     The diameter of tree naive.
+    * @return     The height of the tree.
     */
    int getDiameterOfTreeEfficient(Node *root, int& diameter) {
       if (root == NULL) {
