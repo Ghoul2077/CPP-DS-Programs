@@ -36,20 +36,6 @@ private:
       return (root);
    }
 
-   bool getAncestorsOfNode(Node *root, Node *node, vector<Node *>& ancestors) {
-      if (root == NULL) {
-         return (false);
-      }
-
-      if ((root == node) || getAncestorsOfNode(root->left, node, ancestors) ||
-          getAncestorsOfNode(root->right, node, ancestors)) {
-         ancestors.push_back(root);
-         return (true);
-      }
-
-      return (false);
-   }
-
    /**
     * @brief      Finds the time taken to burn a tree given a leaf node. The
     *             meaning of burning a tree is we burn a node then in next turn
