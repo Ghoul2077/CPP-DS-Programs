@@ -1,7 +1,4 @@
-#include <iostream>
-#include <math.h>
-#include <vector>
-#include <limits>
+#include <bits/stdc++.h>
 using namespace std;
 
 // Utility functions

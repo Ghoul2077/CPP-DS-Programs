@@ -1,7 +1,4 @@
-#include <iostream>
-#include <math.h>
-#include <vector>
-#include <limits>
+#include <bits/stdc++.h>
 using namespace std;
 
 int squareRootNaive(int num) {
@@ -11,10 +8,10 @@ int squareRootNaive(int num) {
       if (i * i == num) {
          break;
       } else if (i * i > num) {
-         return(i - 1);
+         return (i - 1);
       }
    }
-   return(i);
+   return (i);
 }
 
 int squareRoot(int num) {
@@ -29,7 +26,7 @@ int squareRoot(int num) {
       if (square == num) {
          sqrt = mid;
          break;
-      } else if (prevSqaure < num && square > num) {
+      } else if ((prevSqaure < num) && (square > num)) {
          sqrt = mid - 1;
          break;
       } else if (square < num) {
@@ -39,12 +36,12 @@ int squareRoot(int num) {
       }
    }
 
-   return(sqrt);
+   return (sqrt);
 }
 
 int main() {
    int element = 1615;
 
-   cout << squareRoot(element)<<endl;
-   return(0);
+   cout << squareRoot(element) << endl;
+   return (0);
 }

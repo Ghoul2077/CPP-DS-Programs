@@ -1,14 +1,13 @@
-#include <iostream>
-#include <string>
+#include <bits/stdc++.h>
 using namespace std;
 
 int subSequence(string str, int level = 0, string sequence = "") {
    if (level == str.size()) {
       cout << sequence << "  ";
-      return(1);
+      return (1);
    } else {
-      return(subSequence(str, level + 1, sequence) +
-             subSequence(str, level + 1, sequence + str[level]));
+      return (subSequence(str, level + 1, sequence) +
+              subSequence(str, level + 1, sequence + str[level]));
    }
 }
 

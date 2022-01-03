@@ -1,7 +1,4 @@
-#include <iostream>
-#include <math.h>
-#include <vector>
-#include <limits>
+#include <bits/stdc++.h>
 using namespace std;
 
 /**
@@ -22,20 +19,23 @@ int smallestSubarrayWithGivenSum(int *arr, int size, int sum) {
 
    for (windowEnd = 0; windowEnd < size; windowEnd++) {
       windowSum += arr[windowEnd];
+
       while (sum < windowSum && windowStart <= windowEnd) {
          windowSum -= arr[windowStart++];
       }
       int windowSize = windowEnd - windowStart + 1;
-      if(windowSum == sum && windowSize < minWindowSize) minWindowSize = windowSize;
+
+      if ((windowSum == sum) &&
+          (windowSize < minWindowSize)) { minWindowSize = windowSize; }
    }
-   return minWindowSize == numeric_limits<int>::max() ? 0 : minWindowSize;
+   return (minWindowSize == numeric_limits<int>::max() ? 0 : minWindowSize);
 }
 
 int main() {
-   int       arr[] = { 1, 8, 30, 5, 20, 7, 3 };
-   int       sum   = 30;
-   const int size  = sizeof(arr) / sizeof(arr[0]);
+   int arr[]      = { 1, 8, 30, 5, 20, 7, 3 };
+   int sum        = 30;
+   const int size = sizeof(arr) / sizeof(arr[0]);
 
    cout << smallestSubarrayWithGivenSum(arr, size, sum);
-   return(0);
+   return (0);
 }

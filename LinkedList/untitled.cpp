@@ -1,5 +1,4 @@
-#include <iostream>
-#include <math.h>
+#include <bits/stdc++.h>
 using namespace std;
 
 /**
@@ -67,6 +66,7 @@ public:
 
       if (length == -1) {
          this->length = 1;
+
          while (ptr1->next != NULL) {
             ptr1       = ptr1->next;
             ptr2->next = new Node(ptr1);
@@ -76,6 +76,7 @@ public:
          this->tail = new Node(ptr1);
       } else {
          this->length = length;
+
          for (int i = 0; i < length - 1; i++) {
             ptr1       = ptr1->next;
             ptr2->next = new Node(ptr1);
@@ -93,6 +94,7 @@ public:
       Node *ptr = this->head;
 
       cout << "*";
+
       while (ptr != NULL) {
          cout << "->" << ptr->data;
          ptr = ptr->next;
@@ -104,7 +106,7 @@ public:
     * @brief      Initializes the linked list.
     */
    void initializeLL() {
-      int  data;
+      int   data;
       Node *ptr = this->head;
 
       cout << "Enter value, otherwise enter -1 to exit : ";
@@ -112,6 +114,7 @@ public:
 
       while (data != -1) {
          Node *newNode = new Node(data);
+
          if (ptr == NULL) {
             this->head = newNode;
             ptr        = newNode;
@@ -156,7 +159,7 @@ public:
     * @param      l2    The linked list to merge into current linked list
     */
    void merge(const LinkedList *l2) {
-      if (l2 == NULL || l2->head == NULL) {
+      if ((l2 == NULL) || (l2->head == NULL)) {
          return;
       } else if (this->head == NULL) {
          this->head = l2->head;
@@ -167,7 +170,8 @@ public:
 
       while (ptr1 != NULL && ptr2 != NULL) {
          if (ptr1->next != NULL) {
-            if (ptr1->data <= ptr2->data && ptr2->data <= ptr1->next->data) {
+            if ((ptr1->data <= ptr2->data) &&
+                (ptr2->data <= ptr1->next->data)) {
                Node *temp1 = ptr1->next;
                Node *temp2 = ptr2->next;
                ptr1->next = ptr2;
@@ -196,8 +200,8 @@ public:
     */
    void sort() {
       if (this->length > 1) {
-         Node *middlePtr     = NULL;
-         int  halfListLength = floor(this->length / 2);
+         Node *middlePtr      = NULL;
+         int   halfListLength = floor(this->length / 2);
 
          for (int i = 0; i < halfListLength; i++) {
             if (middlePtr == NULL) {
@@ -208,7 +212,8 @@ public:
          }
 
          LinkedList *ll1 = new LinkedList(this->head, halfListLength);
-         LinkedList *ll2 = new LinkedList(middlePtr->next, length - halfListLength);
+         LinkedList *ll2 = new LinkedList(middlePtr->next,
+                                          length - halfListLength);
 
          ll1->sort();
          ll2->sort();
@@ -243,9 +248,11 @@ int main() {
    LinkedList *l2 = new LinkedList;
 
    l1->initializeLL();
+
    // l2->initializeLL();
    // l1->merge(l2);
    l1->sort();
+
    // l1->reverseLL();
    l1->printLL();
 }

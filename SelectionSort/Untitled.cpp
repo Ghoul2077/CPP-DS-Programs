@@ -1,7 +1,4 @@
-#include <iostream>
-#include <math.h>
-#include <vector>
-#include <limits>
+#include <bits/stdc++.h>
 using namespace std;
 
 void printArr(int *arr, int size) {
@@ -27,7 +24,7 @@ int findIndexOfMax(int *arr, int size) {
          max = i;
       }
    }
-   return(max);
+   return (max);
 }
 
 void selectionSort(int *arr, int size) {
@@ -44,5 +41,5 @@ int main() {
 
    selectionSort(arr, size);
    printArr(arr, size);
-   return(0);
+   return (0);
 }

@@ -1,15 +1,12 @@
-#include <iostream>
-#include <math.h>
-#include <vector>
-#include <limits>
+#include <bits/stdc++.h>
 using namespace std;
 
 int max(int num1, int num2) {
-   return(num1 > num2 ? num1 : num2);
+   return (num1 > num2 ? num1 : num2);
 }
 
 int min(int num1, int num2) {
-   return(num1 < num2 ? num1 : num2);
+   return (num1 < num2 ? num1 : num2);
 }
 
 int majorityElementNaive(int *arr, int size) {
@@ -17,17 +14,19 @@ int majorityElementNaive(int *arr, int size) {
 
    for (int i = 0; i < size; i++) {
       int count = 1;
+
       for (int j = 0; j < size; j++) {
          if (arr[j] == arr[i]) {
             count++;
          }
       }
+
       if (count > size / 2) {
          majorityElement = arr[i];
          break;
       }
    }
-   return(majorityElement);
+   return (majorityElement);
 }
 
 int findMajorityCandidate(int *arr, int size) {
@@ -39,13 +38,14 @@ int findMajorityCandidate(int *arr, int size) {
       } else {
          count--;
       }
+
       if (count == 0) {
          res   = arr[i];
          count = 1;
       }
    }
 
-   return(res);
+   return (res);
 }
 
 /**
@@ -65,17 +65,18 @@ int majorityElement(int *arr, int size) {
          count++;
       }
    }
+
    if (count > size / 2) {
-      return(majorityElement);
+      return (majorityElement);
    } else {
-      return(-1);
+      return (-1);
    }
 }
 
 int main() {
-   int       arr[] = { 8, 8, 6, 6, 6, 4, 6 };
-   const int size  = sizeof(arr) / sizeof(arr[0]);
+   int arr[]      = { 8, 8, 6, 6, 6, 4, 6 };
+   const int size = sizeof(arr) / sizeof(arr[0]);
 
    cout << majorityElement(arr, size);
-   return(0);
+   return (0);
 }

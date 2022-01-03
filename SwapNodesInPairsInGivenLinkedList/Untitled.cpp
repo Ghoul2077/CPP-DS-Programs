@@ -1,4 +1,3 @@
-#include <limits.h>
 #include <bits/stdc++.h>
 using namespace std;
 
@@ -60,48 +59,49 @@ void printLL(Node *head) {
  * @return     New head of linked list
  */
 Node* swapNodesInPairsNaive(Node *head) {
-    Node *curr = head;
+   Node *curr = head;
 
-    while(curr != NULL && curr->next != NULL) {
+   while (curr != NULL && curr->next != NULL) {
       swap(curr->data, curr->next->data);
       curr = curr->next->next;
-    }
+   }
 
-    return head;
+   return (head);
 }
 
 /**
  * @brief      Swaps the data of linked list in pairs at a time. It's time
  *             complexity is O(n) time complexity and Q(1) space complexity.
  *             This is the best method to complete such task as there is no need
- *             to know about the internal structure of the linked list nodes to 
+ *             to know about the internal structure of the linked list nodes to
  *             swap.
  *
  * @param      head  The head
  *
  * @return     New head of linked list
  */
-Node *swapNodesInPairs(Node *head) {
-   if(head == NULL || head->next == NULL) {
-      return head;
+Node* swapNodesInPairs(Node *head) {
+   if ((head == NULL) || (head->next == NULL)) {
+      return (head);
    }
 
    Node *curr = head, *prev = NULL;
+
    head = head->next;
 
-   while(curr != NULL && curr->next != NULL) {
-      if(prev != NULL) {
+   while (curr != NULL && curr->next != NULL) {
+      if (prev != NULL) {
          prev->next = curr->next;
       }
       prev = curr;
 
       Node *next = curr->next->next;
       curr->next->next = curr;
-      curr->next = next;
-      curr = next;
+      curr->next       = next;
+      curr             = next;
    }
 
-   return head;
+   return (head);
 }
 
 int main() {

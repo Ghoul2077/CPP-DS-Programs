@@ -1,7 +1,5 @@
-#include <iostream>
-#include <math.h>
+#include <bits/stdc++.h>
 #include <experimental/random>
-#include <limits>
 using namespace std;
 
 void printArr(int *arr, int size) {
@@ -10,7 +8,7 @@ void printArr(int *arr, int size) {
    }
 }
 
-void swap(int&num1, int&num2) {
+void swap(int& num1, int& num2) {
    int temp = num1;
 
    num1 = num2;
@@ -18,7 +16,7 @@ void swap(int&num1, int&num2) {
 }
 
 int min(int num1, int num2) {
-   return(num1 > num2 ? num2 : num1);
+   return (num1 > num2 ? num2 : num1);
 }
 
 int hoarePartition(int *arr, int start, int stop) {
@@ -29,11 +27,13 @@ int hoarePartition(int *arr, int start, int stop) {
       do {
          i++;
       } while (arr[i] < pivot);
+
       do {
          j--;
       } while (arr[j] > pivot);
+
       if (i >= j) {
-         return(j);
+         return (j);
       }
       swap(arr[i], arr[j]);
    }
@@ -43,11 +43,12 @@ int hoarePartitionOptimized(int *arr, int start, int stop) {
    int randNum = std::experimental::randint(start, stop);
 
    swap(arr[randNum], arr[start]);
-   return(hoarePartition(arr, start, stop));
+   return (hoarePartition(arr, start, stop));
 }
 
 void quickSort(int *arr, int start, int stop) {
 BEGIN:
+
    if (start < stop) {
       int pivotIndex = hoarePartitionOptimized(arr, start, stop);
       quickSort(arr, start, pivotIndex);
@@ -69,7 +70,7 @@ int minDifferenceNaive(int *arr, int size) {
    int minDiff = INT_MAX;
 
    if (size == 1) {
-      return(minDiff);
+      return (minDiff);
    }
 
    for (int i = 0; i < size; i++) {
@@ -79,7 +80,7 @@ int minDifferenceNaive(int *arr, int size) {
       }
    }
 
-   return(minDiff);
+   return (minDiff);
 }
 
 /**
@@ -96,7 +97,7 @@ int minDifference(int *arr, int size) {
    int minDiff = INT_MAX;
 
    if (size == 1) {
-      return(minDiff);
+      return (minDiff);
    }
    quickSort(arr, 0, size - 1);
 
@@ -105,7 +106,7 @@ int minDifference(int *arr, int size) {
       minDiff = min(currDiff, minDiff);
    }
 
-   return(minDiff);
+   return (minDiff);
 }
 
 int main() {
@@ -113,5 +114,5 @@ int main() {
    int size  = sizeof(arr) / sizeof(arr[0]);
 
    cout << minDifference(arr, size);
-   return(0);
+   return (0);
 }

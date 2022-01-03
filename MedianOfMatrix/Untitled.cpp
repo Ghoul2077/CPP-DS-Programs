@@ -1,12 +1,9 @@
-#include <iostream>
-#include <vector>
-#include <algorithm>
 #include <bits/stdc++.h>
 using namespace std;
 
 typedef long long unsigned int bigInt;
 
-void printmatrix(vector <vector <int> > *arr) {
+void printmatrix(vector<vector<int> > *arr) {
    for (auto i = arr->begin(); i < arr->end(); i++) {
       for (auto j = i->begin(); j < i->end(); j++) {
          cout << *j << "  ";
@@ -15,8 +12,8 @@ void printmatrix(vector <vector <int> > *arr) {
    }
 }
 
-vector <int> flattenMatrix(vector <vector <int> > *arr) {
-   vector <int> newArr;
+vector<int>flattenMatrix(vector<vector<int> > *arr) {
+   vector<int> newArr;
 
    for (auto i = arr->begin(); i < arr->end(); i++) {
       for (auto j = i->begin(); j < i->end(); j++) {
@@ -24,7 +21,7 @@ vector <int> flattenMatrix(vector <vector <int> > *arr) {
       }
    }
 
-   return(newArr);
+   return (newArr);
 }
 
 /**
@@ -35,8 +32,8 @@ vector <int> flattenMatrix(vector <vector <int> > *arr) {
  *
  * @return     Median of the matrix
  */
-float medianOfRowSortedMatrixNaive(vector <vector <int> > *arr) {
-   vector <int> flattenedArray = flattenMatrix(arr);
+float medianOfRowSortedMatrixNaive(vector<vector<int> > *arr) {
+   vector<int> flattenedArray = flattenMatrix(arr);
 
    sort(flattenedArray.begin(), flattenedArray.end());
    int halfSize = flattenedArray.size() / 2;
@@ -44,31 +41,32 @@ float medianOfRowSortedMatrixNaive(vector <vector <int> > *arr) {
    if (flattenedArray.size() % 2 == 0) {
       float median = ((float)flattenedArray[halfSize] +
                       (float)flattenedArray[halfSize - 1]) / 2;
-      return(median);
+      return (median);
    } else {
       float median = flattenedArray[halfSize];
-      return(median);
+      return (median);
    }
 }
 
 /**
  * @brief      Finds the median of a matrix that has all rows sorted & odd
- *             in number of elements in O(R*log(max - min)logC) time complexity 
+ *             in number of elements in O(R*log(max - min)logC) time complexity
  *             and Q(1) space complexity.
  *
  * @param      arr   The arr
  *
  * @return     Median of the matrix
  */
+
 // TODO: Make this algorithm work for even number of elements
-float medianOfRowSortedMatrix(vector <vector <int> > *arr) {
-   int    min = arr->begin()->front(), max = arr->begin()->back();
+float medianOfRowSortedMatrix(vector<vector<int> > *arr) {
+   int min = arr->begin()->front(), max = arr->begin()->back();
    bigInt numberOfColumns = (*arr)[0].size();
    bigInt numberOfRows    = arr->size();
 
    if (numberOfRows * numberOfColumns % 2 == 0) {
       cout << "Even number of elements" << endl;
-      return(-1);
+      return (-1);
    }
 
    for (bigInt i = 1; i < arr->size(); i++) {
@@ -77,6 +75,7 @@ float medianOfRowSortedMatrix(vector <vector <int> > *arr) {
       if (row->at(0) < min) {
          min = row->at(0);
       }
+
       if (row->at(numberOfColumns - 1) > max) {
          max = row->at(numberOfColumns - 1);
       }
@@ -90,7 +89,8 @@ float medianOfRowSortedMatrix(vector <vector <int> > *arr) {
 
       for (bigInt i = 0; i < numberOfRows; i++) {
          auto row = arr->begin() + i;
-         midPosition += upper_bound(row->begin(), row->end(), mid) - row->begin();
+         midPosition +=
+            upper_bound(row->begin(), row->end(), mid) - row->begin();
       }
 
       if (midPosition < medianPosition) {
@@ -100,18 +100,18 @@ float medianOfRowSortedMatrix(vector <vector <int> > *arr) {
       }
    }
 
-   return((max + min) / 2);
+   return ((max + min) / 2);
 }
 
 int main() {
-   vector <vector <int> > arr = {
-      {  1,  2,  3,  4 },
-      {  5,  6,  7,  8 },
-      {  9, 10, 11, 12 },
-      { 13, 14, 15, 16 }
+   vector<vector<int> > arr = {
+      {  1, 2,  3,  4   },
+      {  5, 6,  7,  8   },
+      {  9, 10, 11, 12  },
+      { 13, 14, 15, 16  }
    };
 
    cout << medianOfRowSortedMatrix(&arr);
 
-   return(0);
+   return (0);
 }

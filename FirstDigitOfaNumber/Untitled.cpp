@@ -1,16 +1,16 @@
-#include <iostream>
+#include <bits/stdc++.h>
 using namespace std;
 
 int findFirstDigit(int num) {
    while (num > 10) {
       num /= 10;
    }
-   return(num);
+   return (num);
 }
 
 int main() {
-   int num   = 34561029;
+   int num = 34561029;
 
    cout << findFirstDigit(num);
-   return(0);
+   return (0);
 }

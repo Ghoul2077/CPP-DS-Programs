@@ -1,7 +1,4 @@
-#include <iostream>
-#include <math.h>
-#include <vector>
-#include <limits>
+#include <bits/stdc++.h>
 using namespace std;
 
 void printArr(int *arr, int size) {
@@ -14,6 +11,7 @@ void insertSort(int *arr, int size) {
    for (int i = 1; i < size; i++) {
       int curr  = arr[i];
       int index = i - 1;
+
       while (arr[index] > curr && index >= 0) {
          arr[index + 1] = arr[index];
          index--;
@@ -28,5 +26,5 @@ int main() {
 
    insertSort(arr, size);
    printArr(arr, size);
-   return(0);
+   return (0);
 }

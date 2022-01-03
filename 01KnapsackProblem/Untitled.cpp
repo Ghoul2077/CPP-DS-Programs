@@ -1,4 +1,4 @@
-#include <iostream>
+#include <bits/stdc++.h>
 using namespace std;
 
 void printMatrix(int matrix[20][20], int maxWeight) {
@@ -11,7 +11,7 @@ void printMatrix(int matrix[20][20], int maxWeight) {
 }
 
 int max(int first, int second) {
-   return(first > second ? first : second);
+   return (first > second ? first : second);
 }
 
 /**
@@ -33,15 +33,15 @@ int knapSack(int objects[][2], int maxWeight) {
       }
 
       for (j = 0; j <= maxWeight; j++) {
-         if (i == 0 || j == 0) {
+         if ((i == 0) || (j == 0)) {
             valMatrix[i][j] = 0;
-         }else{
+         } else {
             int bagWeight = j;
             int diff      = bagWeight - itemWeight;
 
             if (diff < 0) {
                valMatrix[i][j] = valMatrix[i - 1][j];
-            }else{
+            } else {
                valMatrix[i][j] = max(
                   valMatrix[i - 1][j],
                   itemValue + valMatrix[i - 1][diff]
@@ -50,8 +50,9 @@ int knapSack(int objects[][2], int maxWeight) {
          }
       }
    }
+
    // printMatrix(valMatrix, maxWeight);
-   return(valMatrix[i - 1][j - 1]);
+   return (valMatrix[i - 1][j - 1]);
 }
 
 int main() {

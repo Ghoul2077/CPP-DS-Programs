@@ -1,4 +1,3 @@
-#include <limits.h>
 #include <bits/stdc++.h>
 using namespace std;
 
@@ -42,7 +41,7 @@ bigInt lpsCount(string& str) {
 }
 
 /**
- * @brief      Makes a longest prefix suffix (proper prefix which is also suffix) 
+ * @brief      Makes a longest prefix suffix (proper prefix which is also suffix)
  *             length array in O(n^2) time complexity and O(n^2) space complexity
  *             by making use of unordered sets.
  *
@@ -63,7 +62,7 @@ vector<bigInt>lspArray(string& str) {
 }
 
 /**
- * @brief      Makes a longest prefix suffix (proper prefix which is also suffix) 
+ * @brief      Makes a longest prefix suffix (proper prefix which is also suffix)
  *             length array in O(n) time complexity and Q(1) space complexity
  *             using reccursion.
  *

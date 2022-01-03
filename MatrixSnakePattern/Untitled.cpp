@@ -1,5 +1,3 @@
-#include <iostream>
-#include <vector>
 #include <bits/stdc++.h>
 using namespace std;
 
@@ -10,7 +8,7 @@ using namespace std;
  *
  * @param      arr   The arr
  */
-void printMatrixInSnakePattern(vector <vector <int> > *arr) {
+void printMatrixInSnakePattern(vector<vector<int> > *arr) {
    int counter = 0;
 
    for (auto i = arr->begin(); i < arr->end(); i++) {
@@ -29,11 +27,11 @@ void printMatrixInSnakePattern(vector <vector <int> > *arr) {
 }
 
 int main() {
-   vector <vector <int> > arr = { { 1,  2,  3,  4 },
-      { 5,  6,  7,  8 },
+   vector<vector<int> > arr = { { 1, 2,  3,  4  },
+      { 5, 6,  7,  8  },
       { 9, 10, 11, 12 }
    };
 
    printMatrixInSnakePattern(&arr);
-   return(0);
+   return (0);
 }

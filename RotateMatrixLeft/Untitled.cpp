@@ -1,9 +1,7 @@
-#include <iostream>
-#include <vector>
 #include <bits/stdc++.h>
 using namespace std;
 
-void printMatrix(vector <vector <int> > *arr) {
+void printMatrix(vector<vector<int> > *arr) {
    for (auto i = arr->begin(); i < arr->end(); i++) {
       for (auto j = i->begin(); j < i->end(); j++) {
          cout << *j << "  ";
@@ -18,9 +16,9 @@ void printMatrix(vector <vector <int> > *arr) {
  *
  * @param      arr   The arr
  */
-void rotateLeftNaive(vector <vector <int> > *arr) {
+void rotateLeftNaive(vector<vector<int> > *arr) {
    int numberOfColumns = arr->begin()->size();
-   vector <vector <int> > newMatrix(numberOfColumns);
+   vector<vector<int> > newMatrix(numberOfColumns);
 
    for (int i = numberOfColumns - 1; i >= 0; i--) {
       for (auto j = arr->begin(); j < arr->end(); j++) {
@@ -39,12 +37,13 @@ void rotateLeftNaive(vector <vector <int> > *arr) {
  *
  * @param      arr   The arr
  */
-void rotateLeft(vector <vector <int> > *arr) {
+void rotateLeft(vector<vector<int> > *arr) {
    for (long long unsigned int i = 0; i < arr->size(); i++) {
       for (long long unsigned int j = i + 1; j < arr->size(); j++) {
          swap((*arr)[i][j], (*arr)[j][i]);
       }
    }
+
    for (long long unsigned int i = 0; i < arr->size(); i++) {
       int low = 0, high = arr->size() - 1;
 
@@ -57,9 +56,9 @@ void rotateLeft(vector <vector <int> > *arr) {
 }
 
 int main() {
-   vector <vector <int> > arr = {
-      {  1,  2,  3,  4 },
-      {  5,  6,  7,  8 },
+   vector<vector<int> > arr = {
+      {  1, 2,  3,  4  },
+      {  5, 6,  7,  8  },
       {  9, 10, 11, 12 },
       { 13, 14, 15, 16 }
    };
@@ -67,5 +66,5 @@ int main() {
    rotateLeft(&arr);
    printMatrix(&arr);
 
-   return(0);
+   return (0);
 }

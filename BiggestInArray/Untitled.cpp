@@ -1,6 +1,4 @@
-#include <iostream>
-#include <math.h>
-#include <vector>
+#include <bits/stdc++.h>
 using namespace std;
 
 /**
@@ -14,16 +12,18 @@ using namespace std;
 int findLargestNaive(int *arr, int size) {
    for (int i = 0; i < size; i++) {
       int flag = true;
+
       for (int j = 0; j < size; j++) {
          if (arr[j] > arr[i]) {
             flag = false;
          }
       }
+
       if (flag) {
-         return(arr[i]);
+         return (arr[i]);
       }
    }
-   return(-1);
+   return (-1);
 }
 
 /**
@@ -36,7 +36,7 @@ int findLargestNaive(int *arr, int size) {
  */
 int findLargestLinear(int *arr, int size) {
    if (size == 1) {
-      return(arr[0]);
+      return (arr[0]);
    }
    int max = arr[0];
 
@@ -45,7 +45,7 @@ int findLargestLinear(int *arr, int size) {
          max = arr[i];
       }
    }
-   return(max);
+   return (max);
 }
 
 /**
@@ -59,7 +59,7 @@ int findLargestLinear(int *arr, int size) {
  */
 int findLargest(int *arr, int start, int stop) {
    if (start == stop) {
-      return(arr[start]);
+      return (arr[start]);
    }
    int mid = start + floor((stop - start) / 2);
 
@@ -67,9 +67,9 @@ int findLargest(int *arr, int start, int stop) {
    int max2 = findLargest(arr, mid + 1, stop);
 
    if (max1 > max2) {
-      return(max1);
+      return (max1);
    } else {
-      return(max2);
+      return (max2);
    }
 }
 
@@ -86,5 +86,5 @@ int main() {
    // cout << findLargestLinear(arr, sizeof(arr) / sizeof(arr[0]));
    // cout << findLargestNaive(arr, sizeof(arr) / sizeof(arr[0]));
    cout << findLargest(arr, 0, sizeof(arr) / sizeof(arr[0]));
-   return(0);
+   return (0);
 }

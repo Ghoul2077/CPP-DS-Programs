@@ -1,4 +1,3 @@
-#include <limits.h>
 #include <bits/stdc++.h>
 using namespace std;
 
@@ -50,7 +49,7 @@ void printLL(Node *head) {
 
 /**
  * @brief      Finds kth node from end of linked list using double traversal
- *             of linked list i.e in O(n) time complexity and Q(1) space 
+ *             of linked list i.e in O(n) time complexity and Q(1) space
  *             complexity.
  *
  * @param      head  The head
@@ -80,7 +79,7 @@ int kthNodeFromEndOfLinkedListNaive(Node *head, int k) {
 
 /**
  * @brief      Finds kth node from end of linked list using single traversal
- *             of linked list i.e in O(n) time complexity and Q(1) space 
+ *             of linked list i.e in O(n) time complexity and Q(1) space
  *             complexity.
  *
  * @param      head  The head

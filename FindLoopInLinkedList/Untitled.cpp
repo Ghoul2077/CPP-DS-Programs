@@ -1,15 +1,14 @@
-#include <limits.h>
 #include <bits/stdc++.h>
 using namespace std;
 
 struct Node {
    int   data;
    Node *next;
-   bool isVisited;
+   bool  isVisited;
 
    Node(int val) {
-      data = val;
-      next = NULL;
+      data      = val;
+      next      = NULL;
       isVisited = false;
    }
 };
@@ -51,7 +50,7 @@ void printLL(Node *head) {
 }
 
 /**
- * @brief      Finds if a linked list contains loop in O(n^2) time complexity 
+ * @brief      Finds if a linked list contains loop in O(n^2) time complexity
  *             and Q(1) space complexity.
  *
  * @param      head  The head
@@ -59,15 +58,17 @@ void printLL(Node *head) {
  * @return     True if loop exists, false otherwise
  */
 bool containsLoopNaive(Node *head) {
-   Node *currHead = head;
-   bool loopFound = false;
+   Node *currHead  = head;
+   bool  loopFound = false;
 
-   while(currHead != NULL) {
+   while (currHead != NULL) {
       Node *curr = currHead->next;
-      while(curr != NULL && curr->next != currHead) {
+
+      while (curr != NULL && curr->next != currHead) {
          curr = curr->next;
       }
-      if(curr != NULL) {
+
+      if (curr != NULL) {
          cout << "Loop Found" << endl;
          loopFound = true;
          break;
@@ -75,11 +76,11 @@ bool containsLoopNaive(Node *head) {
       currHead = currHead->next;
    }
 
-   return loopFound;
+   return (loopFound);
 }
 
 /**
- * @brief      Finds if a linked list contains loop in O(n) time complexity 
+ * @brief      Finds if a linked list contains loop in O(n) time complexity
  *             and Q(1) space complexity. But this approach requires one to
  *             modify the structure of linked list and add a property isVisited
  *             so this approach might less desirable.
@@ -89,13 +90,13 @@ bool containsLoopNaive(Node *head) {
  * @return     True if loop exists, false otherwise
  */
 bool containsLoop(Node *head) {
-   Node *curr = head;
-   bool loopFound = false;
+   Node *curr      = head;
+   bool  loopFound = false;
 
-   while(curr != NULL) {
-      if(!curr->isVisited) {
+   while (curr != NULL) {
+      if (!curr->isVisited) {
          curr->isVisited = true;
-         curr = curr->next;
+         curr            = curr->next;
       } else {
          cout << "Loop found" << endl;
          loopFound = true;
@@ -103,12 +104,12 @@ bool containsLoop(Node *head) {
       }
    }
 
-   return loopFound;
+   return (loopFound);
 }
 
 /**
  * @brief      Determines if the linked list contains loop in O(n) time
- *             complexity and Q(1) space complexity. This is better solution 
+ *             complexity and Q(1) space complexity. This is better solution
  *             than previous one as it only modifies the linked list rather than
  *             its structre.
  *
@@ -117,15 +118,15 @@ bool containsLoop(Node *head) {
  * @return     True if linked list contains loop, false otherwise.
  */
 bool containsLoopOptimized(Node *head) {
-   Node *curr = head;
-   Node *tempNode = new Node(0);
-   bool loopFound = false;
+   Node *curr      = head;
+   Node *tempNode  = new Node(0);
+   bool  loopFound = false;
 
-   while(curr != NULL) {
-      if(curr->next != tempNode) {
+   while (curr != NULL) {
+      if (curr->next != tempNode) {
          Node *next = curr->next;
          curr->next = tempNode;
-         curr = next;
+         curr       = next;
       } else {
          cout << "Loop found" << endl;
          loopFound = true;
@@ -133,7 +134,7 @@ bool containsLoopOptimized(Node *head) {
       }
    }
 
-   return loopFound;
+   return (loopFound);
 }
 
 /**
@@ -148,11 +149,11 @@ bool containsLoopOptimized(Node *head) {
  */
 bool containsLoopEfficient(Node *head) {
    unordered_set<Node *> visitedNodes;
-   Node *curr = head;
-   bool loopFound = false;
+   Node *curr      = head;
+   bool  loopFound = false;
 
-   while(curr != NULL) {
-      if(visitedNodes.count(curr) == 0) {
+   while (curr != NULL) {
+      if (visitedNodes.count(curr) == 0) {
          visitedNodes.insert(curr);
          curr = curr->next;
       } else {
@@ -162,7 +163,7 @@ bool containsLoopEfficient(Node *head) {
       }
    }
 
-   return loopFound;
+   return (loopFound);
 }
 
 /**
@@ -178,21 +179,21 @@ bool containsLoopEfficient(Node *head) {
 bool floydeWarshallLoopDetection(Node *head) {
    Node *slowPtr = head, *fastPtr = head;
 
-   while(fastPtr != NULL && fastPtr->next != NULL) {
+   while (fastPtr != NULL && fastPtr->next != NULL) {
       slowPtr = slowPtr->next;
       fastPtr = fastPtr->next->next;
 
-      if(slowPtr == fastPtr) {
+      if (slowPtr == fastPtr) {
          break;
       }
    }
 
-   if(slowPtr == fastPtr) {
+   if (slowPtr == fastPtr) {
       cout << "Loop found" << endl;
-      return true;
+      return (true);
    }
 
-   return false;
+   return (false);
 }
 
 int main() {

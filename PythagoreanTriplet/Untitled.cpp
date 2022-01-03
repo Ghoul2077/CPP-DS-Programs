@@ -1,7 +1,4 @@
-#include <iostream>
-#include <math.h>
-#include <vector>
-#include <limits>
+#include <bits/stdc++.h>
 using namespace std;
 
 /**
@@ -15,10 +12,13 @@ void findPythagoreanTripletInSortedArray(int *arr, int size) {
    for (int i = 0; i < size; i++) {
       int low = i + 1, high = size - 1;
       int diff = arr[i] * arr[i];
+
       while (low <= high) {
          int sqrDiff = (arr[high] * arr[high]) - (arr[low] * arr[low]);
+
          if (sqrDiff == diff) {
-            cout << arr[i] << "^2 + " << arr[low] << "^2 = " << arr[high] << "^2";
+            cout << arr[i] << "^2 + " << arr[low] << "^2 = " << arr[high] <<
+            "^2";
             return;
          } else if (sqrDiff < diff) {
             low += 1;
@@ -35,5 +35,5 @@ int main() {
    int size  = sizeof(arr) / sizeof(arr[0]);
 
    findPythagoreanTripletInSortedArray(arr, size);
-   return(0);
+   return (0);
 }

@@ -1,12 +1,11 @@
-#include <iostream>
-#include <unordered_set>
+#include <bits/stdc++.h>
 using namespace std;
 
 /**
- * @brief      Determines if array sub array contains zero sum in O(n^2) time 
- *             complexity and Q(1) space complexity. Subarrays are array 
+ * @brief      Determines if array sub array contains zero sum in O(n^2) time
+ *             complexity and Q(1) space complexity. Subarrays are array
  *             contiguous elements only.
- *             
+ *
  * @param      arr   The arr
  * @param[in]  size  The size
  *
@@ -30,10 +29,10 @@ bool hasZeroSumNaive(int *arr, int size) {
 }
 
 /**
- * @brief      Determines if array sub array contains zero sum in O(n) time 
- *             complexity and O(n) space complexity. Subarrays are array 
+ * @brief      Determines if array sub array contains zero sum in O(n) time
+ *             complexity and O(n) space complexity. Subarrays are array
  *             contiguous elements only.
- *             
+ *
  * @param      arr   The arr
  * @param[in]  size  The size
  *

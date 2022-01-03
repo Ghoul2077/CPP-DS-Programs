@@ -1,4 +1,3 @@
-#include <limits.h>
 #include <bits/stdc++.h>
 using namespace std;
 
@@ -57,31 +56,34 @@ void printLL(Node *head) {
  *
  * @return     New head of the linked list
  */
-Node *reverseLinkedListInGroupsOfK(Node *head, int k) {
+Node* reverseLinkedListInGroupsOfK(Node *head, int k) {
    Node *curr = head, *prevTail = NULL;
-   bool firstPass = true;
+   bool  firstPass = true;
 
-   while(curr != NULL) {
+   while (curr != NULL) {
       Node *currTail = curr, *prev = NULL;
-      int count = 0;
-      while(curr != NULL && count < k) {
+      int   count = 0;
+
+      while (curr != NULL && count < k) {
          Node *next = curr->next;
          curr->next = prev;
-         prev = curr;
-         curr = next;
+         prev       = curr;
+         curr       = next;
          count++;
       }
-      if(firstPass) {
-         head = prev;
+
+      if (firstPass) {
+         head      = prev;
          firstPass = false;
       }
-      if(prevTail != NULL) {
+
+      if (prevTail != NULL) {
          prevTail->next = prev;
       }
       prevTail = currTail;
    }
 
-   return head;
+   return (head);
 }
 
 /**
@@ -95,24 +97,24 @@ Node *reverseLinkedListInGroupsOfK(Node *head, int k) {
  *
  * @return     New head of the linked list
  */
-Node *reverseLinkedListInGroupsOfKReccursive(Node *head, int k) {
+Node* reverseLinkedListInGroupsOfKReccursive(Node *head, int k) {
    Node *curr = head, *prev = NULL, *next = NULL;
-   int count = 0;
+   int   count = 0;
 
-   while(curr != NULL && count < k) {
-      next = curr->next;
+   while (curr != NULL && count < k) {
+      next       = curr->next;
       curr->next = prev;
-      prev = curr;
-      curr = next;
+      prev       = curr;
+      curr       = next;
       count++;
    }
 
-   if(next != NULL) {
+   if (next != NULL) {
       Node *nextHead = reverseLinkedListInGroupsOfKReccursive(next, k);
       head->next = nextHead;
    }
 
-   return prev;
+   return (prev);
 }
 
 int main() {
@@ -128,3 +130,4 @@ int main() {
    }
 
    return (0);
+}

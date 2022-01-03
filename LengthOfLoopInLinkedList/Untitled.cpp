@@ -1,4 +1,3 @@
-#include <limits.h>
 #include <bits/stdc++.h>
 using namespace std;
 
@@ -61,29 +60,29 @@ void printLL(Node *head) {
  */
 int lengthOfLoopInLinkedList(Node *head) {
    Node *slowPtr = head, *fastPtr = head;
-   int count = 1;
+   int   count = 1;
 
-   while(fastPtr != NULL && fastPtr->next != NULL) {
+   while (fastPtr != NULL && fastPtr->next != NULL) {
       slowPtr = slowPtr->next;
       fastPtr = fastPtr->next->next;
 
-      if(slowPtr == fastPtr) {
+      if (slowPtr == fastPtr) {
          break;
       }
    }
 
-   if(slowPtr != fastPtr) {
-      return -1;
+   if (slowPtr != fastPtr) {
+      return (-1);
    }
 
    slowPtr = slowPtr->next;
 
-   while(slowPtr != fastPtr) {
+   while (slowPtr != fastPtr) {
       slowPtr = slowPtr->next;
       count++;
    }
 
-   return count;
+   return (count);
 }
 
 int main() {

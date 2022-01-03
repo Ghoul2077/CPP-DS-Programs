@@ -1,5 +1,4 @@
-#include <iostream>
-#include <string.h>
+#include <bits/stdc++.h>
 using namespace std;
 
 void search(string str1, string str2) {
@@ -26,5 +25,5 @@ int main() {
    string str2 = "Prakhar";
 
    search(str1, str2);
-   return(0);
+   return (0);
 }

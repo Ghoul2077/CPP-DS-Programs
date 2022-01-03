@@ -1,4 +1,3 @@
-#include <limits.h>
 #include <bits/stdc++.h>
 using namespace std;
 
@@ -53,7 +52,7 @@ void printLL(Node *head) {
 
 /**
  * @brief      Reverse a linked list in O(n) time complexity and Q(1) space
- *             complexity. 
+ *             complexity.
  *
  * @param      head  The head
  *

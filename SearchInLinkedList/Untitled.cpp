@@ -1,4 +1,3 @@
-#include <limits.h>
 #include <bits/stdc++.h>
 using namespace std;
 
@@ -69,12 +68,12 @@ int searchInLinkedList(Node *head, int val) {
  * @return     Index of value if found, -1 otherwise
  */
 int searchInLinkedListReccursive(Node *head, int val, int level = 0) {
-   if(head == NULL) {
-      return -1;
+   if (head == NULL) {
+      return (-1);
    } else if (head->data == val) {
-      return level;
+      return (level);
    } else {
-      return searchInLinkedListReccursive(head->next, val, level + 1);
+      return (searchInLinkedListReccursive(head->next, val, level + 1));
    }
 }
 

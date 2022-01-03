@@ -1,4 +1,3 @@
-#include <limits.h>
 #include <bits/stdc++.h>
 using namespace std;
 
@@ -49,7 +48,7 @@ void printLL(Node *head) {
 }
 
 /**
- * @brief      Inserts into a sorted linked list and maintains sorted order in 
+ * @brief      Inserts into a sorted linked list and maintains sorted order in
  *             O(n) time complexity and Q(1) space complexity.
  *
  * @param      head  The head

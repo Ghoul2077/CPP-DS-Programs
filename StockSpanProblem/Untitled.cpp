@@ -1,4 +1,3 @@
-#include <limits.h>
 #include <bits/stdc++.h>
 using namespace std;
 
@@ -6,7 +5,7 @@ typedef long long unsigned int bigInt;
 #define mod 1000000007;
 
 void printArr(int *arr, int size) {
-   for(int i = 0; i < size; i++) {
+   for (int i = 0; i < size; i++) {
       cout << arr[i] << " ";
    }
    cout << endl;
@@ -23,18 +22,19 @@ void printArr(int *arr, int size) {
  *
  * @return     Array with stock span of each index
  */
-int * findStockSpanNaive(int *stockPrices, int size) {
+int* findStockSpanNaive(int *stockPrices, int size) {
    int *arr = new int[size];
 
-   for(int i = 0; i < size; i++) {
+   for (int i = 0; i < size; i++) {
       int count = 1;
-      for(int j = i - 1; j >= 0 && stockPrices[j] <= stockPrices[i]; j--) {
+
+      for (int j = i - 1; j >= 0 && stockPrices[j] <= stockPrices[i]; j--) {
          count++;
       }
       arr[i] = count;
    }
 
-   return arr;
+   return (arr);
 }
 
 /**
@@ -44,7 +44,7 @@ int * findStockSpanNaive(int *stockPrices, int size) {
  *             previous greater element index and using that index computes the
  *             span for given index, It's time complexity is O(n) and it's space
  *             complexity is O(n).
- *             
+ *
  * @param      stockPrices  The stock prices
  * @param[in]  size         The size
  *
@@ -53,21 +53,22 @@ int * findStockSpanNaive(int *stockPrices, int size) {
 int* findStockSpan(int *stockPrices, int size) {
    int *arr = new int[size];
    stack<int> firstBiggestElementToLeft;
+
    firstBiggestElementToLeft.push(0);
    arr[0] = 1;
 
-   for(int i = 1; i < size; i++) {
-      while(!firstBiggestElementToLeft.empty() && 
-         stockPrices[firstBiggestElementToLeft.top()] <= stockPrices[i]) {
+   for (int i = 1; i < size; i++) {
+      while (!firstBiggestElementToLeft.empty() &&
+             stockPrices[firstBiggestElementToLeft.top()] <= stockPrices[i]) {
          firstBiggestElementToLeft.pop();
       }
-      int span = firstBiggestElementToLeft.empty() ? 
-                               i + 1 : i - firstBiggestElementToLeft.top();
+      int span = firstBiggestElementToLeft.empty() ?
+                 i + 1 : i - firstBiggestElementToLeft.top();
       arr[i] = span;
       firstBiggestElementToLeft.push(i);
    }
 
-   return arr;
+   return (arr);
 }
 
 int main() {
@@ -80,7 +81,8 @@ int main() {
       int size;
       cin >> size;
       int *arr = new int[size];
-      for(int i = 0; i < size; i++) {
+
+      for (int i = 0; i < size; i++) {
          cin >> arr[i];
       }
 

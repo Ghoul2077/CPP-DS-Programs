@@ -1,4 +1,3 @@
-#include <limits.h>
 #include <bits/stdc++.h>
 using namespace std;
 
@@ -19,7 +18,7 @@ int powerNaive(int x, int y) {
       res *= x;
    }
 
-   return res;
+   return (res);
 }
 
 /**
@@ -34,8 +33,8 @@ int powerNaive(int x, int y) {
 int power(int x, int y) {
    int res = 1;
 
-   while(y > 0) {
-      if(y & 1) {
+   while (y > 0) {
+      if (y & 1) {
          res *= x;
          y--;
       } else {
@@ -44,7 +43,7 @@ int power(int x, int y) {
       }
    }
 
-   return res;
+   return (res);
 }
 
 int main() {

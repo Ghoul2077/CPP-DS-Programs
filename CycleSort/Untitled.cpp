@@ -1,8 +1,3 @@
-#include <iostream>
-#include <math.h>
-#include <vector>
-#include <limits>
-#include <experimental/random>
 #include <bits/stdc++.h>
 using namespace std;
 
@@ -15,7 +10,7 @@ void printArr(int *arr, int size) {
 /**
  * @brief      Sorting using the concept that if we chain the sorting
  *             of elements then at sometime we are going to return
- *             to the index we started the chain in turn creating a 
+ *             to the index we started the chain in turn creating a
  *             cycle. Hence using the above method we traverse the
  *             array sorting in form of cycles. This takes O(n^2) time
  *             complexity but this takes least amount of swaps.
@@ -37,9 +32,11 @@ int cycleSort(int *arr, int size) {
             position++;
          }
       }
+
       if (i == position) {
          continue;
       }
+
       while (arr[position] == item) {
          position++;
       }
@@ -48,14 +45,17 @@ int cycleSort(int *arr, int size) {
 
       while (position != i) {
          position = i;
+
          for (int k = i + 1; k < size; k++) {
             if (arr[k] < item) {
                position++;
             }
          }
+
          while (arr[position] == item) {
             position++;
          }
+
          if (item != arr[position]) {
             swap(item, arr[position]);
             writes++;
@@ -63,7 +63,7 @@ int cycleSort(int *arr, int size) {
       }
    }
 
-   return(writes);
+   return (writes);
 }
 
 int main() {
@@ -73,5 +73,5 @@ int main() {
    cout << cycleSort(arr, size) << endl;
    printArr(arr, size);
 
-   return(0);
+   return (0);
 }

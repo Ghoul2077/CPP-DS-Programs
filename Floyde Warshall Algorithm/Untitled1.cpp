@@ -1,4 +1,4 @@
-#include <iostream>
+#include <bits/stdc++.h>
 using namespace std;
 
 #define nV     4
@@ -19,9 +19,9 @@ void floydWarshall(int graph[][nV]) {
    for (k = 0; k < nV; k++) {
       for (i = 0; i < nV; i++) {
          for (j = 0; j < nV; j++) {
-            if (i == k || j == k || i == j) {
+            if ((i == k) || (j == k) || (i == j)) {
                continue;
-            }else if (matrix[i][k] + matrix[k][j] < matrix[i][j]) {
+            } else if (matrix[i][k] + matrix[k][j] < matrix[i][j]) {
                matrix[i][j] = matrix[i][k] + matrix[k][j];
             }
          }
@@ -35,7 +35,7 @@ void printMatrix(int matrix[][nV]) {
       for (int j = 0; j < nV; j++) {
          if (matrix[i][j] == INF) {
             cout << "INF" << "\t";
-         }else{
+         } else {
             cout << matrix[i][j] << "\t";
          }
       }
@@ -44,10 +44,10 @@ void printMatrix(int matrix[][nV]) {
 }
 
 int main() {
-   int graph[nV][nV] = { {   0,   3, INF,   5 },
-      {   2,   0, INF,   4 },
-      { INF,   1,   0, INF },
-      { INF, INF,   2,   0 } };
+   int graph[nV][nV] = { {   0, 3,   INF, 5   },
+      {   2, 0,   INF, 4   },
+      { INF, 1,   0,   INF },
+      { INF, INF, 2,   0   } };
 
    floydWarshall(graph);
 }

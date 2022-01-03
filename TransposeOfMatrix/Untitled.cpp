@@ -1,9 +1,7 @@
-#include <iostream>
-#include <vector>
 #include <bits/stdc++.h>
 using namespace std;
 
-void printMatrix(vector <vector <int> > *arr) {
+void printMatrix(vector<vector<int> > *arr) {
    for (auto i = arr->begin(); i < arr->end(); i++) {
       for (auto j = i->begin(); j < i->end(); j++) {
          cout << *j << "  ";
@@ -12,9 +10,9 @@ void printMatrix(vector <vector <int> > *arr) {
    }
 }
 
-vector <vector <int> > transposeNaive(vector <vector <int> > *arr) {
+vector<vector<int> >transposeNaive(vector<vector<int> > *arr) {
    int numberOfColumns = arr->begin()->size();
-   vector <vector <int> > transposedMatrix(numberOfColumns);
+   vector<vector<int> > transposedMatrix(numberOfColumns);
 
    for (int i = 0; i < numberOfColumns; i++) {
       for (auto j = arr->begin(); j < arr->end(); j++) {
@@ -22,10 +20,10 @@ vector <vector <int> > transposeNaive(vector <vector <int> > *arr) {
       }
    }
 
-   return(transposedMatrix);
+   return (transposedMatrix);
 }
 
-void transpose(vector <vector <int> > *arr) {
+void transpose(vector<vector<int> > *arr) {
    if (arr->size() != arr->begin()->size()) {
       cout << "Not a sqaure matrix";
       return;
@@ -39,8 +37,8 @@ void transpose(vector <vector <int> > *arr) {
 }
 
 int main() {
-   vector <vector <int> > arr = { {  1,  2,  3,  4 },
-      {  5,  6,  7,  8 },
+   vector<vector<int> > arr = { {  1, 2,  3,  4  },
+      {  5, 6,  7,  8  },
       {  9, 10, 11, 12 },
       { 13, 14, 15, 16 }
    };
@@ -48,5 +46,5 @@ int main() {
    transpose(&arr);
    printMatrix(&arr);
 
-   return(0);
+   return (0);
 }

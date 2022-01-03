@@ -1,16 +1,14 @@
-#include <iostream>
-#include <math.h>
-#include <vector>
+#include <bits/stdc++.h>
 using namespace std;
 
-void printVector(vector <int> *vect) {
+void printVector(vector<int> *vect) {
    for (auto i = vect->begin(); i != vect->end(); ++i) {
       cout << *i << " ";
    }
 }
 
-vector <int> primeFactorsNaiveApproach(int num) {
-   vector <int> primeFactors;
+vector<int>primeFactorsNaiveApproach(int num) {
+   vector<int> primeFactors;
 
    while (num % 2 == 0) {
       primeFactors.push_back(2);
@@ -28,16 +26,16 @@ vector <int> primeFactorsNaiveApproach(int num) {
       primeFactors.push_back(num);
    }
 
-   return(primeFactors);
+   return (primeFactors);
 }
 
 int main() {
-   vector <int> v1;
-   int          input;
+   vector<int> v1;
+   int input;
 
    cout << "Enter the number : ";
    cin >> input;
    v1 = primeFactorsNaiveApproach(input);
    printVector(&v1);
-   return(0);
+   return (0);
 }

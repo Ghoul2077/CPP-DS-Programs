@@ -1,4 +1,4 @@
-#include <iostream>
+#include <bits/stdc++.h>
 using namespace std;
 
 void runLengthEncoding(char str[], int count = 0, int level = 0) {
@@ -8,7 +8,7 @@ void runLengthEncoding(char str[], int count = 0, int level = 0) {
       } else {
          cout << count << str[level - 1];
       }
-   } else if ((str[level - 1] != str[level]) && level != 0) {
+   } else if ((str[level - 1] != str[level]) && (level != 0)) {
       if (count == 1) {
          cout << str[level - 1];
       } else {

@@ -1,13 +1,14 @@
-#include <iostream>
-#include <vector>
+#include <bits/stdc++.h>
 using namespace std;
 
 void removeChar(char str[], char elem, int level = 0) {
    if (str[level] == '\0') {
       return;
    }
+
    if (str[level] == elem) {
       int i = level;
+
       for (; str[i] != '\0'; i++) {
          str[i] = str[i + 1];
       }
@@ -17,9 +18,9 @@ void removeChar(char str[], char elem, int level = 0) {
 
 int length(char ch[], int level = 0) {
    if (ch[level] == '\0') {
-      return(level);
+      return (level);
    }
-   return(length(ch, level + 1));
+   return (length(ch, level + 1));
 }
 
 int main() {

@@ -1,11 +1,9 @@
-#include <iostream>
-#include <vector>
 #include <bits/stdc++.h>
 using namespace std;
 
 typedef long long unsigned int bigInt;
 
-void printmatrix(vector <vector <int> > *arr) {
+void printmatrix(vector<vector<int> > *arr) {
    for (auto i = arr->begin(); i < arr->end(); i++) {
       for (auto j = i->begin(); j < i->end(); j++) {
          cout << *j << "  ";
@@ -21,7 +19,7 @@ void printmatrix(vector <vector <int> > *arr) {
  * @param      arr   The arr
  * @param[in]  val   The value
  */
-void searchInSortedMatrixNaive(vector <vector <int> > *arr, int val) {
+void searchInSortedMatrixNaive(vector<vector<int> > *arr, int val) {
    for (bigInt i = 0; i < arr->size(); i++) {
       for (bigInt j = 0; j < (*arr)[0].size(); j++) {
          if ((*arr)[i][j] == val) {
@@ -41,7 +39,7 @@ void searchInSortedMatrixNaive(vector <vector <int> > *arr, int val) {
  * @param      arr   The arr
  * @param[in]  val   The value
  */
-void searchInSortedMatrix(vector <vector <int> > *arr, int val) {
+void searchInSortedMatrix(vector<vector<int> > *arr, int val) {
    bigInt rowPtr = arr->size() - 1, colPtr = 0;
    bigInt numberOfRows = (*arr)[0].size();
 
@@ -62,14 +60,14 @@ void searchInSortedMatrix(vector <vector <int> > *arr, int val) {
 }
 
 int main() {
-   vector <vector <int> > arr = {
-      {  1,  2,  3,  4 },
-      {  5,  6,  7,  8 },
+   vector<vector<int> > arr = {
+      {  1, 2,  3,  4  },
+      {  5, 6,  7,  8  },
       {  9, 10, 11, 12 },
       { 13, 14, 15, 16 }
    };
 
    searchInSortedMatrix(&arr, 17);
 
-   return(0);
+   return (0);
 }

@@ -1,15 +1,12 @@
-#include <iostream>
-#include <math.h>
-#include <vector>
-#include <limits>
+#include <bits/stdc++.h>
 using namespace std;
 
 int max(int num1, int num2) {
-   return(num1 > num2 ? num1 : num2);
+   return (num1 > num2 ? num1 : num2);
 }
 
 int min(int num1, int num2) {
-   return(num1 > num2 ? num2 : num1);
+   return (num1 > num2 ? num2 : num1);
 }
 
 int findMax(int *arr, int size) {
@@ -18,7 +15,7 @@ int findMax(int *arr, int size) {
    for (int i = 1; i < size; i++) {
       currMax = max(currMax, arr[i]);
    }
-   return(currMax);
+   return (currMax);
 }
 
 int sum(int *arr, int size) {
@@ -27,7 +24,7 @@ int sum(int *arr, int size) {
    for (int i = 0; i < size; ++i) {
       sum += arr[i];
    }
-   return(sum);
+   return (sum);
 }
 
 /**
@@ -43,22 +40,26 @@ int sum(int *arr, int size) {
  */
 int minimumMaxPageAllocation(int *arr, int size, int numberOfStudents) {
    if (numberOfStudents == 1) {
-      return(sum(arr, size));
+      return (sum(arr, size));
    } else if (size == 1) {
-      return(arr[0]);
+      return (arr[0]);
    } else {
       int res = INT_MAX;
+
       for (int i = 1; i < size; ++i) {
          int totalPagesOfIBooks           = sum(&arr[0], i);
          int numberOfStudentsLeft         = numberOfStudents - 1;
          int numberOfBooksLeft            = size - i;
-         int minimumMaxPagesFromRemaining = minimumMaxPageAllocation(&arr[i], numberOfBooksLeft, numberOfStudentsLeft);
-         int maxWithIBooksRead            = max(totalPagesOfIBooks, minimumMaxPagesFromRemaining);
+         int minimumMaxPagesFromRemaining = minimumMaxPageAllocation(&arr[i],
+                                                                     numberOfBooksLeft,
+                                                                     numberOfStudentsLeft);
+         int maxWithIBooksRead = max(totalPagesOfIBooks,
+                                     minimumMaxPagesFromRemaining);
          res = min(res, maxWithIBooksRead);
       }
-      return(res);
+      return (res);
    }
-   return(0);
+   return (0);
 }
 
 bool isFeasibleSolution(int *arr, int size, int numberOfStudents, int val) {
@@ -72,7 +73,7 @@ bool isFeasibleSolution(int *arr, int size, int numberOfStudents, int val) {
          sum += arr[i];
       }
    }
-   return(studentsRequired <= numberOfStudents);
+   return (studentsRequired <= numberOfStudents);
 }
 
 /**
@@ -88,13 +89,15 @@ bool isFeasibleSolution(int *arr, int size, int numberOfStudents, int val) {
  *
  * @return     Minimum max page possible
  */
-int minimumMaxPageAllocationEfficient(int *arr, int size, int numberOfStudents) {
+int minimumMaxPageAllocationEfficient(int *arr, int size,
+                                      int numberOfStudents) {
    int low  = findMax(arr, size);
    int high = sum(arr, size);
    int res  = 0;
 
    while (low <= high) {
       int mid = (low + high) / 2;
+
       if (isFeasibleSolution(arr, size, numberOfStudents, mid)) {
          res  = mid;
          high = mid - 1;
@@ -102,7 +105,7 @@ int minimumMaxPageAllocationEfficient(int *arr, int size, int numberOfStudents) 
          low = mid + 1;
       }
    }
-   return(res);
+   return (res);
 }
 
 int main() {
@@ -111,5 +114,5 @@ int main() {
    int numberOfStudents = 2;
 
    cout << minimumMaxPageAllocationEfficient(arr, size, numberOfStudents);
-   return(0);
+   return (0);
 }

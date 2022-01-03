@@ -1,6 +1,4 @@
-#include <limits.h>
 #include <bits/stdc++.h>
-#include <new>
 using namespace std;
 
 #define SIZE 300
@@ -13,16 +11,17 @@ private:
 public:
    void initialize() {
       int data;
+
       cin >> data;
 
-      while(data != -1) {
+      while (data != -1) {
          this->push(data);
          cin >> data;
       }
    }
 
    void push(int data) {
-      if(top != SIZE) {
+      if (top != SIZE) {
          top++;
          stack[top] = data;
       } else {
@@ -31,7 +30,7 @@ public:
    }
 
    void pop() {
-      if(top != -1) {
+      if (top != -1) {
          top--;
       } else {
          cout << "Stack underflow" << endl;
@@ -39,20 +38,20 @@ public:
    }
 
    int peek() {
-      if(top != -1) {
-         return stack[top];
+      if (top != -1) {
+         return (stack[top]);
       } else {
          cout << "Stack is empty" << endl;
-         return -1;
+         return (-1);
       }
    }
 
    bool isEmpty() {
-      return top == -1 ? true : false;
+      return (top == -1 ? true : false);
    }
 
    void print() {
-      for(auto i = top; i >= 0; i--) {
+      for (auto i = top; i >= 0; i--) {
          cout << stack[i] << " ";
       }
       cout << endl;

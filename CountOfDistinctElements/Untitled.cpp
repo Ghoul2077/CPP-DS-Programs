@@ -1,6 +1,4 @@
-#include <iostream>
-#include <unordered_map>
-#include <unordered_set>
+#include <bits/stdc++.h>
 using namespace std;
 
 void printMap(unordered_map<int, int> *map) {

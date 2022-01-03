@@ -1,5 +1,4 @@
-#include <iostream>
-#include <algorithm>
+#include <bits/stdc++.h>
 using namespace std;
 
 int gcdNaiveApproach(int num1, int num2) {
@@ -7,12 +6,12 @@ int gcdNaiveApproach(int num1, int num2) {
    int gcd = min(num1, num2);
 
    while (gcd > 0) {
-      if (num1 % gcd == 0 && num2 % gcd == 0) {
+      if ((num1 % gcd == 0) && (num2 % gcd == 0)) {
          break;
       }
       gcd--;
    }
-   return(gcd);
+   return (gcd);
 }
 
 int gcdEuclidApproach(int num1, int num2) {
@@ -20,19 +19,19 @@ int gcdEuclidApproach(int num1, int num2) {
    while (num1 != num2) {
       if (num1 > num2) {
          num1 -= num2;
-      }else  {
+      } else  {
          num2 -= num1;
       }
    }
-   return(num1);
+   return (num1);
 }
 
 int gcdEuclidApproachOptimized(int num1, int num2) {
    // Euclid's Algorithm Optimized
    if (num2 == 0) {
-      return(num1);
-   }else{
-      return(gcdEuclidApproachOptimized(num2, num1 % num2));
+      return (num1);
+   } else {
+      return (gcdEuclidApproachOptimized(num2, num1 % num2));
    }
 }
 

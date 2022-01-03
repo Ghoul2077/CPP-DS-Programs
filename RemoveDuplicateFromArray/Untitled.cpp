@@ -1,6 +1,4 @@
-#include <iostream>
-#include <math.h>
-#include <vector>
+#include <bits/stdc++.h>
 using namespace std;
 
 void deleteFromArrayIndex(int *arr, int size, int deleteIndex) {
@@ -26,7 +24,7 @@ int removeDuplicateNaive(int *arr, int size) {
          }
       }
    }
-   return(size);
+   return (size);
 }
 
 /**
@@ -45,16 +43,19 @@ int removeDuplicate(int *arr, int size) {
 
    for (int i = 1; i < size; i++) {
       bool isPresent = false;
+
       for (int j = 0; j < counter; j++) {
          if (arr[i] == arrayPtr[j]) {
             isPresent = true;
             break;
          }
       }
+
       if (!isPresent) {
          arrayPtr[counter++] = arr[i];
       }
    }
+
    for (int i = 0; i < size; i++) {
       if (i < counter) {
          arr[i] = arrayPtr[i];
@@ -62,7 +63,7 @@ int removeDuplicate(int *arr, int size) {
          arr[i] = 0;
       }
    }
-   return(counter);
+   return (counter);
 }
 
 void printArr(int *arr, int size) {
@@ -79,5 +80,5 @@ int main() {
    int newSize = removeDuplicate(arr, sizeof(arr) / sizeof(arr[0]));
 
    printArr(arr, newSize);
-   return(0);
+   return (0);
 }

@@ -1,17 +1,17 @@
-#include <iostream>
-#include <math.h>
+#include <bits/stdc++.h>
 using namespace std;
 
 // Has time complexity of O(n)
 int insert(int *arr, int size, int insertItem, int insertIndex, int capacity) {
-   if (insertIndex >= capacity || size == capacity) {
-      return(size);
+   if ((insertIndex >= capacity) || (size == capacity)) {
+      return (size);
    }
+
    for (int i = size - 1; i >= insertIndex; i--) {
       arr[i + 1] = arr[i];
    }
    arr[insertIndex] = insertItem;
-   return(size + 1);
+   return (size + 1);
 }
 
 void printArr(int *arr, int size) {
@@ -33,5 +33,5 @@ int main() {
    insert(arr, 3, insert_data, insert_at, sizeof(arr) / sizeof(arr[0]));
    printArr(arr, 4);
 
-   return(0);
+   return (0);
 }

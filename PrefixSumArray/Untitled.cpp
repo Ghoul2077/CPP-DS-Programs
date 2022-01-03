@@ -1,7 +1,4 @@
-#include <iostream>
-#include <math.h>
-#include <vector>
-#include <limits>
+#include <bits/stdc++.h>
 using namespace std;
 
 /**
@@ -13,15 +10,16 @@ using namespace std;
  *
  * @return     Prefix sum array pointer
  */
-int *prefixSumArray(int *arr, int size) {
+int* prefixSumArray(int *arr, int size) {
    int *sumArray = new int[size];
 
    sumArray[0] = arr[0];
+
    for (int i = 1; i < size; i++) {
       sumArray[i] = sumArray[i - 1] + arr[i];
    }
 
-   return(sumArray);
+   return (sumArray);
 }
 
 /**
@@ -43,7 +41,7 @@ int getSum(const int *sumArray, int size, int start, int stop) {
    } else {
       sum = sumArray[stop];
    }
-   return(sum);
+   return (sum);
 }
 
 /**
@@ -59,7 +57,7 @@ int getSum(const int *sumArray, int size, int start, int stop) {
  */
 int findCenterElement(int *sumArray, int size) {
    if (size == 1) {
-      return(0);
+      return (0);
    }
    int centerElementIndex = -1;
 
@@ -69,15 +67,15 @@ int findCenterElement(int *sumArray, int size) {
       }
       break;
    }
-   return(centerElementIndex);
+   return (centerElementIndex);
 }
 
 int main() {
-   int       arr[] = { 30, 5, 20, 7, 3 };
-   const int size  = sizeof(arr) / sizeof(arr[0]);
+   int arr[]      = { 30, 5, 20, 7, 3 };
+   const int size = sizeof(arr) / sizeof(arr[0]);
 
    int *sumArray = prefixSumArray(arr, size);
 
    cout << findCenterElement(sumArray, size);
-   return(0);
+   return (0);
 }

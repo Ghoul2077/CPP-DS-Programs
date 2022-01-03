@@ -1,5 +1,3 @@
-#include <iostream>
-#include <vector>
 #include <bits/stdc++.h>
 using namespace std;
 
@@ -14,7 +12,7 @@ private:
    bigInt hashCodeGenerator(int data) {
       bigInt key = data % 7;
 
-      return key;
+      return (key);
    }
 
 public:
@@ -125,5 +123,5 @@ int main() {
    newHashMap->search(18);
    newHashMap->search(20);
 
-   return 0;
+   return (0);
 }

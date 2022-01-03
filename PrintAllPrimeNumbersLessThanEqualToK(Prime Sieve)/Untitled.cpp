@@ -1,4 +1,3 @@
-#include <limits.h>
 #include <bits/stdc++.h>
 using namespace std;
 
@@ -52,10 +51,10 @@ void printallprimenumberslessthank(int k) {
       arr[i] = false;
    }
 
-   for(int i = 0; i < k + 1; i++) {
-        if(arr[i]) {
-            cout << i << " ";
-        }
+   for (int i = 0; i < k + 1; i++) {
+      if (arr[i]) {
+         cout << i << " ";
+      }
    }
 }
 

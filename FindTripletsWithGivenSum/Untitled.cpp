@@ -1,7 +1,4 @@
-#include <iostream>
-#include <math.h>
-#include <vector>
-#include <limits>
+#include <bits/stdc++.h>
 using namespace std;
 
 /**
@@ -42,6 +39,7 @@ void findTripletsWithSumInSortedArray(int *arr, int size, int sum) {
 
       while (low <= high) {
          int currSum = arr[low] + arr[high];
+
          if (currSum == diff) {
             cout << arr[i] << " + " << arr[low] << " + " << arr[high];
             return;
@@ -61,5 +59,5 @@ int main() {
    int sum   = 321;
 
    findTripletsWithSumInSortedArray(arr, size, sum);
-   return(0);
+   return (0);
 }

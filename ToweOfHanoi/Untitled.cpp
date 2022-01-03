@@ -1,4 +1,4 @@
-#include <iostream>
+#include <bits/stdc++.h>
 using namespace std;
 
 void towerOfHanoi(string from, string to, string other, int count) {

@@ -1,4 +1,3 @@
-#include <limits.h>
 #include <bits/stdc++.h>
 using namespace std;
 
@@ -37,7 +36,7 @@ Node* initializeLL() {
 
 void printLL(Node *head) {
    Node *currNode = head;
-   
+
    if (head == NULL) {
       return;
    } else {
@@ -56,13 +55,14 @@ void printLL(Node *head) {
  *
  */
 void removeDuplicateFromSortedLL(Node *head) {
-   if(head == NULL) {
-      return head;
+   if (head == NULL) {
+      return (head);
    }
 
    Node *curr = head;
-   while(curr->next != NULL) {
-      if(curr->data == curr->next->data) {
+
+   while (curr->next != NULL) {
+      if (curr->data == curr->next->data) {
          Node *temp = curr->next;
          curr->next = curr->next->next;
          delete temp;
@@ -71,7 +71,7 @@ void removeDuplicateFromSortedLL(Node *head) {
       }
    }
 
-   return head;
+   return (head);
 }
 
 int main() {

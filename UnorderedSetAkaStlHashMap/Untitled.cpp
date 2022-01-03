@@ -1,5 +1,4 @@
-#include <iostream>
-#include <unordered_set>
+#include <bits/stdc++.h>
 using namespace std;
 
 /**
@@ -13,9 +12,9 @@ int main() {
    set.insert(100);
    set.insert(90);
 
-   for(int x: set) {
-      cout<< x << "  ";
+   for (int x: set) {
+      cout << x << "  ";
    }
 
-   return 0;
+   return (0);
 }

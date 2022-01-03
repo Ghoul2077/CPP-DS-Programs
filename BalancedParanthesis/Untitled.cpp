@@ -1,4 +1,3 @@
-#include <limits.h>
 #include <bits/stdc++.h>
 using namespace std;
 
@@ -14,28 +13,32 @@ typedef long long unsigned int bigInt;
  * @param[in]  brackets  The brackets
  */
 void areBracketsBalanced(string brackets) {
-   if(brackets.size() % 2 != 0) {
+   if (brackets.size() % 2 != 0) {
       cout << "No";
       return;
    }
 
    stack<char> bracketStack;
 
-   for(int i = 0; i < brackets.size(); i++) {
-      switch(brackets[i]) {
-         case '{' : 
+   for (int i = 0; i < brackets.size(); i++) {
+      switch (brackets[i]) {
+      case '{':
          bracketStack.push('}');
          break;
-         case '(' : 
+
+      case '(':
          bracketStack.push(')');
          break;
-         case '[' : 
+
+      case '[':
          bracketStack.push(']');
          break;
-         case '}' : 
-         case ')' : 
-         case ']' : 
-         if(!bracketStack.empty() && bracketStack.top() == brackets[i]) {
+
+      case '}':
+      case ')':
+      case ']':
+
+         if (!bracketStack.empty() && (bracketStack.top() == brackets[i])) {
             bracketStack.pop();
          } else {
             cout << "No";

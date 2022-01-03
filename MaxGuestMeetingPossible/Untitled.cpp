@@ -1,17 +1,13 @@
-#include <iostream>
-#include <math.h>
-#include <vector>
-#include <limits>
-#include <experimental/random>
 #include <bits/stdc++.h>
+#include <experimental/random>
 using namespace std;
 
 int min(int num1, int num2) {
-   return(num1 > num2 ? num2 : num1);
+   return (num1 > num2 ? num2 : num1);
 }
 
 int max(int num1, int num2) {
-   return(num1 > num2 ? num1 : num2);
+   return (num1 > num2 ? num1 : num2);
 }
 
 /**
@@ -27,7 +23,7 @@ int max(int num1, int num2) {
  * @return     Max number of guests that is possible for us to meet
  */
 int maxGuestsWhomMeetingPossible(int *arrival, int *departure, int size) {
-   sort(arrival, arrival + size);
+   sort(arrival,   arrival + size);
    sort(departure, departure + size);
 
    int maxCount = INT_MIN;
@@ -45,7 +41,7 @@ int maxGuestsWhomMeetingPossible(int *arrival, int *departure, int size) {
       maxCount = max(count, maxCount);
    }
 
-   return(maxCount);
+   return (maxCount);
 }
 
 int main() {
@@ -57,5 +53,5 @@ int main() {
 
    cout << maxGuests;
 
-   return(0);
+   return (0);
 }

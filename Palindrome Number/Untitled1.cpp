@@ -1,5 +1,4 @@
-#include <iostream>
-#include <cmath>
+#include <bits/stdc++.h>
 using namespace std;
 
 int reverseNum(int num) {
@@ -8,18 +7,18 @@ int reverseNum(int num) {
    while (num != 0) {
       reversedNum = reversedNum * 10 + (num % 10);
       num         = num / 10;
-   };
+   }
 
-   return(reversedNum);
+   return (reversedNum);
 }
 
 bool isPalindrome(int num) {
    int i, digits = reverseNum(num);
 
    if (num == reverseNum(num)) {
-      return(true);
+      return (true);
    } else {
-      return(false);
+      return (false);
    }
 }
 

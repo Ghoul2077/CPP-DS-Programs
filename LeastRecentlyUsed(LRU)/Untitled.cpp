@@ -1,4 +1,3 @@
-#include <limits.h>
 #include <bits/stdc++.h>
 using namespace std;
 
@@ -18,27 +17,28 @@ class LRU {
 private:
    int length;
    Node *head, *tail;
-   unordered_map<int, Node *> dataToNode;
+   unordered_map<int, Node *>dataToNode;
 
    void moveNodeToFront(Node *ref) {
-      if(ref != head) {
-         if(ref == tail) {
+      if (ref != head) {
+         if (ref == tail) {
             tail = ref->prev;
          }
          ref->prev->next = ref->next;
-         ref->next = head;
-         head->prev = ref;
-         ref->prev = NULL;
-         head = ref;
+         ref->next       = head;
+         head->prev      = ref;
+         ref->prev       = NULL;
+         head            = ref;
       }
    }
 
    void insertFromFront(int val) {
       Node *newNode = new Node(val);
+
       dataToNode.insert({ val, newNode });
       newNode->next = head;
 
-      if(head == NULL) {
+      if (head == NULL) {
          tail = newNode;
       } else {
          head->prev = newNode;
@@ -49,10 +49,12 @@ private:
 
    void deleteTail() {
       Node *temp = tail;
-      if(tail->prev != NULL) {
+
+      if (tail->prev != NULL) {
          tail->prev->next = NULL;
       }
-      if(head == tail) {
+
+      if (head == tail) {
          head = NULL;
       }
       tail = tail->prev;
@@ -63,19 +65,20 @@ private:
 public:
    LRU(int len) {
       length = len;
-      head = NULL;
-      tail = NULL;
+      head   = NULL;
+      tail   = NULL;
    }
+
    LRU(Node *node, int len) {
       length = len;
-      head = node;
-      tail = node;
+      head   = node;
+      tail   = node;
    }
 
    void print() {
       Node *curr = head;
 
-      while(curr != NULL) {
+      while (curr != NULL) {
          cout << curr->data << " ";
          curr = curr->next;
       }
@@ -84,19 +87,19 @@ public:
    }
 
    string read(int val) {
-      if(dataToNode.count(val) == 1) {
+      if (dataToNode.count(val) == 1) {
          Node *valNode = dataToNode[val];
          moveNodeToFront(valNode);
-         return "Hit";
+         return ("Hit");
       }
 
       insertFromFront(val);
 
-      if(dataToNode.size() > length) {
+      if (dataToNode.size() > length) {
          deleteTail();
       }
 
-      return "Miss";
+      return ("Miss");
    }
 };
 

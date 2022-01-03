@@ -1,4 +1,4 @@
-#include <iostream>
+#include <bits/stdc++.h>
 using namespace std;
 
 void josephusProblem(string arr[], int numOfPeople, int killNum) {

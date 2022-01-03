@@ -1,7 +1,5 @@
-#include <iostream>
-#include <math.h>
+#include <bits/stdc++.h>
 #include <experimental/random>
-#include <limits>
 using namespace std;
 
 void printArr(int *arr, int size) {
@@ -10,7 +8,7 @@ void printArr(int *arr, int size) {
    }
 }
 
-void swap(int&num1, int&num2) {
+void swap(int& num1, int& num2) {
    int temp = num1;
 
    num1 = num2;
@@ -18,7 +16,7 @@ void swap(int&num1, int&num2) {
 }
 
 int min(int num1, int num2) {
-   return(num1 > num2 ? num2 : num1);
+   return (num1 > num2 ? num2 : num1);
 }
 
 int hoarePartition(int *arr, int start, int stop) {
@@ -29,11 +27,13 @@ int hoarePartition(int *arr, int start, int stop) {
       do {
          i++;
       } while (arr[i] < pivot);
+
       do {
          j--;
       } while (arr[j] > pivot);
+
       if (i >= j) {
-         return(j);
+         return (j);
       }
       swap(arr[i], arr[j]);
    }
@@ -43,11 +43,12 @@ int hoarePartitionOptimized(int *arr, int start, int stop) {
    int randInt = std::experimental::randint(start, stop);
 
    swap(arr[randInt], arr[start]);
-   return(hoarePartition(arr, start, stop));
+   return (hoarePartition(arr, start, stop));
 }
 
 void quickSort(int *arr, int start, int stop) {
 Begin:
+
    if (start < stop) {
       int pivotIndex = hoarePartition(arr, start, stop);
       quickSort(arr, start, pivotIndex);
@@ -70,7 +71,7 @@ Begin:
  */
 int minDiffOfMinAndMaxChocolatesBetweenKKids(int *arr, int size, int k) {
    if (k > size) {
-      return(-1);
+      return (-1);
    }
 
    quickSort(arr, 0, size - 1);
@@ -81,7 +82,7 @@ int minDiffOfMinAndMaxChocolatesBetweenKKids(int *arr, int size, int k) {
       minDiff = min(minDiff, currDiff);
    }
 
-   return(minDiff);
+   return (minDiff);
 }
 
 int main() {
@@ -90,5 +91,5 @@ int main() {
    int kidsNum = 3;
 
    cout << minDiffOfMinAndMaxChocolatesBetweenKKids(arr, size, kidsNum);
-   return(0);
+   return (0);
 }

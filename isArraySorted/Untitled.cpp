@@ -1,5 +1,4 @@
-#include <iostream>
-#include <math.h>
+#include <bits/stdc++.h>
 using namespace std;
 
 /**
@@ -13,12 +12,12 @@ using namespace std;
  */
 bool findIfSortedReccursive(int arr[], int size, int startIndex = 0) {
    if (size == 2) {
-      return(arr[startIndex] <= arr[startIndex + 1] ? true : false);
+      return (arr[startIndex] <= arr[startIndex + 1] ? true : false);
    } else
    if (arr[startIndex] > arr[startIndex + 1]) {
-      return(false);
+      return (false);
    } else {
-      return(findIfSortedReccursive(arr, size - 1, startIndex + 1));
+      return (findIfSortedReccursive(arr, size - 1, startIndex + 1));
    }
 }
 
@@ -41,7 +40,7 @@ bool findIfSortedNaive(int *arr, int size) {
          }
       }
    }
-   return(flag);
+   return (flag);
 }
 
 /**
@@ -61,7 +60,7 @@ bool findIfSorted(int *arr, int size) {
          break;
       }
    }
-   return(flag);
+   return (flag);
 }
 
 int main() {

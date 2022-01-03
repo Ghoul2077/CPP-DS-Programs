@@ -1,4 +1,3 @@
-#include <limits.h>
 #include <bits/stdc++.h>
 using namespace std;
 
@@ -35,39 +34,40 @@ Node* initializeLL() {
    return (head);
 }
 
-Node *findMiddleOfLinkedList(Node *head) {
-   if(head == NULL) {
-      return head;
+Node* findMiddleOfLinkedList(Node *head) {
+   if (head == NULL) {
+      return (head);
    }
 
    Node *slowPtr = head, *fastPtr = head;
 
-   while(fastPtr->next != NULL && fastPtr->next->next != NULL) {
+   while (fastPtr->next != NULL && fastPtr->next->next != NULL) {
       fastPtr = fastPtr->next->next;
       slowPtr = slowPtr->next;
    }
 
-   return slowPtr;
+   return (slowPtr);
 }
 
-Node *reverseLL(Node *head) {
-   if(head == NULL) {
-      return head;
+Node* reverseLL(Node *head) {
+   if (head == NULL) {
+      return (head);
    }
 
    Node *curr = head, *prev = NULL, *next = curr->next;
 
-   while(curr != NULL) {
+   while (curr != NULL) {
       Node *temp = curr->next;
       curr->next = prev;
-      prev = curr;
-      curr = temp;
-      if(curr != NULL) {
+      prev       = curr;
+      curr       = temp;
+
+      if (curr != NULL) {
          next = curr->next;
       }
    }
 
-   return prev;
+   return (prev);
 }
 
 /**
@@ -81,20 +81,20 @@ Node *reverseLL(Node *head) {
 bool isLLPalindromeNaive(Node *head) {
    stack<int> linkedListData;
 
-   for(Node *curr = head; curr != NULL; curr = curr->next) {
+   for (Node *curr = head; curr != NULL; curr = curr->next) {
       linkedListData.push(curr->data);
    }
 
-   for(Node *curr = head; curr != NULL; curr = curr->next) {
-      if(curr->data != linkedListData.top()) {
+   for (Node *curr = head; curr != NULL; curr = curr->next) {
+      if (curr->data != linkedListData.top()) {
          cout << "Not palindrome" << endl;
-         return false;
+         return (false);
       }
       linkedListData.pop();
    }
 
    cout << "Is palindrome" << endl;
-   return true;
+   return (true);
 }
 
 /**
@@ -108,21 +108,21 @@ bool isLLPalindromeNaive(Node *head) {
  * @return     True if the specified linked list is palindrome, False otherwise.
  */
 bool isLLPalindrome(Node *head) {
-   Node *middlePtr = findMiddleOfLinkedList(head);
+   Node *middlePtr    = findMiddleOfLinkedList(head);
    Node *newMiddlePtr = reverseLL(middlePtr);
-   Node *curr = head;
+   Node *curr         = head;
 
-   while(curr != middlePtr && newMiddlePtr != NULL) {
-      if(curr->data != newMiddlePtr->data) {
+   while (curr != middlePtr && newMiddlePtr != NULL) {
+      if (curr->data != newMiddlePtr->data) {
          cout << "Not palindrome";
-         return false;
+         return (false);
       }
-      curr = curr->next;
+      curr         = curr->next;
       newMiddlePtr = newMiddlePtr->next;
    }
 
    cout << "Is palindrome";
-   return true;
+   return (true);
 }
 
 int main() {

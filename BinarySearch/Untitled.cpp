@@ -1,7 +1,4 @@
-#include <iostream>
-#include <math.h>
-#include <vector>
-#include <limits>
+#include <bits/stdc++.h>
 using namespace std;
 
 /**
@@ -21,7 +18,7 @@ bool findIfSorted(int *arr, int size) {
          break;
       }
    }
-   return(flag);
+   return (flag);
 }
 
 int binarySearchIterative(int *arr, int size, int toSearch) {
@@ -34,7 +31,7 @@ int binarySearchIterative(int *arr, int size, int toSearch) {
          int mid = (start + end) / 2;
 
          if (arr[mid] == toSearch) {
-            return(mid);
+            return (mid);
          } else if (arr[mid] > toSearch) {
             end = mid - 1;
          } else {
@@ -44,35 +41,37 @@ int binarySearchIterative(int *arr, int size, int toSearch) {
    } else {
       cout << "Array is not sorted" << endl;
    }
-   return(-1);
+   return (-1);
 }
 
-int binarySearchReccursive(int *arr, int size, int start, int end, int toSearch) {
+int binarySearchReccursive(int *arr, int size, int start, int end,
+                           int toSearch) {
    const bool isSorted = findIfSorted(arr, size);
 
    if (isSorted) {
       if (start > end) {
-         return(-1);
+         return (-1);
       }
 
       int mid = (start + end) / 2;
+
       if (arr[mid] == toSearch) {
-         return(mid);
+         return (mid);
       } else if (arr[mid] < toSearch) {
-         return(binarySearchReccursive(arr, size, mid + 1, end, toSearch));
+         return (binarySearchReccursive(arr, size, mid + 1, end, toSearch));
       } else {
-         return(binarySearchReccursive(arr, size, start, mid - 1, toSearch));
+         return (binarySearchReccursive(arr, size, start, mid - 1, toSearch));
       }
    } else {
       cout << "Array is not sorted" << endl;
    }
-   return(-1);
+   return (-1);
 }
 
 int main() {
-   int       arr[] = { 10, 10 };
-   const int size  = sizeof(arr) / sizeof(arr[0]);
+   int arr[]      = { 10, 10 };
+   const int size = sizeof(arr) / sizeof(arr[0]);
 
    cout << binarySearchReccursive(arr, size, 0, size - 1, 4);
-   return(0);
+   return (0);
 }

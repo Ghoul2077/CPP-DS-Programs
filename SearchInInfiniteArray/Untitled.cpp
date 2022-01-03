@@ -1,7 +1,4 @@
-#include <iostream>
-#include <math.h>
-#include <vector>
-#include <limits>
+#include <bits/stdc++.h>
 using namespace std;
 
 /**
@@ -19,13 +16,13 @@ int searchInfiniteSizedSortedArrayNaive(int *arr, int size, int element) {
 
    while (true) {
       if (arr[counter] == element) {
-         return(counter);
+         return (counter);
       } else if (arr[counter] > element) {
-         return(-1);
+         return (-1);
       }
       counter++;
    }
-   return(-1);
+   return (-1);
 }
 
 int binarySearch(int *arr, int start, int stop, int element) {
@@ -37,10 +34,10 @@ int binarySearch(int *arr, int start, int stop, int element) {
       } else if (arr[mid] > element) {
          stop = mid - 1;
       } else {
-         return(mid);
+         return (mid);
       }
    }
-   return(-1);
+   return (-1);
 }
 
 /**
@@ -56,7 +53,7 @@ int binarySearch(int *arr, int start, int stop, int element) {
  */
 int searchInfiniteSizedSortedArray(int *arr, int size, int element) {
    if (arr[0] == element) {
-      return(0);
+      return (0);
    }
    int i;
 
@@ -64,10 +61,10 @@ int searchInfiniteSizedSortedArray(int *arr, int size, int element) {
       if (arr[i] > element) {
          break;
       } else if (arr[i] == element) {
-         return(i);
+         return (i);
       }
    }
-   return(binarySearch(arr, 0, i, element));
+   return (binarySearch(arr, 0, i, element));
 }
 
 int main() {
@@ -77,5 +74,5 @@ int main() {
 
    // cout << searchInfiniteSizedSortedArrayNaive(arr, size, element) << endl;
    cout << searchInfiniteSizedSortedArray(arr, size, element);
-   return(0);
+   return (0);
 }

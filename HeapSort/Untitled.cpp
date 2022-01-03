@@ -1,4 +1,3 @@
-#include <iostream>
 #include <bits/stdc++.h>
 using namespace std;
 
@@ -11,12 +10,14 @@ void printArr(int *arr, int size) {
 void heapify(int *arr, int size, int i) {
    int largest = i, left = 2 * i + 1, right = 2 * i + 2;
 
-   if (left < size && arr[largest] < arr[left]) {
+   if ((left < size) && (arr[largest] < arr[left])) {
       largest = left;
    }
-   if (right < size && arr[largest] < arr[right]) {
+
+   if ((right < size) && (arr[largest] < arr[right])) {
       largest = right;
    }
+
    if (largest != i) {
       swap(arr[largest], arr[i]);
       heapify(arr, size, largest);
@@ -39,7 +40,8 @@ void buildHeap(int *arr, int size) {
  */
 void heapSort(int *arr, int size) {
    buildHeap(arr, size);
-   for(int i = size - 1; i > 0; i--) {
+
+   for (int i = size - 1; i > 0; i--) {
       swap(arr[i], arr[0]);
       heapify(arr, i, 0);
    }
@@ -52,5 +54,5 @@ int main() {
    heapSort(arr, size);
    printArr(arr, size);
 
-   return(0);
+   return (0);
 }

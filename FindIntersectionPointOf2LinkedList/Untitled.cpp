@@ -1,4 +1,3 @@
-#include <limits.h>
 #include <bits/stdc++.h>
 using namespace std;
 
@@ -57,36 +56,36 @@ void printLL(Node *head) {
  *
  * @return     Node where the linked lists intersect, NULL otherwise
  */
-Node *findIntersectionPointOf2LinkedListNaive(Node *head1, Node *head2) {
+Node* findIntersectionPointOf2LinkedListNaive(Node *head1, Node *head2) {
    Node *curr1 = head1, *curr2 = head2;
    unordered_set<Node *> visitedNodes;
 
-   while(curr1 != NULL) {
+   while (curr1 != NULL) {
       visitedNodes.insert(curr1);
       curr1 = curr1->next;
    }
 
-   while(curr2 != NULL) {
-      if(visitedNodes.count(curr2) == 1) {
-         return curr2;
+   while (curr2 != NULL) {
+      if (visitedNodes.count(curr2) == 1) {
+         return (curr2);
       }
       curr2 = curr2->next;
    }
 
    cout << "No common node found" << endl;
-   return NULL;
+   return (NULL);
 }
 
 int getNodeCount(Node *head) {
-   Node *curr = head;
-   int count = 0;
+   Node *curr  = head;
+   int   count = 0;
 
-   while(curr != NULL) {
+   while (curr != NULL) {
       curr = curr->next;
       count++;
    }
 
-   return count;
+   return (count);
 }
 
 /**
@@ -98,36 +97,36 @@ int getNodeCount(Node *head) {
  *
  * @return     Node where the linked lists intersect, NULL otherwise
  */
-Node *findIntersectionPointOf2LinkedList(Node *head1, Node *head2) {
+Node* findIntersectionPointOf2LinkedList(Node *head1, Node *head2) {
    int nodeCount1 = getNodeCount(head1);
    int nodeCount2 = getNodeCount(head2);
-   int diff = abs(nodeCount2 - nodeCount1);
+   int diff       = abs(nodeCount2 - nodeCount1);
 
    Node *currOfBigger = NULL, *currOfSmaller = NULL;
 
-   if(nodeCount1 > nodeCount2) {
-      currOfBigger = head1;
+   if (nodeCount1 > nodeCount2) {
+      currOfBigger  = head1;
       currOfSmaller = head2;
    } else {
-      currOfBigger = head2;
+      currOfBigger  = head2;
       currOfSmaller = head1;
    }
 
-   for(int i = 0; i < diff; i++) {
+   for (int i = 0; i < diff; i++) {
       currOfBigger = currOfBigger->next;
    }
 
-   while(currOfBigger != NULL && currOfSmaller != NULL) {
-      if(currOfBigger == currOfSmaller) {
-         return currOfSmaller;
+   while (currOfBigger != NULL && currOfSmaller != NULL) {
+      if (currOfBigger == currOfSmaller) {
+         return (currOfSmaller);
       }
 
-      currOfBigger = currOfBigger->next;
+      currOfBigger  = currOfBigger->next;
       currOfSmaller = currOfSmaller->next;
    }
 
    cout << "No common node found" << endl;
-   return NULL;
+   return (NULL);
 }
 
 int main() {
@@ -138,16 +137,16 @@ int main() {
 
    for (int i = 0; i < testCases; i++) {
       Node *head1 = new Node(1);
-      head1->next = new Node(2);
+      head1->next       = new Node(2);
       head1->next->next = new Node(3);
 
       Node *head2 = new Node(4);
-      head2->next = new Node(5);
+      head2->next       = new Node(5);
       head2->next->next = head1->next;
 
       Node *commonNode = findIntersectionPointOf2LinkedList(head1, head2);
 
-      if(commonNode != NULL) {
+      if (commonNode != NULL) {
          cout << commonNode->data;
       }
    }

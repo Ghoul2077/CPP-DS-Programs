@@ -1,12 +1,14 @@
-#include <iostream>
+#include <bits/stdc++.h>
 using namespace std;
 
 void removeConsecutive(char str[], int level = 0) {
    if (str[level] == '\0') {
       return;
    }
-   if (level != 0 && (str[level - 1] == str[level])) {
+
+   if ((level != 0) && (str[level - 1] == str[level])) {
       int i = level;
+
       for (; str[i] != '\0'; i++) {
          str[i - 1] = str[i];
       }

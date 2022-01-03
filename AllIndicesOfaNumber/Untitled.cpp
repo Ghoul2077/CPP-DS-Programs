@@ -1,9 +1,9 @@
-#include <iostream>
+#include <bits/stdc++.h>
 using namespace std;
 
 int positionsInArr(int arr[], int size, int elem) {
-   int *output = new int[size];
-   int counter = 0;
+   int *output  = new int[size];
+   int  counter = 0;
 
    for (int i = 0; i < size; i++) {
       if (arr[i] == elem) {
@@ -11,22 +11,30 @@ int positionsInArr(int arr[], int size, int elem) {
          counter++;
       }
    }
-   return(counter);
+   return (counter);
 }
 
-int *positionsInArr2(int arr[], int size, int elem, int level = 0, int countIndex = 0) {
+int* positionsInArr2(int arr[],
+                     int size,
+                     int elem,
+                     int level      = 0,
+                     int countIndex = 0) {
    if (level == size) {
-      return(new int[countIndex]);
+      return (new int[countIndex]);
    }
    int *arr2 = 0;
 
    if (arr[level] == elem) {
-      arr2             = positionsInArr2(arr, size, elem, level + 1, countIndex + 1);
+      arr2 = positionsInArr2(arr,
+                             size,
+                             elem,
+                             level + 1,
+                             countIndex + 1);
       arr2[countIndex] = level;
    } else {
       arr2 = positionsInArr2(arr, size, elem, level + 1, countIndex);
    }
-   return(arr2);
+   return (arr2);
 }
 
 int main() {

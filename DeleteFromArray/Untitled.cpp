@@ -1,5 +1,4 @@
-#include <iostream>
-#include <math.h>
+#include <bits/stdc++.h>
 using namespace std;
 
 // Has time complexity of O(n)
@@ -11,18 +10,21 @@ void deleteFromArrayIndex(int *arr, int size, int deleteIndex) {
 
 int deleteFromArray(int *arr, int size, int deleteItem) {
    int i;
+
    for (i = 0; i < size; i++) {
       if (arr[i] == deleteItem) {
          break;
       }
    }
+
    if (i == size) {
-      return(size);
+      return (size);
    }
+
    for (i; i < size; i++) {
       arr[i] = arr[i + 1];
    }
-   return(size - 1);
+   return (size - 1);
 }
 
 void printArr(int *arr, int size) {
@@ -41,5 +43,5 @@ int main() {
    deleteFromArray(arr, sizeof(arr) / sizeof(arr[0]), delete_val);
    printArr(arr, sizeof(arr) / sizeof(arr[0]) - 1);
 
-   return(0);
+   return (0);
 }

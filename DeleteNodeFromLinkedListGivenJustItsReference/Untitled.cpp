@@ -1,4 +1,3 @@
-#include <limits.h>
 #include <bits/stdc++.h>
 using namespace std;
 
@@ -54,11 +53,12 @@ void printLL(Node *head) {
  * @param      node  The node
  */
 void deleteNodeGivenItsReference(Node *node) {
-   if(node == NULL || node->next == NULL) {
+   if ((node == NULL) || (node->next == NULL)) {
       cout << "Node to delete cannot be last node";
    }
 
    Node *next = node->next;
+
    node->data = node->next->data;
    node->next = node->next->next;
    delete(next);

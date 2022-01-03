@@ -1,4 +1,4 @@
-#include <iostream>
+#include <bits/stdc++.h>
 using namespace std;
 
 void insert(bool *arr, int val) {
@@ -24,5 +24,5 @@ int main() {
    _delete(hashArray, 119);
    search(hashArray, 119);
 
-   return(0);
+   return (0);
 }

@@ -1,7 +1,4 @@
-#include <iostream>
-#include <math.h>
-#include <vector>
-#include <limits>
+#include <bits/stdc++.h>
 using namespace std;
 
 void minimumGroupFlipsToMakeAllSame(bool *arr, int size) {
@@ -17,19 +14,20 @@ void minimumGroupFlipsToMakeAllSame(bool *arr, int size) {
    switchCounter = !toSwitch;
 
    for (int i = 1; i < size; i++) {
-      if (arr[i] == toSwitch && arr[i - 1] == switchCounter) {
+      if ((arr[i] == toSwitch) && (arr[i - 1] == switchCounter)) {
          cout << "From " << i << " to ";
       }
-      if (arr[i] == switchCounter && arr[i - 1] == toSwitch) {
+
+      if ((arr[i] == switchCounter) && (arr[i - 1] == toSwitch)) {
          cout << i - 1 << endl;
       }
    }
 }
 
 int main() {
-   bool      arr[] = { 1, 1, 0, 0, 1, 1, 0, 0, 1, 0, 1 };
-   const int size  = sizeof(arr) / sizeof(arr[0]);
+   bool arr[]     = { 1, 1, 0, 0, 1, 1, 0, 0, 1, 0, 1 };
+   const int size = sizeof(arr) / sizeof(arr[0]);
 
    minimumGroupFlipsToMakeAllSame(arr, size);
-   return(0);
+   return (0);
 }

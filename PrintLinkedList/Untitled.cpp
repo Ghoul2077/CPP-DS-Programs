@@ -1,4 +1,3 @@
-#include <limits.h>
 #include <bits/stdc++.h>
 using namespace std;
 
@@ -42,9 +41,9 @@ void printLL(Node *head) {
    if (head == NULL) {
       return;
    } else {
-      while(currNode != NULL) {
-      cout << currNode->data << " ";
-      currNode = currNode->next;
+      while (currNode != NULL) {
+         cout << currNode->data << " ";
+         currNode = currNode->next;
       }
    }
 }

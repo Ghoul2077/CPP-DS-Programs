@@ -1,4 +1,3 @@
-#include <limits.h>
 #include <bits/stdc++.h>
 using namespace std;
 
@@ -7,7 +6,7 @@ typedef long long unsigned int bigInt;
 
 class CustomStack {
 private:
-   stack<int> st;
+   stack<int>st;
    int min;
 
 public:
@@ -17,16 +16,17 @@ public:
 
    void initialize() {
       int data;
+
       cin >> data;
 
-      while(data != -1) {
+      while (data != -1) {
          this->push(data);
          cin >> data;
       }
    }
 
    int top() {
-      if(!st.empty()) {
+      if (!st.empty()) {
          int num = st.top();
          return (num <= min ? min : num);
       } else {
@@ -35,10 +35,10 @@ public:
    }
 
    void push(int data) {
-      if(st.empty()) {
+      if (st.empty()) {
          min = data;
          st.push(data);
-      } else if(data <= min) {
+      } else if (data <= min) {
          st.push(2 * data - min);
          min = data;
       } else {
@@ -47,10 +47,11 @@ public:
    }
 
    void pop() {
-      if(!st.empty()) {
+      if (!st.empty()) {
          int num = st.top();
          st.pop();
-         if(num <= min) {
+
+         if (num <= min) {
             min = 2 * min - num;
          }
       } else {
@@ -59,14 +60,14 @@ public:
    }
 
    bool isEmpty() {
-      return st.empty();
+      return (st.empty());
    }
 
    int getMin() {
       if (min == -1) {
          cout << "No minimum found" << endl;
       }
-      return min;
+      return (min);
    }
 };
 

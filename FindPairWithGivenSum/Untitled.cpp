@@ -1,5 +1,3 @@
-#include <iostream>
-#include <unordered_map>
 #include <bits/stdc++.h>
 using namespace std;
 
@@ -25,12 +23,12 @@ bool findPairWithSumInArrayNaive(int *arr, int size, int sum) {
       }
    }
 
-   return isPairPresent;
+   return (isPairPresent);
 }
 
 /**
  * @brief      Finds a pair with a given sum in array by applying sorting in
- *             O(nlogn) time complexity and Q(1) space complexity. It has 
+ *             O(nlogn) time complexity and Q(1) space complexity. It has
  *             advantage over hashmap method because of space complexity.
  *
  * @param      arr   The arr
@@ -43,6 +41,7 @@ void findPairWithSumInArray(int *arr, int size, int sum) {
 
    while (low <= high) {
       int currSum = arr[low] + arr[high];
+
       if (currSum == sum) {
          cout << arr[low] << " + " << arr[high] << " = " << sum;
          break;
@@ -55,7 +54,7 @@ void findPairWithSumInArray(int *arr, int size, int sum) {
 }
 
 /**
- * @brief      Finds all pairs in an array with a given sum using hashmap in 
+ * @brief      Finds all pairs in an array with a given sum using hashmap in
  *             Q(n) time complexity and O(n) space complexity.
  *
  * @param      arr   The arr
@@ -89,5 +88,5 @@ int main() {
    int sum   = 7;
 
    findPairWithSumInArray(arr, size, sum);
-   return(0);
+   return (0);
 }

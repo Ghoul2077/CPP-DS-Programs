@@ -1,5 +1,4 @@
-#include <iostream>
-#include <math.h>
+#include <bits/stdc++.h>
 using namespace std;
 
 void printArr(int *arr, int size) {
@@ -9,11 +8,11 @@ void printArr(int *arr, int size) {
 }
 
 int min(int num1, int num2) {
-   return(num1 > num2 ? num2 : num1);
+   return (num1 > num2 ? num2 : num1);
 }
 
 int max(int num1, int num2) {
-   return(num1 > num2 ? num1 : num2);
+   return (num1 > num2 ? num1 : num2);
 }
 
 int maxElement(int *arr, int size) {
@@ -22,7 +21,7 @@ int maxElement(int *arr, int size) {
    for (int i = 1; i < size; i++) {
       maxVal = max(maxVal, arr[i]);
    }
-   return(maxVal);
+   return (maxVal);
 }
 
 int minElement(int *arr, int size) {
@@ -31,7 +30,7 @@ int minElement(int *arr, int size) {
    for (int i = 1; i < size; i++) {
       minVal = min(minVal, arr[i]);
    }
-   return(minVal);
+   return (minVal);
 }
 
 /**
@@ -53,6 +52,7 @@ void countSortNaive(int *arr, int size, int max) {
    for (int i = 0; i < max; i++) {
       countArr[i] = 0;
    }
+
    for (int i = 0; i < size; i++) {
       countArr[arr[i]]++;
    }
@@ -83,9 +83,11 @@ void countSort(int *arr, int size, int max) {
    for (int i = 0; i < max; i++) {
       countArr[i] = 0;
    }
+
    for (int i = 0; i < size; i++) {
       countArr[arr[i]]++;
    }
+
    for (int i = 1; i < max; i++) {
       countArr[i] = countArr[i] + countArr[i - 1];
    }
@@ -96,6 +98,7 @@ void countSort(int *arr, int size, int max) {
       outputArr[countArr[arr[i]] - 1] = arr[i];
       countArr[arr[i]]--;
    }
+
    for (int i = 0; i < size; i++) {
       arr[i] = outputArr[i];
    }
@@ -115,23 +118,27 @@ void countSort(int *arr, int size, int max) {
  * @param[in]  max   The maximum value of array
  */
 void countSortOptimized(int *arr, int size, int min, int max) {
-   int range = max - min + 1;
+   int  range = max - min + 1;
    int *count = new int[range], *output = new int[size];
 
    for (int i = 0; i < range; i++) {
       count[i] = 0;
    }
+
    for (int i = 0; i < size; i++) {
       count[arr[i] - min]++;
    }
+
    for (int i = 1; i < range; i++) {
       count[i] = count[i - 1] + count[i];
    }
+
    for (int i = size - 1; i >= 0; i--) {
       int val = arr[i] - min;
       output[count[val] - 1] = arr[i];
       count[val]--;
    }
+
    for (int i = 0; i < size; i++) {
       arr[i] = output[i];
    }
@@ -150,5 +157,5 @@ int main() {
    countSortOptimized(arr, size, min, max);
    printArr(arr, size);
 
-   return(0);
+   return (0);
 }

@@ -1,4 +1,4 @@
-#include <iostream>
+#include <bits/stdc++.h>
 using namespace std;
 
 void printArr(int *arr, int size) {
@@ -10,7 +10,7 @@ void printArr(int *arr, int size) {
 void insertionSort(int *arr, int size) {
    for (int i = 1; i < size; i++) {
       int curr = arr[i];
-      int  j    = i - 1;
+      int j    = i - 1;
 
       while (arr[j] > curr && j >= 0) {
          arr[j + 1] = arr[j];
@@ -28,5 +28,5 @@ int main() {
    insertionSort(arr, size);
    printArr(arr, size);
 
-   return(0);
+   return (0);
 }

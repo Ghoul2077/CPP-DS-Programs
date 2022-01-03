@@ -1,4 +1,4 @@
-#include <iostream>
+#include <bits/stdc++.h>
 using namespace std;
 
 int lastIndexOf(int arr[], int size, int elem) {
@@ -9,18 +9,18 @@ int lastIndexOf(int arr[], int size, int elem) {
          break;
       }
    }
-   return(index);
+   return (index);
 }
 
 int lastIndexOfReccursive(int arr[], int size, int elem, int level = 1) {
    int searchIndex = size - level;
 
    if (arr[searchIndex] == elem) {
-      return(searchIndex);
-   }else if (searchIndex == -1) {
-      return(false);
-   }else{
-      return(lastIndexOf2(arr, size, elem, ++level));
+      return (searchIndex);
+   } else if (searchIndex == -1) {
+      return (false);
+   } else {
+      return (lastIndexOf2(arr, size, elem, ++level));
    }
 }
 

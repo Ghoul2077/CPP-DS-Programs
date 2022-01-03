@@ -1,5 +1,4 @@
-#include <iostream>
-#include <cmath>
+#include <bits/stdc++.h>
 using namespace std;
 
 int factorial(int num) {
@@ -8,7 +7,7 @@ int factorial(int num) {
    while (num != 1) {
       result = result * num--;
    }
-   return(result);
+   return (result);
 }
 
 int trailingZeroesNaiveApproach(int num) {
@@ -19,7 +18,7 @@ int trailingZeroesNaiveApproach(int num) {
       count++;
       num /= 10;
    }
-   return(count);
+   return (count);
 }
 
 int trailingZeroes(int num) {
@@ -31,7 +30,7 @@ int trailingZeroes(int num) {
    for (int i = 5; i <= num; i = i * 5) {
       result = result + num / i;
    }
-   return(result);
+   return (result);
 }
 
 int main() {

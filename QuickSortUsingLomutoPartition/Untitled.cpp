@@ -1,7 +1,5 @@
-#include <iostream>
-#include <math.h>
+#include <bits/stdc++.h>
 #include <experimental/random>
-#include <limits>
 using namespace std;
 
 void printArr(int *arr, int size) {
@@ -10,7 +8,7 @@ void printArr(int *arr, int size) {
    }
 }
 
-void swap(int&num1, int&num2) {
+void swap(int& num1, int& num2) {
    int temp = num1;
 
    num1 = num2;
@@ -28,18 +26,18 @@ int lomutoPartition(int *arr, int start, int stop) {
       }
    }
    swap(arr[i + 1], arr[stop]);
-   return(i + 1);
+   return (i + 1);
 }
 
 int lomutoPartitionOptimized(int *arr, int start, int stop) {
    int randNum = std::experimental::randint(start, stop);
 
    swap(arr[stop], arr[randNum]);
-   return(lomutoPartition(arr, start, stop));
+   return (lomutoPartition(arr, start, stop));
 }
 
 /**
- * @brief      Quick sort using lomuto partition in O(nlogn) average time 
+ * @brief      Quick sort using lomuto partition in O(nlogn) average time
  *             complexity and O(n^2) in worst case when not using optimised
  *             partitioning which chooses pivot at random.
  *
@@ -50,7 +48,7 @@ int lomutoPartitionOptimized(int *arr, int start, int stop) {
 void quickSortLomuto(int *arr, int start, int stop) {
    if (start < stop) {
       int pivotIndex = lomutoPartitionOptimized(arr, start, stop);
-      quickSortLomuto(arr, start, pivotIndex - 1);
+      quickSortLomuto(arr, start,          pivotIndex - 1);
       quickSortLomuto(arr, pivotIndex + 1, stop);
    }
 }
@@ -61,5 +59,5 @@ int main() {
 
    quickSortLomuto(arr, 0, size - 1);
    printArr(arr, size);
-   return(0);
+   return (0);
 }

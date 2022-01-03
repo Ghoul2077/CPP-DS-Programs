@@ -1,11 +1,9 @@
-#include <iostream>
-#include <math.h>
-#include <vector>
+#include <bits/stdc++.h>
 using namespace std;
 
 int findLargestLinear(int *arr, int size) {
    if (size == 1) {
-      return(arr[0]);
+      return (arr[0]);
    }
    int max = arr[0];
 
@@ -14,7 +12,7 @@ int findLargestLinear(int *arr, int size) {
          max = arr[i];
       }
    }
-   return(max);
+   return (max);
 }
 
 /**
@@ -28,16 +26,18 @@ int findLargestLinear(int *arr, int size) {
 int findSecondLargestNaive(int *arr, int size) {
    for (int i = 0; i < size; i++) {
       int counter = 0;
+
       for (int j = 0; j < size; j++) {
          if (arr[j] > arr[i]) {
             counter++;
          }
       }
+
       if (counter == 1) {
-         return(arr[i]);
+         return (arr[i]);
       }
    }
-   return(-1);
+   return (-1);
 }
 
 /**
@@ -62,7 +62,7 @@ int findSecondLargestLinear(int *arr, int size) {
          }
       }
    }
-   return(secondLargest);
+   return (secondLargest);
 }
 
 /**
@@ -78,15 +78,15 @@ int findSecondLargest(int *arr, int size) {
 
    for (int i = 0; i < size; i++) {
       if (arr[i] > arr[largest]) {
-         secondLargest     = largest;
-         largest = i;
+         secondLargest = largest;
+         largest       = i;
       } else if (arr[i] != arr[largest]) {
-         if (secondLargest == -1 || arr[i] > arr[secondLargest]) {
+         if ((secondLargest == -1) || (arr[i] > arr[secondLargest])) {
             secondLargest = i;
          }
       }
    }
-   return arr[secondLargest];
+   return (arr[secondLargest]);
 }
 
 void printArr(int *arr, int size) {
@@ -100,5 +100,5 @@ int main() {
    int arr[] = { 16, 34, 33, 54, 30, 10, 1, 22, 69, 90, 88 };
 
    cout << findSecondLargest(arr, sizeof(arr) / sizeof(arr[0]));
-   return(0);
+   return (0);
 }

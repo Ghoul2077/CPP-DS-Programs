@@ -1,7 +1,4 @@
-#include <iostream>
-#include <math.h>
-#include <vector>
-#include <limits>
+#include <bits/stdc++.h>
 using namespace std;
 
 void printArr(int *arr, int size) {
@@ -31,16 +28,20 @@ int countInversionsInArrayNaive(int *arr, int size) {
          }
       }
    }
-   return(count);
+   return (count);
 }
 
-int countInversionsInMergedArray(int *arr, int start1, int stop1, int start2, int stop2) {
-   int i = start1, j = start2;
-   int counter           = 0;
-   int size              = stop2 - start1 + 1;
-   int leftArraySize     = stop1 - start1 + 1;
-   int *newArr           = new int[size];
-   int countOfInversions = 0;
+int countInversionsInMergedArray(int *arr,
+                                 int  start1,
+                                 int  stop1,
+                                 int  start2,
+                                 int  stop2) {
+   int  i = start1, j = start2;
+   int  counter           = 0;
+   int  size              = stop2 - start1 + 1;
+   int  leftArraySize     = stop1 - start1 + 1;
+   int *newArr            = new int[size];
+   int  countOfInversions = 0;
 
    while (i <= stop1 && j <= stop2) {
       if (arr[i] <= arr[j]) {
@@ -65,7 +66,7 @@ int countInversionsInMergedArray(int *arr, int start1, int stop1, int start2, in
    }
 
    delete[] newArr;
-   return(countOfInversions);
+   return (countOfInversions);
 }
 
 /**
@@ -88,7 +89,7 @@ int countInversionsInArray(int *arr, int start, int stop) {
       count += countInversionsInMergedArray(arr, start, mid, mid + 1, stop);
    }
 
-   return(count);
+   return (count);
 }
 
 int main() {
@@ -97,5 +98,5 @@ int main() {
 
    cout << countInversionsInArrayNaive(arr, size);
    cout << countInversionsInArray(arr, 0, size);
-   return(0);
+   return (0);
 }

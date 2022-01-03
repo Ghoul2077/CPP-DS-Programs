@@ -1,21 +1,20 @@
-#include <iostream>
-#include <list>
+#include <bits/stdc++.h>
 using namespace std;
 
 class hashMapUsingChaining {
 private:
    int bucketSize;
-   list <int> *table;
+   list<int> *table;
 
 public:
    hashMapUsingChaining(int size) {
       this->bucketSize = size;
-      this->table      = new list <int>[size];
+      this->table      = new list<int>[size];
    }
 
    void insert(int data) {
-      int        key        = data % this->bucketSize;
-      list <int> *hashChain = &table[key];
+      int key              = data % this->bucketSize;
+      list<int> *hashChain = &table[key];
 
       hashChain->push_back(data);
    }
@@ -33,8 +32,8 @@ public:
    }
 
    void _delete(int data) {
-      int        key        = data % this->bucketSize;
-      list <int> *hashChain = &table[key];
+      int key              = data % this->bucketSize;
+      list<int> *hashChain = &table[key];
 
       hashChain->remove(data);
    }
@@ -50,5 +49,5 @@ int main() {
    hashMap->search(20);
    hashMap->search(40);
 
-   return(0);
+   return (0);
 }

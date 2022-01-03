@@ -1,11 +1,8 @@
-#include <iostream>
-#include <math.h>
-#include <vector>
-#include <limits>
+#include <bits/stdc++.h>
 using namespace std;
 
 /**
- * @brief      Counts the number of ones of a sorted boolean array in O(n) time 
+ * @brief      Counts the number of ones of a sorted boolean array in O(n) time
  *             complexity.
  *
  * @param      arr   The arr
@@ -21,11 +18,11 @@ int countNumberOfOnesNaive(int *arr, int size) {
          count++;
       }
    }
-   return(count);
+   return (count);
 }
 
 /**
- * @brief      Counts the number of ones of a sorted boolean array in O(logn) 
+ * @brief      Counts the number of ones of a sorted boolean array in O(logn)
  *             time complexity.
  *
  * @param      arr   The arr
@@ -42,21 +39,21 @@ int countNumberOfOnes(int *arr, int size) {
       if (arr[mid] == 0) {
          start = mid + 1;
       } else {
-         if (mid == 0 || arr[mid - 1] == 0) {
-            return(size - mid);
+         if ((mid == 0) || (arr[mid - 1] == 0)) {
+            return (size - mid);
          } else {
             stop = mid - 1;
          }
       }
    }
 
-   return(0);
+   return (0);
 }
 
 int main() {
-   int       arr[] = { 0, 0, 0, 1, 1, 1, 1, 1 };
-   const int size  = sizeof(arr) / sizeof(arr[0]);
+   int arr[]      = { 0, 0, 0, 1, 1, 1, 1, 1 };
+   const int size = sizeof(arr) / sizeof(arr[0]);
 
    cout << countNumberOfOnes(arr, size);
-   return(0);
+   return (0);
 }

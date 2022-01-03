@@ -1,11 +1,8 @@
-#include <iostream>
-#include <math.h>
-#include <vector>
-#include <limits>
+#include <bits/stdc++.h>
 using namespace std;
 
-vector <float> maxSumOfKElements(int *arr, int size, int k) {
-   vector <float> averages;
+vector<float>maxSumOfKElements(int *arr, int size, int k) {
+   vector<float> averages;
 
    int maxWindowSum = 0;
 
@@ -24,22 +21,22 @@ vector <float> maxSumOfKElements(int *arr, int size, int k) {
       averages.push_back(newAverage);
    }
 
-   return(averages);
+   return (averages);
 }
 
-void printVector(vector <float> *vect) {
+void printVector(vector<float> *vect) {
    for (auto i = vect->begin(); i != vect->end(); ++i) {
       cout << *i << " ";
    }
 }
 
 int main() {
-   int       arr[] = { 1, 8, 30, -5, 20, 7 };
-   const int size  = sizeof(arr) / sizeof(arr[0]);
+   int arr[]      = { 1, 8, 30, -5, 20, 7 };
+   const int size = sizeof(arr) / sizeof(arr[0]);
 
-   vector <float> averages = maxSumOfKElements(arr, size, 3);
+   vector<float> averages = maxSumOfKElements(arr, size, 3);
 
    printVector(&averages);
 
-   return(0);
+   return (0);
 }

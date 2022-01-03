@@ -1,4 +1,3 @@
-#include <limits.h>
 #include <bits/stdc++.h>
 using namespace std;
 
@@ -58,29 +57,30 @@ void printLL(Node *head) {
  *
  * @return     Node reference if loop is present, NULL otherwise
  */
-Node *findFirstNodeOfTheLoop(Node *head) {
+Node* findFirstNodeOfTheLoop(Node *head) {
    Node *slowPtr = head, *fastPtr = head;
 
-   while(fastPtr != NULL && fastPtr->next != NULL) {
+   while (fastPtr != NULL && fastPtr->next != NULL) {
       slowPtr = slowPtr->next;
       fastPtr = fastPtr->next->next;
 
-      if(slowPtr == fastPtr) {
+      if (slowPtr == fastPtr) {
          break;
       }
    }
 
-   if(slowPtr != fastPtr) {
-      return NULL;
+   if (slowPtr != fastPtr) {
+      return (NULL);
    }
 
    slowPtr = head;
-   while(slowPtr != fastPtr) {
+
+   while (slowPtr != fastPtr) {
       slowPtr = slowPtr->next;
       fastPtr = fastPtr->next;
    }
 
-   return slowPtr;
+   return (slowPtr);
 }
 
 int main() {
@@ -90,9 +90,10 @@ int main() {
    cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
 
    for (int i = 0; i < testCases; i++) {
-      Node *head = initializeLL();
+      Node *head             = initializeLL();
       Node *loopStartingNode = findFirstNodeOfTheLoop(head);
-      if(loopStartingNode) {
+
+      if (loopStartingNode) {
          cout << loopStartingNode->data << endl;
       }
       printLL(head);

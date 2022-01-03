@@ -1,5 +1,4 @@
-#include <iostream>
-#include <math.h>
+#include <bits/stdc++.h>
 using namespace std;
 
 void printArr(int *arr, int size) {
@@ -8,7 +7,7 @@ void printArr(int *arr, int size) {
    }
 }
 
-void swap(int&num1, int&num2) {
+void swap(int& num1, int& num2) {
    int temp = num1;
 
    num1 = num2;
@@ -22,37 +21,43 @@ void swap(int&num1, int&num2) {
  *             pivot and the 3rd and last part contains numbers greater than the
  *             larger pivot. And this algo does this in O(4n) time complexity and
  *             Q(n) space complexity
- *             
+ *
  * @param      arr          The arr
  * @param[in]  size         The size
  * @param[in]  pivotIndex1  The pivot index 1
  * @param[in]  pivotIndex2  The pivot index 2
  */
-void partitionAroundThreePivotsNaive(int *arr, int size, int pivotIndex1, int pivotIndex2) {
+void partitionAroundThreePivotsNaive(int *arr,
+                                     int  size,
+                                     int  pivotIndex1,
+                                     int  pivotIndex2) {
    int pivot1 = arr[pivotIndex1], pivot2 = arr[pivotIndex2];
 
    if (pivot1 > pivot2) {
       swap(pivot1, pivot2);
    }
 
-   int *newArr = new int[size];
-   int counter = 0;
+   int *newArr  = new int[size];
+   int  counter = 0;
 
    for (int i = 0; i < size; i++) {
       if (arr[i] < pivot1) {
          newArr[counter++] = arr[i];
       }
    }
+
    for (int i = 0; i < size; i++) {
-      if (arr[i] >= pivot1 && arr[i] <= pivot2) {
+      if ((arr[i] >= pivot1) && (arr[i] <= pivot2)) {
          newArr[counter++] = arr[i];
       }
    }
+
    for (int i = 0; i < size; i++) {
-      if (arr[i] > pivot1 && arr[i] > pivot2) {
+      if ((arr[i] > pivot1) && (arr[i] > pivot2)) {
          newArr[counter++] = arr[i];
       }
    }
+
    for (int i = 0; i < size; i++) {
       arr[i] = newArr[i];
    }
@@ -72,7 +77,7 @@ void partitionAroundThreePivotsNaive(int *arr, int size, int pivotIndex1, int pi
  * @param[in]  pivotIndex2  The pivot index 2
  */
 void dutchFlagSort(int *arr, int size, int pivotIndex1, int pivotIndex2) {
-   if(size == 1) {
+   if (size == 1) {
       return;
    }
 
@@ -83,7 +88,7 @@ void dutchFlagSort(int *arr, int size, int pivotIndex1, int pivotIndex2) {
       swap(pivot1, pivot2);
    }
 
-   swap(arr[0], arr[pivotIndex1]);
+   swap(arr[0],        arr[pivotIndex1]);
    swap(arr[size - 1], arr[pivotIndex2]);
 
    while (mid <= high) {
@@ -99,7 +104,7 @@ void dutchFlagSort(int *arr, int size, int pivotIndex1, int pivotIndex2) {
       }
    }
 
-   swap(arr[0], arr[low - 1]);
+   swap(arr[0],        arr[low - 1]);
    swap(arr[size - 1], arr[high + 1]);
 }
 
@@ -111,5 +116,5 @@ int main() {
 
    dutchFlagSort(arr, size, pivotIndex1, pivotIndex2);
    printArr(arr, size);
-   return(0);
+   return (0);
 }

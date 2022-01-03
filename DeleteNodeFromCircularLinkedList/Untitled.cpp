@@ -1,4 +1,3 @@
-#include <limits.h>
 #include <bits/stdc++.h>
 using namespace std;
 
@@ -86,6 +85,7 @@ Node* deleteAtBeginningEfficient(Node *head) {
       return (head);
    }
    Node *temp = head->next;
+
    head->data = head->next->data;
    head->next = head->next->next;
 

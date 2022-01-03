@@ -1,5 +1,4 @@
-#include <iostream>
-#include <unordered_set>
+#include <bits/stdc++.h>
 using namespace std;
 
 unordered_set<int>* findDistinctElements(int *arr, int size) {
@@ -54,7 +53,7 @@ int findNumberOfIntersectionsNaive(int *arr1, int size1, int *arr2, int size2) {
 
 /**
  * @brief      Finds a number of intersections between 2 given arrays in
- *             O(n1 + n2) time complexity but with 3 traversals and Q(n1 + n2) 
+ *             O(n1 + n2) time complexity but with 3 traversals and Q(n1 + n2)
  *             space complexity.
  *
  * @param      arr1   The arr 1
@@ -80,7 +79,7 @@ int findNumberOfIntersections(int *arr1, int size1, int *arr2, int size2) {
 
 /**
  * @brief      Finds a number of intersections between 2 given arrays in
- *             O(n1 + n2) time complexity but with 2 traversals and Q(n1 + n2) 
+ *             O(n1 + n2) time complexity but with 2 traversals and Q(n1 + n2)
  *             space complexity.
  *
  * @param      arr1   The arr 1
@@ -95,10 +94,10 @@ int findNumberOfIntersectionsOptimized(int *arr1,
                                        int *arr2,
                                        int  size2) {
    unordered_set<int> distinctElements1(arr1, arr1 + size1);
-   int count                             = 0;
+   int count = 0;
 
    for (int i = 0; i < size2; i++) {
-      if(distinctElements1.count(arr2[i]) == 1) {
+      if (distinctElements1.count(arr2[i]) == 1) {
          distinctElements1.erase(arr2[i]);
          count++;
       }

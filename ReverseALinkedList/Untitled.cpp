@@ -1,4 +1,3 @@
-#include <limits.h>
 #include <bits/stdc++.h>
 using namespace std;
 
@@ -126,8 +125,8 @@ Node* reverseLinkedListReccursive1(Node *head, Node *prev = NULL) {
 
 /**
  * @brief      Reverses a linked list reccursivly using custom implementation
- *             where we reverse last n - 1 node and then accordingly reverse  
- *             starting elements. It's time complexity is O(n) and space 
+ *             where we reverse last n - 1 node and then accordingly reverse
+ *             starting elements. It's time complexity is O(n) and space
  *             complexity is Q(1).
  *
  * @param      head  The head
@@ -146,7 +145,7 @@ Node* reverseLinkedListReccursive2(Node *head) {
       return (prevHead);
    }
 
-   return head;
+   return (head);
 }
 
 int main() {

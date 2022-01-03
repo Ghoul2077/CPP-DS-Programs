@@ -1,11 +1,12 @@
-#include <iostream>
-#include <math.h>
-#include <vector>
+#include <bits/stdc++.h>
 using namespace std;
 
 // Utility functions
-void printArr(int *arr, int size);
-void swap(int *arr, int index1, int index2);
+void printArr(int *arr,
+              int  size);
+void swap(int *arr,
+          int  index1,
+          int  index2);
 
 /**
  * @brief      Move zeroes to end in O(n^2) time complexity
@@ -34,8 +35,9 @@ void moveZeroesToEndNaive(int *arr, int size) {
  */
 void moveZeroesToEnd(int *arr, int size) {
    int zeroCount = 0;
-   for(int i = 0; i < size; i++) {
-      if(arr[i] == 0) {
+
+   for (int i = 0; i < size; i++) {
+      if (arr[i] == 0) {
          zeroCount++;
       } else {
          const int replaceIndex = i - zeroCount;
@@ -46,6 +48,7 @@ void moveZeroesToEnd(int *arr, int size) {
 
 void swap(int *arr, int index1, int index2) {
    int temp = arr[index1];
+
    arr[index1] = arr[index2];
    arr[index2] = temp;
 }
@@ -58,10 +61,10 @@ void printArr(int *arr, int size) {
 }
 
 int main() {
-   int       arr[] = { 0, 33, 33, 0, 30, 30, 1, 22, 69, 90, 88 };
-   const int size  = sizeof(arr) / sizeof(arr[0]);
+   int arr[]      = { 0, 33, 33, 0, 30, 30, 1, 22, 69, 90, 88 };
+   const int size = sizeof(arr) / sizeof(arr[0]);
 
    moveZeroesToEnd(arr, size);
    printArr(arr, size);
-   return(0);
+   return (0);
 }

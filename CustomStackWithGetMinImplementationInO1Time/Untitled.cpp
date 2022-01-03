@@ -1,4 +1,3 @@
-#include <limits.h>
 #include <bits/stdc++.h>
 using namespace std;
 
@@ -7,47 +6,49 @@ typedef long long unsigned int bigInt;
 
 class CustomStack {
 private:
-   stack<int> st;
-   stack<int> auxillaryArr;
+   stack<int>st;
+   stack<int>auxillaryArr;
 
 public:
    void initialize() {
       int data;
+
       cin >> data;
 
-      while(data != -1) {
+      while (data != -1) {
          this->push(data);
          cin >> data;
       }
    }
 
    int top() {
-      return st.top();
+      return (st.top());
    }
 
    void push(int data) {
       st.push(data);
-      if(auxillaryArr.empty() || data <= auxillaryArr.top()) {
+
+      if (auxillaryArr.empty() || (data <= auxillaryArr.top())) {
          auxillaryArr.push(data);
-      } 
+      }
    }
 
    void pop() {
-      if(auxillaryArr.top() == st.top()) {
+      if (auxillaryArr.top() == st.top()) {
          auxillaryArr.pop();
       }
       st.pop();
    }
 
    bool isEmpty() {
-      return st.empty();
+      return (st.empty());
    }
 
    int getMin() {
-      if(auxillaryArr.empty()) {
-         return -1;
+      if (auxillaryArr.empty()) {
+         return (-1);
       }
-      return auxillaryArr.top();
+      return (auxillaryArr.top());
    }
 };
 

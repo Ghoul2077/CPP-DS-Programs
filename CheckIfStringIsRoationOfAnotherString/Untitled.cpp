@@ -1,4 +1,3 @@
-#include <limits.h>
 #include <bits/stdc++.h>
 using namespace std;
 
@@ -6,8 +5,8 @@ typedef long long unsigned int bigInt;
 
 /**
  * @brief      Finds if a string 2 is rotations of string 1 in O(n^2) time
- *             and Q(1) space complexity compleixty by traversing and comparing 
- *             full string starting from each index. 
+ *             and Q(1) space complexity compleixty by traversing and comparing
+ *             full string starting from each index.
  *
  * @param      str1  The string 1
  * @param      str2  The string 2
@@ -43,20 +42,21 @@ bool checkForRotationNaive(string& str1, string& str2) {
 
 /**
  * @brief      Finds if a string 2 is rotations of string 1 in O(n) time
- *             and Q(n) space complexity compleixty by traversing and comparing 
- *             full string starting from each index. 
+ *             and Q(n) space complexity compleixty by traversing and comparing
+ *             full string starting from each index.
  *
  * @param      str1  The string 1
  * @param      str2  The string 2
  *
  * @return     True if is rotation, False otherwise
  */
-bool checkForRotation(string &str1, string &str2) {
-   if(str1.size() != str2.size()) {
-      return false;
+bool checkForRotation(string& str1, string& str2) {
+   if (str1.size() != str2.size()) {
+      return (false);
    }
    bool isPresent = ((str1 + str1).find(str2) != string::npos);
-   return isPresent;
+
+   return (isPresent);
 }
 
 int main() {

@@ -1,16 +1,13 @@
-#include <iostream>
-#include <math.h>
-#include <vector>
-#include <limits>
+#include <bits/stdc++.h>
 using namespace std;
 
 int linearSearch(int *arr, int size, int elem) {
    for (int i = 0; i < size; i++) {
       if (arr[i] == elem) {
-         return(i);
+         return (i);
       }
    }
-   return(-1);
+   return (-1);
 }
 
 int binarySearch(int *arr, int size, int elem) {
@@ -18,25 +15,26 @@ int binarySearch(int *arr, int size, int elem) {
 
    while (start <= stop) {
       int mid = (start + stop) / 2;
+
       if (arr[mid] < elem) {
          start = mid + 1;
-      }else if (arr[mid] > elem) {
+      } else if (arr[mid] > elem) {
          stop = mid - 1;
-      }else {
-         return(mid);
+      } else {
+         return (mid);
       }
    }
-   return(-1);
+   return (-1);
 }
 
 int searchInRotatedArrayNaive(int *arr, int size, int elem) {
-   return(linearSearch(arr, size, elem));
+   return (linearSearch(arr, size, elem));
 }
 
 /**
  * @brief      Searching in a sorted rotated array in O(logn) time complexity
  *             by exploiting the fact that at any given time half of the array
- *             will be completely sorted and other will be not, so find the 
+ *             will be completely sorted and other will be not, so find the
  *             range in which your number lies then find it using binary search
  *
  * @param      arr   The arr
@@ -49,26 +47,29 @@ int searchInRotatedArray(int *arr, int size, int elem) {
    int mid = (size - 1) / 2;
 
    if (arr[mid] == elem) {
-      return(mid);
+      return (mid);
    }
 
-   if (arr[mid] > arr[0] && arr[mid] >= elem && arr[0] <= elem) {
-      return(binarySearch(arr, mid + 1, elem));
-   } else if (arr[mid] < arr[size - 1] && arr[mid] <= elem && arr[size - 1] >= elem) {
-      return(binarySearch(&arr[mid], mid + 1, elem));
+   if ((arr[mid] > arr[0]) && (arr[mid] >= elem) && (arr[0] <= elem)) {
+      return (binarySearch(arr, mid + 1, elem));
+   } else if ((arr[mid] < arr[size - 1]) && (arr[mid] <= elem) &&
+              (arr[size - 1] >= elem)) {
+      return (binarySearch(&arr[mid], mid + 1, elem));
    } else {
       int res;
+
       if (arr[mid] > arr[0]) {
          res = searchInRotatedArray(&arr[mid + 1], mid, elem);
       } else if (arr[mid] < arr[size - 1]) {
          res = searchInRotatedArray(arr, mid - 1, elem);
       }
+
       if (res != -1) {
-         return(res + mid + 1);
+         return (res + mid + 1);
       }
    }
 
-   return(-1);
+   return (-1);
 }
 
 int main() {
@@ -77,5 +78,5 @@ int main() {
    int elem  = 15;
 
    cout << searchInRotatedArray(arr, size, elem);
-   return(0);
+   return (0);
 }

@@ -1,4 +1,4 @@
-#include <iostream>
+#include <bits/stdc++.h>
 using namespace std;
 
 void printArr(int arr[], int size) {
@@ -9,10 +9,10 @@ void printArr(int arr[], int size) {
 }
 
 void merge(int arr[], int start1, int end1, int start2, int end2) {
-   int size = end2 - start1 + 1;
+   int  size = end2 - start1 + 1;
    int *finalArr = new int[size];
-   int i = start1, j = start2;
-   int counter = 0;
+   int  i = start1, j = start2;
+   int  counter = 0;
 
    while (i <= end1 && j <= end2) {
       if (arr[i] <= arr[j]) {
@@ -25,6 +25,7 @@ void merge(int arr[], int start1, int end1, int start2, int end2) {
    while (i <= end1) {
       finalArr[counter++] = arr[i++];
    }
+
    while (j <= end2) {
       finalArr[counter++] = arr[j++];
    }
@@ -39,7 +40,7 @@ void merge(int arr[], int start1, int end1, int start2, int end2) {
 void mergeSort(int arr[], int start, int end) {
    if (start < end) {
       int mid = (start + end) / 2;
-      mergeSort(arr, start, mid);
+      mergeSort(arr, start,   mid);
       mergeSort(arr, mid + 1, end);
       merge(arr, start, mid, mid + 1, end);
    }

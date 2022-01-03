@@ -1,4 +1,4 @@
-#include <iostream>
+#include <bits/stdc++.h>
 using namespace std;
 
 void printArr(int arr[], int n) {
@@ -15,6 +15,7 @@ void linearSearch(int arr[], int n, int x) {
          cout << "Found element at index " << i << endl;
       }
    }
+
    if (i == n + 1) {
       cout << "Element Not Found in Array" << endl;
    }
@@ -25,15 +26,17 @@ void binarySearch(int arr[], int n, int x) {
 
    while (start < end) {
       mid = (start + end) / 2;
+
       if (arr[mid] == x) {
          cout << "Found element at index " << mid << endl;
          break;
-      }else if (x > arr[mid])   {
+      } else if (x > arr[mid])   {
          start = mid + 1;
-      }else  {
+      } else  {
          end = mid - 1;
       }
    }
+
    if (start > end) {
       cout << "Element Not Found in Array" << endl;
    }
@@ -41,7 +44,7 @@ void binarySearch(int arr[], int n, int x) {
 
 int insert(int arr[], int n, int x, int capacity, int pos) {
    if (n == capacity) {
-      return(n);
+      return (n);
    }
    int index = pos - 1;
 
@@ -49,7 +52,7 @@ int insert(int arr[], int n, int x, int capacity, int pos) {
       arr[i + 1] = arr[i];
    }
    arr[index] = x;
-   return(n + 1);
+   return (n + 1);
 }
 
 int main() {
@@ -57,6 +60,7 @@ int main() {
 
    linearSearch(arr, 6, 4);
    binarySearch(arr, 6, 4);
+
    // insert(arr, 6, 7, 7, 7);
    // printArr(arr, 7);
 }

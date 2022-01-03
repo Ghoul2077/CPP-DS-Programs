@@ -1,7 +1,4 @@
-#include <iostream>
-#include <math.h>
-#include <vector>
-#include <limits>
+#include <bits/stdc++.h>
 using namespace std;
 
 void printArr(int *arr, int size) {
@@ -22,13 +19,15 @@ void swap(int *num1, int *num2) {
 void bubbleSort(int *arr, int size) {
    for (int i = 0; i < size; i++) {
       bool didSwap = false;
+
       for (int j = 0; j < size - i - 1; j++) {
          if (arr[j] > arr[j + 1]) {
             swap(arr[j], arr[j + 1]);
             didSwap = true;
          }
       }
-      if(!didSwap) {
+
+      if (!didSwap) {
          break;
       }
    }
@@ -40,5 +39,5 @@ int main() {
 
    bubbleSort(arr, size);
    printArr(arr, size);
-   return(0);
+   return (0);
 }

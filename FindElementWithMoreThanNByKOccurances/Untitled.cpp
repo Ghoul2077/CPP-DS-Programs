@@ -1,4 +1,3 @@
-#include <iostream>
 #include <bits/stdc++.h>
 using namespace std;
 
@@ -97,7 +96,7 @@ void findElementWithMoreThanNByKOcuuranceOptimized(int *arr, int size, int k) {
  * @brief      Finds all elements with more than n by k ocuurance
  *             in O(n*k) time complexity and space complexity is
  *             O(k - 1). This is efficient solution as it will outperform the
- *             above given solution when k is very small compared to size of 
+ *             above given solution when k is very small compared to size of
  *             and it also has better space complexity. This approach is based
  *             on the fact that there can be at max (k - 1) elements with
  *             frequency greater than n / k.

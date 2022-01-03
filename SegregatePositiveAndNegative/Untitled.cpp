@@ -1,7 +1,5 @@
-#include <iostream>
-#include <math.h>
+#include <bits/stdc++.h>
 #include <experimental/random>
-#include <limits>
 using namespace std;
 
 void printArr(int *arr, int size) {
@@ -10,7 +8,7 @@ void printArr(int *arr, int size) {
    }
 }
 
-void swap(int&num1, int&num2) {
+void swap(int& num1, int& num2) {
    int temp = num1;
 
    num1 = num2;
@@ -19,25 +17,27 @@ void swap(int&num1, int&num2) {
 
 /**
  * @brief      This is naive because this uses O(n) space and for the same
- *             is not in place. 
+ *             is not in place.
  *
  * @param      arr   The arr
  * @param[in]  size  The size
  */
 void segregatePositiveAndNegativeNaive(int *arr, int size) {
-   int *newArr = new int[size];
-   int counter = 0;
+   int *newArr  = new int[size];
+   int  counter = 0;
 
    for (int i = 0; i < size; i++) {
       if (arr[i] < 0) {
          newArr[counter++] = arr[i];
       }
    }
+
    for (int i = 0; i < size; i++) {
       if (arr[i] >= 0) {
          newArr[counter++] = arr[i];
       }
    }
+
    for (int i = 0; i < size; i++) {
       arr[i] = newArr[i];
    }
@@ -46,15 +46,17 @@ void segregatePositiveAndNegativeNaive(int *arr, int size) {
 int hoarePartitionModified(int *arr, int size) {
    int i = -1, j = size;
 
-   while(true) {
+   while (true) {
       do {
          i++;
-      } while(arr[i] < 0);
+      } while (arr[i] < 0);
+
       do {
          j--;
-      } while(arr[j] > 0);
-      if(i >= j) {
-         return j;
+      } while (arr[j] > 0);
+
+      if (i >= j) {
+         return (j);
       }
       swap(arr[i], arr[j]);
    }
@@ -70,5 +72,5 @@ int main() {
 
    segregatePositiveAndNegative(arr, size);
    printArr(arr, size);
-   return(0);
+   return (0);
 }

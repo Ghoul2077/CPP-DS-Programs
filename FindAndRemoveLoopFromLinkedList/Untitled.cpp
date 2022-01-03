@@ -1,4 +1,3 @@
-#include <limits.h>
 #include <bits/stdc++.h>
 using namespace std;
 
@@ -52,8 +51,8 @@ void findAndRemoveLoopsInLLNaive(Node *head) {
    unordered_set<Node *> vistiedNodes;
    Node *curr = head, *prev = NULL;
 
-   while(curr != NULL) {
-      if(vistiedNodes.count(curr) == 0) {
+   while (curr != NULL) {
+      if (vistiedNodes.count(curr) == 0) {
          vistiedNodes.insert(curr);
          prev = curr;
          curr = curr->next;
@@ -69,8 +68,8 @@ void findAndRemoveLoopsInLLNaive(Node *head) {
  *             complexity and Q(1) space complexity. It uses the floyde cycle
  *             detection algorithm and builds upon it by exploiting the fact
  *             after loop is detecting if we move slow pointer from head one
- *             node at a time and fast pointer from it position one node at a 
- *             time then we will be bound to hit at the starting point of the 
+ *             node at a time and fast pointer from it position one node at a
+ *             time then we will be bound to hit at the starting point of the
  *             loop.
  *
  * @param      head  The head
@@ -78,31 +77,32 @@ void findAndRemoveLoopsInLLNaive(Node *head) {
 void findAndRemoveLoopsInLL(Node *head) {
    Node *slowPtr = head, *fastPtr = head;
 
-   while(fastPtr != NULL && fastPtr->next != NULL) {
+   while (fastPtr != NULL && fastPtr->next != NULL) {
       slowPtr = slowPtr->next;
       fastPtr = fastPtr->next->next;
 
-      if(slowPtr == fastPtr) {
+      if (slowPtr == fastPtr) {
          break;
       }
    }
 
-   if(slowPtr != fastPtr) {
+   if (slowPtr != fastPtr) {
       return;
    }
 
    // Edge case where the link list is actually circular linked list
-   if(slowPtr == head && fastPtr == head) {
+   if ((slowPtr == head) && (fastPtr == head)) {
       do {
          fastPtr = fastPtr->next;
-      } while(fastPtr->next != slowPtr);
+      } while (fastPtr->next != slowPtr);
 
       fastPtr->next = NULL;
       return;
    }
 
    slowPtr = head;
-   while(slowPtr->next != fastPtr->next) {
+
+   while (slowPtr->next != fastPtr->next) {
       slowPtr = slowPtr->next;
       fastPtr = fastPtr->next;
    }

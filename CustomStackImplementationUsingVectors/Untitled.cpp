@@ -1,18 +1,17 @@
-#include <limits.h>
 #include <bits/stdc++.h>
-#include <new>
 using namespace std;
 
 class Stack {
 private:
-   vector<int> stack;
+   vector<int>stack;
 
 public:
    void initialize() {
       int data;
+
       cin >> data;
 
-      while(data != -1) {
+      while (data != -1) {
          this->push(data);
          cin >> data;
       }
@@ -21,13 +20,13 @@ public:
    void push(int data) {
       try {
          stack.push_back(data);
-      } catch(bad_alloc& badAlloc) {
+      } catch (bad_alloc& badAlloc) {
          cout << badAlloc.what();
       }
    }
 
    void pop() {
-      if(stack.size() != 0) {
+      if (stack.size() != 0) {
          stack.erase(stack.end() - 1);
       } else {
          cout << "Stack underflow" << endl;
@@ -35,20 +34,20 @@ public:
    }
 
    int top() {
-      if(stack.size() != 0) {
-         return stack.back();
+      if (stack.size() != 0) {
+         return (stack.back());
       } else {
          cout << "Stack is empty" << endl;
-         return -1;
+         return (-1);
       }
    }
 
    bool isEmpty() {
-      return stack.size() == 0 ? true : false;
+      return (stack.size() == 0 ? true : false);
    }
 
    void print() {
-      for(auto i = stack.end() - 1; i >= stack.begin(); i--) {
+      for (auto i = stack.end() - 1; i >= stack.begin(); i--) {
          cout << *i << " ";
       }
       cout << endl;

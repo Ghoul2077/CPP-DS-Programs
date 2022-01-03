@@ -1,5 +1,4 @@
-#include <iostream>
-#include <math.h>
+#include <bits/stdc++.h>
 #include <experimental/random>
 using namespace std;
 
@@ -9,7 +8,7 @@ void printArr(int *arr, int size) {
    }
 }
 
-void swap(int&num1, int&num2) {
+void swap(int& num1, int& num2) {
    int temp = num1;
 
    num1 = num2;
@@ -24,11 +23,13 @@ int hoarePartition(int *arr, int start, int stop) {
       do {
          i++;
       } while (arr[i] < pivot);
+
       do {
          j--;
       } while (arr[j] > pivot);
+
       if (i >= j) {
-         return(j);
+         return (j);
       }
       swap(arr[i], arr[j]);
    }
@@ -45,25 +46,26 @@ int lomutoPartition(int *arr, int start, int stop) {
       }
    }
    swap(arr[stop], arr[i + 1]);
-   return(i + 1);
+   return (i + 1);
 }
 
 int hoarePartitionOptimized(int *arr, int start, int stop) {
    int randNum = std::experimental::randint(start, stop);
 
    swap(arr[randNum], arr[start]);
-   return(hoarePartition(arr, start, stop));
+   return (hoarePartition(arr, start, stop));
 }
 
 int lomutoPartitionOptimized(int *arr, int start, int stop) {
    int randNum = std::experimental::randint(start, stop);
 
    swap(arr[randNum], arr[stop]);
-   return(lomutoPartition(arr, start, stop));
+   return (lomutoPartition(arr, start, stop));
 }
 
 void quickSort(int *arr, int start, int stop) {
 Begin:
+
    if (start < stop) {
       int pivotIndex = hoarePartition(arr, start, stop);
       quickSort(arr, start, pivotIndex);
@@ -83,7 +85,7 @@ Begin:
  */
 int findKthSmallestElementNaive(int *arr, int size, int k) {
    quickSort(arr, 0, size - 1);
-   return(arr[k - 1]);
+   return (arr[k - 1]);
 }
 
 /**
@@ -103,8 +105,9 @@ int findKthSmallestElement(int *arr, int size, int k) {
 
    while (start <= stop) {
       int pivotIndex = lomutoPartitionOptimized(arr, start, stop);
+
       if (pivotIndex == k - 1) {
-         return(arr[pivotIndex]);
+         return (arr[pivotIndex]);
       } else if (pivotIndex > k - 1) {
          stop = pivotIndex - 1;
       } else {
@@ -112,7 +115,7 @@ int findKthSmallestElement(int *arr, int size, int k) {
       }
    }
 
-   return(-1);
+   return (-1);
 }
 
 int main() {
@@ -121,5 +124,5 @@ int main() {
    int k     = 4;
 
    cout << findKthSmallestElement(arr, size, k);
-   return(0);
+   return (0);
 }

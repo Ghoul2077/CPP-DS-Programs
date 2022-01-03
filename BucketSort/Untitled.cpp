@@ -1,6 +1,4 @@
-#include <iostream>
-#include <math.h>
-#include <vector>
+#include <bits/stdc++.h>
 using namespace std;
 
 void printArr(int *arr, int size) {
@@ -15,7 +13,7 @@ int maxElement(int *arr, int size) {
    for (int i = 1; i < size; i++) {
       maxVal = max(maxVal, arr[i]);
    }
-   return(maxVal);
+   return (maxVal);
 }
 
 int minElement(int *arr, int size) {
@@ -24,10 +22,10 @@ int minElement(int *arr, int size) {
    for (int i = 1; i < size; i++) {
       minVal = min(minVal, arr[i]);
    }
-   return(minVal);
+   return (minVal);
 }
 
-void insertionSort(vector <int> *arr) {
+void insertionSort(vector<int> *arr) {
    for (int i = 1; i < arr->size(); i++) {
       auto curr = arr[i];
       int  j    = i - 1;
@@ -44,7 +42,7 @@ void insertionSort(vector <int> *arr) {
 void bucketSort(int *arr, int size, int min, int max) {
    int numberOfBuckets = 5;
    int bucketSize      = ceil(((float)max - (float)min + 1) / numberOfBuckets);
-   vector <vector <int> > bucketsArray(numberOfBuckets);
+   vector<vector<int> > bucketsArray(numberOfBuckets);
    int counter = 0;
 
    for (int i = 0; i < size; i++) {
@@ -72,5 +70,5 @@ int main() {
    bucketSort(arr, size, min, max);
    printArr(arr, size);
 
-   return(0);
+   return (0);
 }

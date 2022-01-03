@@ -1,4 +1,3 @@
-#include <limits.h>
 #include <bits/stdc++.h>
 using namespace std;
 
@@ -59,24 +58,24 @@ void printLL(Node *head) {
  *
  * @return     New head of the linked list
  */
-Node *segregateEvenAndOddInLLNaive(Node *head) {
+Node* segregateEvenAndOddInLLNaive(Node *head) {
    Node *curr = head, *tail = head, *prev = NULL;
 
-   while(tail->next != NULL) {
+   while (tail->next != NULL) {
       tail = tail->next;
    }
 
    Node *currTail = tail;
 
-   while(curr != tail) {
+   while (curr != tail) {
       Node *next = curr->next;
 
-      if(curr->data % 2 != 0) {
+      if (curr->data % 2 != 0) {
          currTail->next = curr;
-         currTail = currTail->next;
+         currTail       = currTail->next;
          currTail->next = NULL;
 
-         if(prev != NULL) {
+         if (prev != NULL) {
             prev->next = next;
          } else {
             head = next;
@@ -89,7 +88,7 @@ Node *segregateEvenAndOddInLLNaive(Node *head) {
       curr = next;
    }
 
-   return head;
+   return (head);
 }
 
 /**
@@ -101,42 +100,42 @@ Node *segregateEvenAndOddInLLNaive(Node *head) {
  *
  * @return     New head of the linked list
  */
-Node *segregateEvenAndOddInLL(Node *head) {
+Node* segregateEvenAndOddInLL(Node *head) {
    Node *curr = head, *evenHead = NULL, *evenTail = NULL;
    Node *oddHead = NULL, *oddTail = NULL;
 
-   while(curr != NULL) {
+   while (curr != NULL) {
       Node *next = curr->next;
 
-      if(curr->data % 2 == 0) {
-         if(evenHead == NULL) {
+      if (curr->data % 2 == 0) {
+         if (evenHead == NULL) {
             evenHead = curr;
             evenTail = curr;
          } else {
             evenTail->next = curr;
-            evenTail = curr;
+            evenTail       = curr;
          }
       } else {
-         if(oddHead == NULL) {
+         if (oddHead == NULL) {
             oddHead = curr;
             oddTail = curr;
          } else {
             oddTail->next = curr;
-            oddTail = curr;
+            oddTail       = curr;
          }
       }
 
       curr = next;
    }
 
-   if(evenHead == NULL || oddHead == NULL) {
-      return head;
+   if ((evenHead == NULL) || (oddHead == NULL)) {
+      return (head);
    }
 
    evenTail->next = oddHead;
-   oddTail->next = NULL;
+   oddTail->next  = NULL;
 
-   return evenHead;
+   return (evenHead);
 }
 
 int main() {

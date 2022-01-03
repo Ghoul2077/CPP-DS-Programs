@@ -1,15 +1,12 @@
-#include <iostream>
-#include <math.h>
-#include <vector>
-#include <limits>
+#include <bits/stdc++.h>
 using namespace std;
 
 int max(int num1, int num2) {
-   return(num1 > num2 ? num1 : num2);
+   return (num1 > num2 ? num1 : num2);
 }
 
 int min(int num1, int num2) {
-   return(num1 < num2 ? num1 : num2);
+   return (num1 < num2 ? num1 : num2);
 }
 
 int maximumSumSubarray(int *arr, int size) {
@@ -21,7 +18,7 @@ int maximumSumSubarray(int *arr, int size) {
       res    = max(res, maxSum);
    }
 
-   return(res);
+   return (res);
 }
 
 /**
@@ -37,13 +34,14 @@ int maximumSumCircularSubarrayNaive(int *arr, int size) {
 
    for (int i = 0; i < size; i++) {
       int newSum = arr[i];
+
       for (int j = i + 1; j < i + size; j++) {
          int currIndex = j % size;
          newSum = max(arr[currIndex] + newSum, newSum);
          maxSum = max(newSum, maxSum);
       }
    }
-   return(maxSum);
+   return (maxSum);
 }
 
 /**
@@ -61,7 +59,7 @@ int maximumSumCircularSubarray(int *arr, int size) {
    int maxNormal = maximumSumSubarray(arr, size);
 
    if (maxNormal < 0) {
-      return(maxNormal);
+      return (maxNormal);
    }
 
    int totalSum = 0;
@@ -72,13 +70,13 @@ int maximumSumCircularSubarray(int *arr, int size) {
    }
    int maxCircular = totalSum + maximumSumSubarray(arr, size);
 
-   return(max(maxCircular, maxNormal));
+   return (max(maxCircular, maxNormal));
 }
 
 int main() {
-   int       arr[] = { 8, -4, 3, -5, 4 };
-   const int size  = sizeof(arr) / sizeof(arr[0]);
+   int arr[]      = { 8, -4, 3, -5, 4 };
+   const int size = sizeof(arr) / sizeof(arr[0]);
 
    cout << maximumSumCircularSubarray(arr, size);
-   return(0);
+   return (0);
 }

@@ -1,6 +1,4 @@
-#include <iostream>
-#include <string>
-#include <math.h>
+#include <bits/stdc++.h>
 using namespace std;
 
 const char KEYPAD[9][3] = {
@@ -25,11 +23,12 @@ void printArr(string arr[], int size) {
 int subSequence(int num, string *output) {
    if (num == 0) {
       output[0] = "";
-      return(1);
+      return (1);
    } else {
       int unitsDigit  = num % 10;
       int smallerNum  = num / 10;
       int smallerSize = subSequence(smallerNum, output);
+
       for (int i = 0; i < 3; i++) {
          for (int j = 0; j < smallerSize; j++) {
             output[j + smallerSize * (i + 1)] = (
@@ -37,12 +36,12 @@ int subSequence(int num, string *output) {
                );
          }
       }
-      return(smallerSize * 3);
+      return (smallerSize * 3);
    }
 }
 
 int main() {
-   int    num;
+   int num;
    string *output = new string[100];
 
    cout << "Enter number : ";

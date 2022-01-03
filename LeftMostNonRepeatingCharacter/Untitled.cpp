@@ -1,4 +1,3 @@
-#include <limits.h>
 #include <bits/stdc++.h>
 using namespace std;
 
@@ -32,7 +31,7 @@ char leftMostNonRepeatingCharacterNaive(string& str) {
 /**
  * @brief      Finds the first non repeating character in a given string in
  *             O(n) time complexity and Q(128) space complexity. It does this
- *             by filling array of 128 values with -1 (indicating not yet 
+ *             by filling array of 128 values with -1 (indicating not yet
  *             encountered) and then traversing the string storing index value
  *             instead of -1 for first occurance otherwise -2 if already
  *             encountered. Now we just have to find the minimum of first

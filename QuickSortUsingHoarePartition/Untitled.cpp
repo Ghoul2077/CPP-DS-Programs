@@ -1,6 +1,4 @@
-#include <iostream>
-#include <math.h>
-#include <limits>
+#include <bits/stdc++.h>
 #include <experimental/random>
 using namespace std;
 
@@ -10,7 +8,7 @@ void printArr(int *arr, int size) {
    }
 }
 
-void swap(int&num1, int&num2) {
+void swap(int& num1, int& num2) {
    int temp = num1;
 
    num1 = num2;
@@ -25,11 +23,13 @@ int hoarePartition(int *arr, int start, int stop) {
       do {
          i++;
       } while (arr[i] < pivot);
+
       do {
          j--;
       } while (arr[j] > pivot);
+
       if (i >= j) {
-         return(j);
+         return (j);
       }
       swap(arr[i], arr[j]);
    }
@@ -39,7 +39,7 @@ int hoarePartitionOptimized(int *arr, int start, int stop) {
    int randNum = std::experimental::randint(start, stop);
 
    swap(arr[start], arr[randNum]);
-   return(hoarePartition(arr, start, stop));
+   return (hoarePartition(arr, start, stop));
 }
 
 /**
@@ -55,7 +55,7 @@ int hoarePartitionOptimized(int *arr, int start, int stop) {
 void quickSortHoarde(int *arr, int start, int stop) {
    if (start < stop) {
       int pivotIndex = hoarePartitionOptimized(arr, start, stop);
-      quickSortHoarde(arr, start, pivotIndex);
+      quickSortHoarde(arr, start,          pivotIndex);
       quickSortHoarde(arr, pivotIndex + 1, stop);
    }
 }
@@ -66,5 +66,5 @@ int main() {
 
    quickSortHoarde(arr, 0, size - 1);
    printArr(arr, size);
-   return(0);
+   return (0);
 }

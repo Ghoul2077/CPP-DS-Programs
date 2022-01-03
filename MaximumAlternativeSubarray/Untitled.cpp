@@ -1,7 +1,4 @@
-#include <iostream>
-#include <math.h>
-#include <vector>
-#include <limits>
+#include <bits/stdc++.h>
 using namespace std;
 
 /**
@@ -15,8 +12,9 @@ using namespace std;
  */
 int maximumLengthEvenOddSubarray(int *arr, int size) {
    int count = 0;
+
    // Represents whether next element is odd or even
-   int flag  = arr[0] % 2;
+   int flag = arr[0] % 2;
 
    // Loop through array comparing whether curr element is equal to assumed flag
    for (int i = 0; i < size; i++) {
@@ -29,13 +27,13 @@ int maximumLengthEvenOddSubarray(int *arr, int size) {
          continue;
       }
    }
-   return(count);
+   return (count);
 }
 
 int main() {
-   int       arr[] = { 7, 10, 13, 14 };
-   const int size  = sizeof(arr) / sizeof(arr[0]);
+   int arr[]      = { 7, 10, 13, 14 };
+   const int size = sizeof(arr) / sizeof(arr[0]);
 
    cout << maximumLengthEvenOddSubarray(arr, size);
-   return(0);
+   return (0);
 }

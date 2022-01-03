@@ -1,4 +1,3 @@
-#include <limits.h>
 #include <bits/stdc++.h>
 using namespace std;
 
@@ -101,7 +100,7 @@ Node* deleteLastNode(Node *head) {
 }
 
 /**
- * @brief      Deletes the node at given index from a given linked list in Q(N) 
+ * @brief      Deletes the node at given index from a given linked list in Q(N)
  *             time complexity and Q(1) space complexity.
  *
  * @param      head  The head of linked list
@@ -126,7 +125,7 @@ Node* deleteAtGivenIndex(Node *head, int index) {
       curr->next = curr->next->next;
       delete toDelete;
    } else {
-      cout << "Index value overflow" <<endl;
+      cout << "Index value overflow" << endl;
    }
 
    return (head);

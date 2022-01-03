@@ -1,7 +1,4 @@
-#include <iostream>
-#include <math.h>
-#include <vector>
-#include <limits>
+#include <bits/stdc++.h>
 using namespace std;
 
 void printArr(int *arr, int size) {
@@ -19,15 +16,15 @@ int findMaxInArray(int *arr, int size) {
          max = arr[i];
       }
    }
-   return(max);
+   return (max);
 }
 
 void merge(int arr[], int start1, int end1, int start2, int end2) {
-   int i = start1;
-   int j = start2;
-   int k;
-   int counter   = 0;
-   int size      = end2 - start1 + 1;
+   int  i = start1;
+   int  j = start2;
+   int  k;
+   int  counter  = 0;
+   int  size     = end2 - start1 + 1;
    int *finalArr = new int[size];
 
    while (i <= end1 && j <= end2) {
@@ -41,6 +38,7 @@ void merge(int arr[], int start1, int end1, int start2, int end2) {
    while (i <= end1) {
       finalArr[counter++] = arr[i++];
    }
+
    while (j <= end2) {
       finalArr[counter++] = arr[j++];
    }
@@ -55,7 +53,7 @@ void merge(int arr[], int start1, int end1, int start2, int end2) {
 void mergeSort(int arr[], int start, int end) {
    if (start < end) {
       int mid = (start + end) / 2;
-      mergeSort(arr, start, mid);
+      mergeSort(arr, start,   mid);
       mergeSort(arr, mid + 1, end);
       merge(arr, start, mid, mid + 1, end);
    }
@@ -76,11 +74,11 @@ int findRepeatingNumberSuperNaive(int *arr, int size) {
    for (int i = 0; i < size; i++) {
       for (int j = i + 1; j < size; j++) {
          if (arr[i] == arr[j]) {
-            return(arr[i]);
+            return (arr[i]);
          }
       }
    }
-   return(-1);
+   return (-1);
 }
 
 /**
@@ -99,10 +97,10 @@ int findRepeatingNumberNaive(int *arr, int size) {
 
    for (int i = 1; i < size; i++) {
       if (arr[i] == arr[i - 1]) {
-         return(arr[i]);
+         return (arr[i]);
       }
    }
-   return(-1);
+   return (-1);
 }
 
 /**
@@ -117,7 +115,7 @@ int findRepeatingNumberNaive(int *arr, int size) {
  * @return     The repeating element
  */
 int findRepeatingNumber(int *arr, int size) {
-   int max = findMaxInArray(arr, size);
+   int max                    = findMaxInArray(arr, size);
    int sumOfNonRepeatingArray = (max * (max + 1)) / 2;
    int sumOfGivenArray        = 0;
 
@@ -125,11 +123,11 @@ int findRepeatingNumber(int *arr, int size) {
       sumOfGivenArray += arr[i];
    }
 
-   int diff = sumOfGivenArray - sumOfNonRepeatingArray;
+   int diff                         = sumOfGivenArray - sumOfNonRepeatingArray;
    int numberOfTimesElementRepeated = size - max - 1;
-   int element = diff / numberOfTimesElementRepeated;
+   int element                      = diff / numberOfTimesElementRepeated;
 
-   return(element);
+   return (element);
 }
 
 /**
@@ -153,11 +151,12 @@ int findRepeatingNumber2(int *arr, int size) {
    } while (slow != fast);
 
    slow = arr[0] + 1;
+
    while (slow != fast) {
       slow = arr[slow] + 1;
       fast = arr[fast] + 1;
    }
-   return(slow - 1);
+   return (slow - 1);
 }
 
 int main() {
@@ -165,5 +164,5 @@ int main() {
    int size  = sizeof(arr) / sizeof(arr[0]);
 
    cout << findRepeatingNumber2(arr, size);
-   return(0);
+   return (0);
 }

@@ -1,4 +1,3 @@
-#include <iostream>
 #include <bits/stdc++.h>
 using namespace std;
 
@@ -70,7 +69,7 @@ int longestSubarrayWithCommonSum(int *arr1, int *arr2, int size) {
       }
    }
 
-   return maxLen;
+   return (maxLen);
 }
 
 int main() {

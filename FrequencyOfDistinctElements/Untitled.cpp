@@ -1,5 +1,4 @@
-#include <iostream>
-#include <unordered_map>
+#include <bits/stdc++.h>
 using namespace std;
 
 void printMap(unordered_map<int, int> *map) {
@@ -44,7 +43,7 @@ void frequencyOfDistinctElementsNaive(int *arr, int size) {
  *
  * @param      arr   The arr
  * @param[in]  size  The size
- * 
+ *
  * @return     The map containing frequency of distinct elements.
  */
 unordered_map<int, int>frequencyOfDistinctElements(int *arr, int size) {
@@ -71,6 +70,7 @@ int main() {
    // frequencyOfDistinctElementsNaive(arr, size);
 
    unordered_map<int, int> result = frequencyOfDistinctElements(arr, size);
+
    printMap(&result);
 
    return (0);

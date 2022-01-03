@@ -1,11 +1,8 @@
-#include <iostream>
-#include <math.h>
-#include <vector>
-#include <limits>
+#include <bits/stdc++.h>
 using namespace std;
 
 int max(int num1, int num2) {
-   return(num1 > num2 ? num1 : num2);
+   return (num1 > num2 ? num1 : num2);
 }
 
 /**
@@ -21,14 +18,16 @@ int maximumSumSubarrayNaive(int *arr, int size) {
 
    for (int i = 0; i < size; i++) {
       int currSum = 0;
+
       for (int j = i; j < size; j++) {
          currSum += arr[j];
+
          if (currSum > maxSum) {
             maxSum = currSum;
          }
       }
    }
-   return(maxSum);
+   return (maxSum);
 }
 
 /**
@@ -48,13 +47,13 @@ int maximumSumSubarray(int *arr, int size) {
       res    = max(res, maxSum);
    }
 
-   return(res);
+   return (res);
 }
 
 int main() {
-   int       arr[] = { 2, 3, -8, 7, -1, 2, 3 };
-   const int size  = sizeof(arr) / sizeof(arr[0]);
+   int arr[]      = { 2, 3, -8, 7, -1, 2, 3 };
+   const int size = sizeof(arr) / sizeof(arr[0]);
 
    cout << maximumSumSubarray(arr, size);
-   return(0);
+   return (0);
 }

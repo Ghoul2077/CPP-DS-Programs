@@ -1,13 +1,13 @@
-#include <iostream>
+#include <bits/stdc++.h>
 using namespace std;
 
 int max(int first, int second, int third) {
-   if (first > second && first > third) {
-      return(first);
-   } else if (second > first && second > third) {
-      return(second);
+   if ((first > second) && (first > third)) {
+      return (first);
+   } else if ((second > first) && (second > third)) {
+      return (second);
    } else {
-      return(third);
+      return (third);
    }
 }
 
@@ -27,16 +27,17 @@ int max(int first, int second, int third) {
  */
 int maxPieces(int maxCuts, int a, int b, int c, int cutCount = 0) {
    if (maxCuts == 0) {
-      return(cutCount);
+      return (cutCount);
    }
+
    if (maxCuts < 0) {
-      return(-1);
+      return (-1);
    }
    cutCount++;
-   return(max(maxPieces(maxCuts - a, a, b, c, cutCount),
-              maxPieces(maxCuts - b, a, b, c, cutCount),
-              maxPieces(maxCuts - c, a, b, c, cutCount)
-              ));
+   return (max(maxPieces(maxCuts - a, a, b, c, cutCount),
+               maxPieces(maxCuts - b, a, b, c, cutCount),
+               maxPieces(maxCuts - c, a, b, c, cutCount)
+               ));
 }
 
 int main() {

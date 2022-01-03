@@ -1,4 +1,3 @@
-#include <limits.h>
 #include <bits/stdc++.h>
 using namespace std;
 
@@ -33,7 +32,7 @@ char leftMostRepeatingCharacterNaive(string& str) {
  *
  * @return     First repeating character if found any, empty string otherwise
  */
-char leftMostRepeatingCharacter(string &str) {
+char leftMostRepeatingCharacter(string& str) {
    int count[128] = { 0 };
 
    for (bigInt i = 0; i < str.size(); i++) {
@@ -62,7 +61,7 @@ char leftMostRepeatingCharacter(string &str) {
  *
  * @return     First repeating character if found any, empty string otherwise
  */
-string leftMostRepeatingCharacterOptimized(string &str) {
+string leftMostRepeatingCharacterOptimized(string& str) {
    int firstOccurances[128];
 
    fill(firstOccurances, firstOccurances + 128, -1);
@@ -96,7 +95,7 @@ string leftMostRepeatingCharacterOptimized(string &str) {
  *
  * @return     First repeating character if found any, empty string otherwise
  */
-string leftMostRepeatingCharacterEfficient(string &str) {
+string leftMostRepeatingCharacterEfficient(string& str) {
    bool visited[128];
 
    fill(visited, visited + 128, false);

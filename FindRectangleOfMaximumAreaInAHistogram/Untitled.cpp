@@ -1,4 +1,3 @@
-#include <limits.h>
 #include <bits/stdc++.h>
 using namespace std;
 
@@ -18,16 +17,17 @@ typedef long long unsigned int bigInt;
 int getMaximumAreaOfRectangleNaive(int *arr, int size) {
    int maxArea = INT_MIN;
 
-   for(int i = 0; i < size; i++) {
+   for (int i = 0; i < size; i++) {
       int currMin = arr[i];
-      for(int j = i; j < size; j++) {
+
+      for (int j = i; j < size; j++) {
          currMin = min(currMin, arr[j]);
          int currArea = currMin * (j - i + 1);
          maxArea = max(maxArea, currArea);
       }
    }
 
-   return maxArea;
+   return (maxArea);
 }
 
 /**
@@ -42,12 +42,12 @@ int getMaximumAreaOfRectangleNaive(int *arr, int size) {
  * @return     The maximum area of rectangle.
  */
 int getMaximumAreaOfRectangle(int *arr, int size) {
-   stack<int> st1, st2;
+   stack<int>  st1, st2;
    vector<int> arr1, arr2;
    int maxArea = INT_MIN;
 
-   for(int i = 0; i < size; i++) {
-      while(!st1.empty() && arr[st1.top()] >= arr[i]) {
+   for (int i = 0; i < size; i++) {
+      while (!st1.empty() && arr[st1.top()] >= arr[i]) {
          st1.pop();
       }
       int smallerElemIndex = st1.empty() ? -1 : st1.top();
@@ -55,8 +55,8 @@ int getMaximumAreaOfRectangle(int *arr, int size) {
       st1.push(i);
    }
 
-   for(int i = size - 1; i >= 0; i--) {
-      while(!st2.empty() && arr[st2.top()] >= arr[i]) {
+   for (int i = size - 1; i >= 0; i--) {
+      while (!st2.empty() && arr[st2.top()] >= arr[i]) {
          st2.pop();
       }
       int smallerElemIndex = st2.empty() ? size : st2.top();
@@ -66,14 +66,14 @@ int getMaximumAreaOfRectangle(int *arr, int size) {
 
    reverse(arr2.begin(), arr2.end());
 
-   for(int i = 0; i < size; i++) {
-      int currVal = arr[i];
+   for (int i = 0; i < size; i++) {
+      int currVal  = arr[i];
       int interval = arr2[i] - arr1[i] - 1;
       int currArea = currVal * interval;
       maxArea = max(maxArea, currArea);
    }
 
-   return maxArea;
+   return (maxArea);
 }
 
 /**
@@ -91,8 +91,8 @@ int getMaximumAreaOfRectangleOptimized(int *arr, int size) {
    stack<int> st;
    int maxArea = INT_MIN;
 
-   for(int i = 0; i < size; i++) {
-      while(!st.empty() && arr[st.top()] >= arr[i]) {
+   for (int i = 0; i < size; i++) {
+      while (!st.empty() && arr[st.top()] >= arr[i]) {
          int top = st.top();
          st.pop();
          int curr = arr[top] * (st.empty() ? i : (i - st.top() - 1));
@@ -101,14 +101,14 @@ int getMaximumAreaOfRectangleOptimized(int *arr, int size) {
       st.push(i);
    }
 
-   while(!st.empty()) {
+   while (!st.empty()) {
       int top = st.top();
       st.pop();
       int curr = arr[top] * (st.empty() ? size : size - st.top() - 1);
       maxArea = max(maxArea, curr);
    }
 
-   return maxArea;
+   return (maxArea);
 }
 
 int main() {
@@ -121,7 +121,8 @@ int main() {
       int size;
       cin >> size;
       int *arr = new int[size];
-      for(int i = 0; i < size; i++) {
+
+      for (int i = 0; i < size; i++) {
          cin >> arr[i];
       }
       cout << getMaximumAreaOfRectangleOptimized(arr, size);

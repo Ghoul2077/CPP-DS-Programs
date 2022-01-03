@@ -1,7 +1,4 @@
-#include <iostream>
-#include <math.h>
-#include <vector>
-#include <limits>
+#include <bits/stdc++.h>
 using namespace std;
 
 // Utility functions
@@ -38,7 +35,7 @@ void printArr(int *arr, int size) {
  */
 int maximizeProfitNaive(int *arr, int start, int end) {
    if (end <= start) {
-      return(0);
+      return (0);
    }
 
    int profit = 0;
@@ -56,7 +53,7 @@ int maximizeProfitNaive(int *arr, int start, int end) {
    }
 
 
-   return(profit);
+   return (profit);
 }
 
 /**
@@ -78,14 +75,15 @@ int maximizeProfit(int *arr, int size) {
       }
    }
 
-   return(profit);
+   return (profit);
 }
 
 int main() {
    int arr[] = { 1, 5, 3, 8, 12 };
+
    // int       arr[] = { 0, 33, 33, 0, 30, 30, 1, 22, 69, 90, 88 };
    const int size = sizeof(arr) / sizeof(arr[0]);
 
    cout << maximizeProfitNaive(arr, 0, size);
-   return(0);
+   return (0);
 }

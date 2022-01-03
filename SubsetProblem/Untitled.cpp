@@ -1,15 +1,17 @@
-#include <iostream>
+#include <bits/stdc++.h>
 using namespace std;
 
-int findSubsetsWithSum(int set[], int len, int sum, int index = 0, int count = 0) {
+int findSubsetsWithSum(int set[], int len, int sum, int index = 0,
+                       int count                              = 0) {
    if (sum == 0) {
-      return(++count);
+      return (++count);
    }
-   if (sum < 0 || index == len) {
-      return(count);
+
+   if ((sum < 0) || (index == len)) {
+      return (count);
    }
-   return(findSubsetsWithSum(set, len, sum, index + 1, count) +
-          findSubsetsWithSum(set, len, sum - set[index], index + 1, count));
+   return (findSubsetsWithSum(set, len, sum, index + 1, count) +
+           findSubsetsWithSum(set, len, sum - set[index], index + 1, count));
 }
 
 // Easier Implementation

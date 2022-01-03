@@ -1,7 +1,4 @@
-#include <iostream>
-#include <math.h>
-#include <vector>
-#include <limits>
+#include <bits/stdc++.h>
 using namespace std;
 
 void printArr(int *arr, int size) {
@@ -10,7 +7,7 @@ void printArr(int *arr, int size) {
    }
 }
 
-void swap(int&num1, int&num2) {
+void swap(int& num1, int& num2) {
    int temp = num1;
 
    num1 = num2;
@@ -30,13 +27,13 @@ void swap(int&num1, int&num2) {
  * @return     Final index of pivot element
  */
 int naivePartitioning(int *arr, int start, int stop, int pivotIndex) {
-   int arrSize = stop - start + 1;
-   int *newArr = new int[arrSize];
-   int newIndexOfPivot;
-   int counter = 0;
+   int  arrSize = stop - start + 1;
+   int *newArr  = new int[arrSize];
+   int  newIndexOfPivot;
+   int  counter = 0;
 
    for (int i = start; i <= stop; i++) {
-      if (i != pivotIndex && arr[i] <= arr[pivotIndex]) {
+      if ((i != pivotIndex) && (arr[i] <= arr[pivotIndex])) {
          newArr[counter++] = arr[i];
       }
    }
@@ -49,12 +46,13 @@ int naivePartitioning(int *arr, int start, int stop, int pivotIndex) {
          newArr[counter++] = arr[i];
       }
    }
+
    for (int i = start; i <= stop; i++) {
       arr[i] = newArr[i - start];
    }
 
    delete[] newArr;
-   return(newIndexOfPivot);
+   return (newIndexOfPivot);
 }
 
 /**
@@ -80,7 +78,7 @@ int lomutoPartition(int *arr, int start, int stop) {
       }
    }
    swap(arr[i + 1], arr[stop]);
-   return(i + 1);
+   return (i + 1);
 }
 
 /**
@@ -88,7 +86,7 @@ int lomutoPartition(int *arr, int start, int stop) {
  *             position in O(n) time complexity and Q(1) space complexity. This
  *             does not ensure that smaller elements are to the left and greater
  *             to the right in process of finding final index.
- *             
+ *
  * @param      arr         The arr
  * @param[in]  start       The start
  * @param[in]  stop        The stop
@@ -104,11 +102,13 @@ int hoarePartition(int *arr, int start, int stop) {
       do {
          i++;
       } while (arr[i] < pivot);
+
       do {
          j--;
       } while (arr[j] > pivot);
+
       if (i >= j) {
-         return(j);
+         return (j);
       }
       swap(arr[i], arr[j]);
    }
@@ -120,5 +120,5 @@ int main() {
    int partitionIndex = 3;
 
    cout << hoarePartition(arr, 0, size - 1);
-   return(0);
+   return (0);
 }

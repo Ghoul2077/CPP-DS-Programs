@@ -1,7 +1,4 @@
-#include <iostream>
-#include <math.h>
-#include <vector>
-#include <limits>
+#include <bits/stdc++.h>
 using namespace std;
 
 /**
@@ -18,6 +15,7 @@ int maximumConsecutiveOneNaive(int *arr, int size) {
 
    for (int i = 0; i < size; i++) {
       int currCount = 0;
+
       for (int j = i; j < size; j++) {
          if (arr[j] == 1) {
             currCount++;
@@ -25,11 +23,12 @@ int maximumConsecutiveOneNaive(int *arr, int size) {
             break;
          }
       }
+
       if (currCount > res) {
          res = currCount;
       }
    }
-   return(res);
+   return (res);
 }
 
 /**
@@ -52,18 +51,18 @@ int maximumConsecutiveOne(int *arr, int size) {
          }
          count = 0;
          continue;
-      } else{
+      } else {
          count++;
       }
    }
 
-   return(res);
+   return (res);
 }
 
 int main() {
-   int       arr[] = { 1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 0, 1, 1, 1, 1, 1, 0 };
-   const int size  = sizeof(arr) / sizeof(arr[0]);
+   int arr[]      = { 1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 0, 1, 1, 1, 1, 1, 0 };
+   const int size = sizeof(arr) / sizeof(arr[0]);
 
    cout << maximumConsecutiveOneNaive(arr, size);
-   return(0);
+   return (0);
 }

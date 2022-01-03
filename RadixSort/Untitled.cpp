@@ -1,4 +1,3 @@
-#include <iostream>
 #include <bits/stdc++.h>
 using namespace std;
 
@@ -9,11 +8,11 @@ void printArr(int *arr, int size) {
 }
 
 int min(int num1, int num2) {
-   return(num1 > num2 ? num2 : num1);
+   return (num1 > num2 ? num2 : num1);
 }
 
 int max(int num1, int num2) {
-   return(num1 > num2 ? num1 : num2);
+   return (num1 > num2 ? num1 : num2);
 }
 
 int maxElement(int *arr, int size, int exp = 0) {
@@ -23,7 +22,7 @@ int maxElement(int *arr, int size, int exp = 0) {
       int val = exp != 0 ? (arr[i] / exp) % 10 : arr[i];
       maxVal = max(maxVal, val);
    }
-   return(maxVal);
+   return (maxVal);
 }
 
 int minElement(int *arr, int size, int exp = 0) {
@@ -33,30 +32,35 @@ int minElement(int *arr, int size, int exp = 0) {
       int val = exp != 0 ? (arr[i] / exp) % 10 : arr[i];
       minVal = min(minVal, val);
    }
-   return(minVal);
+   return (minVal);
 }
 
-void countSortHelperForRadixSort(int *arr, int size, int min, int max, int exp) {
-   int range = max - min + 1;
+void countSortHelperForRadixSort(int *arr, int size, int min, int max,
+                                 int exp) {
+   int  range = max - min + 1;
    int *count = new int[range], *output = new int[size];
 
    for (int i = 0; i < range; i++) {
       count[i] = 0;
    }
+
    for (int i = 0; i < size; i++) {
       int currVal    = (arr[i] / exp) % 10;
       int countIndex = currVal - min;
       count[countIndex]++;
    }
-   for(int i = 1; i < range; i++) {
+
+   for (int i = 1; i < range; i++) {
       count[i] = count[i - 1] + count[i];
    }
+
    for (int i = size - 1; i >= 0; i--) {
       int currVal    = (arr[i] / exp) % 10;
       int countIndex = currVal - min;
       output[count[countIndex] - 1] = arr[i];
       count[countIndex]--;
    }
+
    for (int i = 0; i < size; i++) {
       arr[i] = output[i];
    }
@@ -96,5 +100,5 @@ int main() {
    radixSort(arr, size);
    printArr(arr, size);
 
-   return(0);
+   return (0);
 }

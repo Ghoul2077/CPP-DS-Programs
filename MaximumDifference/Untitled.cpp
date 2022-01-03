@@ -1,13 +1,14 @@
-#include <iostream>
-#include <math.h>
-#include <vector>
-#include <limits>
+#include <bits/stdc++.h>
 using namespace std;
 
 // Utility functions
-void printArr(int *arr, int size);
-void swap(int *arr, int index1, int index2);
-void reverseArray(int *arr, int size);
+void printArr(int *arr,
+              int  size);
+void swap(int *arr,
+          int  index1,
+          int  index2);
+void reverseArray(int *arr,
+                  int  size);
 
 /**
  * @brief      The maximum difference between arr[j] - arr[i] where j > i in
@@ -24,13 +25,14 @@ int maximumDifferenceNaive(int *arr, int size) {
    for (int i = 0; i < size; i++) {
       for (int j = i + 1; j < size; j++) {
          int diff = arr[j] - arr[i];
+
          if (diff > maxDiff) {
             maxDiff = diff;
          }
       }
    }
 
-   return(maxDiff);
+   return (maxDiff);
 }
 
 /**
@@ -49,11 +51,12 @@ int maximumDifference(int *arr, int size) {
       if (res < arr[i] - min) {
          res = arr[i] - min;
       }
+
       if (arr[i] < min) {
          min = arr[i];
       }
    }
-   return(res);
+   return (res);
 }
 
 void reverseArray(int *arr, int size) {
@@ -78,9 +81,9 @@ void printArr(int *arr, int size) {
 }
 
 int main() {
-   int arr[] = { 30, 10, 8, 2 };
+   int arr[]      = { 30, 10, 8, 2 };
    const int size = sizeof(arr) / sizeof(arr[0]);
 
    cout << maximumDifference(arr, size);
-   return(0);
+   return (0);
 }
