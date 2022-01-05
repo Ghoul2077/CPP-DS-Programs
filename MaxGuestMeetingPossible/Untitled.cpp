@@ -2,14 +2,6 @@
 #include <experimental/random>
 using namespace std;
 
-int min(int num1, int num2) {
-   return (num1 > num2 ? num2 : num1);
-}
-
-int max(int num1, int num2) {
-   return (num1 > num2 ? num1 : num2);
-}
-
 /**
  * @brief      Finds the maximum number of guests whom meeting is possible given
  *             their arrival time array and their respective departure time

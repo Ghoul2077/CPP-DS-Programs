@@ -10,10 +10,6 @@ void printMatrix(int matrix[20][20], int maxWeight) {
    }
 }
 
-int max(int first, int second) {
-   return (first > second ? first : second);
-}
-
 /**
  * @brief      finds maximum value that can be obtained with given items and
  *             weight contraints using dynamic programming

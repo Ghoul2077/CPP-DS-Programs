@@ -7,14 +7,6 @@ void printArr(int *arr, int size) {
    }
 }
 
-int min(int num1, int num2) {
-   return (num1 > num2 ? num2 : num1);
-}
-
-int max(int num1, int num2) {
-   return (num1 > num2 ? num1 : num2);
-}
-
 int maxElement(int *arr, int size, int exp = 0) {
    int maxVal = exp != 0 ? (arr[0] / exp) % 10 : arr[0];
 

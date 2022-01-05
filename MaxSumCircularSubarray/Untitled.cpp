@@ -1,14 +1,6 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-int max(int num1, int num2) {
-   return (num1 > num2 ? num1 : num2);
-}
-
-int min(int num1, int num2) {
-   return (num1 < num2 ? num1 : num2);
-}
-
 int maximumSumSubarray(int *arr, int size) {
    int res    = arr[0];
    int maxSum = arr[0];

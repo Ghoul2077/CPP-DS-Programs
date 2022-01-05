@@ -1,10 +1,6 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-int max(int num1, int num2) {
-   return (num1 > num2 ? num1 : num2);
-}
-
 /**
  * @brief      Finds maximum sum that subarray has in O(n^2) time complexity
  *

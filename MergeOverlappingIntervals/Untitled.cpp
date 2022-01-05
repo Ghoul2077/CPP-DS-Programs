@@ -11,14 +11,6 @@ void printArr(vector<pair<int, int> > *arr) {
    }
 }
 
-int min(int num1, int num2) {
-   return (num1 > num2 ? num2 : num1);
-}
-
-int max(int num1, int num2) {
-   return (num1 > num2 ? num1 : num2);
-}
-
 /**
  * @brief      Merge overlapping intervals by first sorting and then traversing.
  *             It takes O(nlogn) time complexity and O(n) space complexity
