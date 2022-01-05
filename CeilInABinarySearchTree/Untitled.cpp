@@ -36,50 +36,51 @@ private:
    }
 
    /**
-    * @brief      Finds a floor of a given value from the given tree. Floor is
-    *             the nearest smaller value from the tree. The time complexity
+    * @brief      Finds a ceil of a given value from the given tree. Ceil is
+    *             the nearest greater value from the tree. The time complexity
     *             of reccursive version is O(h) and it's space complexity is O(h)
     *
     * @param      root   The root
     * @param[in]  value  The value
     *
-    * @return     Floor value if present, INT_MIN otherwise
+    * @return     Ceil value if present, INT_MAX otherwise
     */
-   int findFloorReccursive(Node *root, int value) {
+   int findCeilReccursive(Node *root, int value) {
       if (root == NULL) {
-         return (INT_MIN);
+         return (INT_MAX);
       }
 
-      if (root->data > value) {
-         return (findFloorReccursive(root->left, value));
-      } else if (root->data < value) {
-         int rightSubtreeFloor = findFloorReccursive(root->right, value);
-         return (max(rightSubtreeFloor, root->data));
+      if (root->data < value) {
+         return (findCeilReccursive(root->right, value));
+      } else if (root->data > value) {
+         int val = findCeilReccursive(root->left, value);
+         return (min(val, root->data));
       }
+
       return (root->data);
    }
 
    /**
-    * @brief      Finds a floor of a given value from the given tree. Floor is
-    *             the nearest smaller value from the tree. The time complexity
+    * @brief      Finds a ceil of a given value from the given tree. Ceil is
+    *             the nearest greater value from the tree. The time complexity
     *             of iterative version is O(h) and it's space complexity is O(1)
     *
     * @param      root   The root
     * @param[in]  value  The value
     *
-    * @return     Floor value if present, INT_MIN otherwise
+    * @return     Ceil value if present, INT_MAX otherwise
     */
-   int findFloorIterative(Node *root, int value) {
+   int findCeilIterative(Node *root, int value) {
       Node *curr = root;
-      int   res  = INT_MIN;
+      int   res  = INT_MAX;
 
       while (curr != NULL) {
          if (curr->data == value) {
             return (curr->data);
          } else if (curr->data < value) {
-            res  = curr->data;
             curr = curr->right;
          } else if (curr->data > value) {
+            res  = curr->data;
             curr = curr->left;
          }
       }
@@ -106,8 +107,8 @@ public:
       }
    }
 
-   void solve(int value) {
-      cout << (findFloorIterative(root, value));
+   int solve(int value) {
+      return (findCeilIterative(root, value));
    }
 
    void insert(int data) {
@@ -124,7 +125,7 @@ int main() {
    for (int i = 0; i < testCases; i++) {
       Tree *t = new Tree();
       t->initialize();
-      t->solve(16);
+      cout << t->solve(-3);
       cout << endl;
    }
    return (0);
