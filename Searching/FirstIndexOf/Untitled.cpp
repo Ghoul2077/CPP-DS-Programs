@@ -1,7 +1,7 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-int firstIndexOf(int arr[], int size, int elem) {
+int firstIndexOfIterative(int arr[], int size, int elem) {
    int index;
 
    for (index = 0; index < size; index++) {
@@ -12,7 +12,7 @@ int firstIndexOf(int arr[], int size, int elem) {
    return (index);
 }
 
-int firstIndexOf2(int arr[], int size, int elem, int searchIndex = 0) {
+int firstIndexOfReccursive(int arr[], int size, int elem, int searchIndex = 0) {
    if (arr[searchIndex] == elem) {
       return (searchIndex);
    }
@@ -20,7 +20,7 @@ int firstIndexOf2(int arr[], int size, int elem, int searchIndex = 0) {
    if (searchIndex == size) {
       return (-1);
    }
-   return (firstIndexOf2(arr, size, elem, ++searchIndex));
+   return (firstIndexOfReccursive(arr, size, elem, ++searchIndex));
 }
 
 int main() {
@@ -28,6 +28,6 @@ int main() {
    int elem  = 4;
    int size  = sizeof(arr) / sizeof(arr[0]);
 
-   cout << firstIndexOf(arr, size, elem) << endl;
-   cout << firstIndexOf2(arr, size, elem) << endl;
+   cout << firstIndexOfIterative(arr, size, elem) << endl;
+   cout << firstIndexOfReccursive(arr, size, elem) << endl;
 }

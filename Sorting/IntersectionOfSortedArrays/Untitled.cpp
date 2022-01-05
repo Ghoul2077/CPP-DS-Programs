@@ -51,42 +51,6 @@ void intersectionOfSortedArrayNaive(int *arr1, int size1, int *arr2,
 
 /**
  * @brief      Find the intersection between 2 sorted array using binary search
- *             in O(nlogn) time complexity and Q(smallerArraySize) space
- *             complexity
- *
- * @param      arr1   The arr 1
- * @param[in]  size1  The size 1
- * @param      arr2   The arr 2
- * @param[in]  size2  The size 2
- */
-void intersectionOfSortedArray(int *arr1, int size1, int *arr2, int size2) {
-   int *smallerArr       = size1 < size2 ? arr1 : arr2;
-   int  smallerArrSize   = smallerArr == arr1 ? size1 : size2;
-   int *greaterArr       = size1 > size2 ? arr1 : arr2;
-   int  greaterArrSize   = greaterArr == arr1 ? size1 : size2;
-   int *intersectedArray = new int[smallerArrSize];
-   int  counter          = 0;
-
-   for (int i = 0; i < smallerArrSize; i++) {
-      if ((i > 0) &&) {
-         bool isPresentInGreaterArr = binarySearch(greaterArr,
-                                                   greaterArrSize,
-                                                   smallerArr[i]);
-      }
-      bool isAlreadyPresentInIntersectedArr = binarySearch(intersectedArray,
-                                                           counter,
-                                                           smallerArr[i]);
-
-      if (isPresentInGreaterArr && !isAlreadyPresentInIntersectedArr) {
-         intersectedArray[counter++] = smallerArr[i];
-      }
-   }
-
-   printArr(intersectedArray, counter);
-}
-
-/**
- * @brief      Find the intersection between 2 sorted array using binary search
  *             in O(n) time complexity and Q(1) space complexity using the
  *             algo from merge technique of merge sort.
  *
@@ -102,7 +66,7 @@ void intersectionOfSortedArrayEfficient(int *arr1,
    int i = 0, j = 0;
 
    while (i < size1 && j < size2) {
-      if ((i > 0) && (arr[i] == arr[i - 1])) {
+      if ((i > 0) && (arr1[i] == arr2[i - 1])) {
          i++;
          continue;
       }

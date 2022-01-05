@@ -2,10 +2,20 @@
 using namespace std;
 
 #define nV     4
-
 #define INF    999
 
-void printMatrix(int matrix[][nV]);
+void printMatrix(int matrix[][nV]) {
+   for (int i = 0; i < nV; i++) {
+      for (int j = 0; j < nV; j++) {
+         if (matrix[i][j] == INF) {
+            cout << "INF" << "\t";
+         } else {
+            cout << matrix[i][j] << "\t";
+         }
+      }
+      cout << "\n";
+   }
+}
 
 void floydWarshall(int graph[][nV]) {
    int matrix[nV][nV], i, j, k;
@@ -30,24 +40,11 @@ void floydWarshall(int graph[][nV]) {
    printMatrix(matrix);
 }
 
-void printMatrix(int matrix[][nV]) {
-   for (int i = 0; i < nV; i++) {
-      for (int j = 0; j < nV; j++) {
-         if (matrix[i][j] == INF) {
-            cout << "INF" << "\t";
-         } else {
-            cout << matrix[i][j] << "\t";
-         }
-      }
-      cout << "\n";
-   }
-}
-
 int main() {
-   int graph[nV][nV] = { {   0, 3,   INF, 5   },
-      {   2, 0,   INF, 4   },
-      { INF, 1,   0,   INF },
-      { INF, INF, 2,   0   } };
+   int graph[nV][nV] = { {   0, 3,   INF,   5     },
+      {   2, 0,   INF,   4     },
+      { INF, 1,   0,     INF   },
+      { INF, INF, 2,     0     } };
 
    floydWarshall(graph);
 }

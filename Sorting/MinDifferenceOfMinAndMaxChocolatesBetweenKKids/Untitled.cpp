@@ -15,10 +15,6 @@ void swap(int& num1, int& num2) {
    num2 = temp;
 }
 
-int min(int num1, int num2) {
-   return (num1 > num2 ? num2 : num1);
-}
-
 int hoarePartition(int *arr, int start, int stop) {
    int pivot = arr[start];
    int i = start - 1, j = stop + 1;

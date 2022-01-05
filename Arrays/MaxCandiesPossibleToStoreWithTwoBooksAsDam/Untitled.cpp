@@ -9,7 +9,7 @@ using namespace std;
  * @param      arr   The arr
  * @param[in]  size  The size
  *
- * @return     { description_of_the_return_value }
+ * @return     Maximum number of canides possible
  */
 int maxCandiesPossibleToStoreWithTwoBooks(int *arr, int size) {
    int maxCandies = 0;

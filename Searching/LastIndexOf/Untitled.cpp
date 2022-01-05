@@ -20,7 +20,7 @@ int lastIndexOfReccursive(int arr[], int size, int elem, int level = 1) {
    } else if (searchIndex == -1) {
       return (false);
    } else {
-      return (lastIndexOf2(arr, size, elem, ++level));
+      return (lastIndexOfReccursive(arr, size, elem, ++level));
    }
 }
 

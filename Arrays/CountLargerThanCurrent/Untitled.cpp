@@ -1,10 +1,6 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-int min(int num1, int num2) {
-   return (num1 > num2 ? num2 : num1);
-}
-
 int* countLargerThanCurrNaive(int *arr, int size) {
    int *counts = new int[size];
 
