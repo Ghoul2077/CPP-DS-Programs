@@ -6,7 +6,7 @@ using namespace std;
  *             complexity and Q(1) space complexity. Subarrays are array
  *             contiguous elements only.
  *
- * @param      arr   The arr
+ * @param      arr   The array
  * @param[in]  size  The size
  *
  * @return     True if zero sum, False otherwise.
@@ -33,7 +33,7 @@ bool hasZeroSumNaive(int *arr, int size) {
  *             complexity and O(n) space complexity. Subarrays are array
  *             contiguous elements only.
  *
- * @param      arr   The arr
+ * @param      arr   The array
  * @param[in]  size  The size
  *
  * @return     True if zero sum, False otherwise.

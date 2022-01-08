@@ -5,7 +5,7 @@ using namespace std;
  * @brief      Calculate max sum of subarray given the size of
  *             subarrays in O(n^2) time complexity
  *
- * @param      arr   The arr
+ * @param      arr   The array
  * @param[in]  size  The size
  * @param[in]  k     The size of subarrays
  *
@@ -37,7 +37,7 @@ int maxSumOfKElementsNaive(int *arr, int size, int k) {
  *             subarrays in O(n) time complexity via sliding
  *             window technique
  *
- * @param      arr   The arr
+ * @param      arr   The array
  * @param[in]  size  The size
  * @param[in]  k     The size of subarrays
  *

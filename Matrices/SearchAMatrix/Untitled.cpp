@@ -16,7 +16,7 @@ void printmatrix(vector<vector<int> > *arr) {
  * @brief      Searches a sorted matrix (Both rows & cols sorted) for a given
  *             value in O(R * C)  time complexity and Q(1) space complexity.
  *
- * @param      arr   The arr
+ * @param      arr   The array
  * @param[in]  val   The value
  */
 void searchInSortedMatrixNaive(vector<vector<int> > *arr, int val) {
@@ -36,7 +36,7 @@ void searchInSortedMatrixNaive(vector<vector<int> > *arr, int val) {
  * @brief      Searches a sorted matrix (Both rows & cols sorted) for a given
  *             value in O(R + C)  time complexity and Q(1) space complexity.
  *
- * @param      arr   The arr
+ * @param      arr   The array
  * @param[in]  val   The value
  */
 void searchInSortedMatrix(vector<vector<int> > *arr, int val) {
@@ -61,10 +61,10 @@ void searchInSortedMatrix(vector<vector<int> > *arr, int val) {
 
 int main() {
    vector<vector<int> > arr = {
-      {  1, 2,  3,  4  },
-      {  5, 6,  7,  8  },
-      {  9, 10, 11, 12 },
-      { 13, 14, 15, 16 }
+      {  1, 2,  3,  4   },
+      {  5, 6,  7,  8   },
+      {  9, 10, 11, 12  },
+      { 13, 14, 15, 16  }
    };
 
    searchInSortedMatrix(&arr, 17);

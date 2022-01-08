@@ -11,7 +11,7 @@ void printMap(unordered_map<int, int> *map) {
  * @brief      Finds a count of distinct elements in a given array in O(n^2)
  *             time complexity and Q(1) space complexity.
  *
- * @param      arr   The arr
+ * @param      arr   The array
  * @param[in]  size  The size
  *
  * @return     The count of distinct elements
@@ -40,7 +40,7 @@ int findCountOfDistinctNaive(int *arr, int size) {
  * @brief      Finds a count of distinct elements in a given array in O(n)
  *             time complexity and Q(n) space complexity using hash map.
  *
- * @param      arr   The arr
+ * @param      arr   The array
  * @param[in]  size  The size
  *
  * @return     Hash map containing the count of each distinct elements
@@ -66,7 +66,7 @@ int findCountOfDistinct(int *arr, int size) {
  * @brief      Finds a count of distinct elements in a given array in O(n) time
  *             complexity and O(n) space complexity.
  *
- * @param      arr   The arr
+ * @param      arr   The array
  * @param[in]  size  The size
  *
  * @return     Number of distinct elements

@@ -14,7 +14,7 @@ void reverseArray(int *arr,
  * @brief      The maximum difference between arr[j] - arr[i] where j > i in
  *             O(n^2) time complexity and Q(1) space complexity
  *
- * @param      arr   The arr
+ * @param      arr   The array
  * @param[in]  size  The size
  *
  * @return     Maximum difference res
@@ -39,7 +39,7 @@ int maximumDifferenceNaive(int *arr, int size) {
  * @brief      The maximum difference between arr[j] - arr[i] where j > i in
  *             O(n) time complexity and Q(1) space complexity
  *
- * @param      arr   The arr
+ * @param      arr   The array
  * @param[in]  size  The size
  *
  * @return     Maximum difference res

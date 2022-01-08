@@ -5,7 +5,7 @@ using namespace std;
  * @brief      Finds the longest subarray with given sum in O(n^2) time
  *             complexity and Q(1) space complexity.
  *
- * @param      arr   The arr
+ * @param      arr   The array
  * @param[in]  size  The size
  * @param[in]  sum   The sum
  *
@@ -34,7 +34,7 @@ int longestSubarrayWithGivenSumNaive(int *arr, int size, int sum) {
  *             complexity and O(n) space complexity. We use hashmap and store
  *             prefix sum as key and index as value and then get to our answer.
  *
- * @param      arr   The arr
+ * @param      arr   The array
  * @param[in]  size  The size
  * @param[in]  sum   The sum
  *

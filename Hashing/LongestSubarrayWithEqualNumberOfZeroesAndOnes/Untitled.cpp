@@ -5,7 +5,7 @@ using namespace std;
  * @brief      Finds the longest subarray with equal number of zeroes and ones
  *             O(n^2) time complexity and Q(1) space complexity.
  *
- * @param      arr   The arr
+ * @param      arr   The array
  * @param[in]  size  The size
  *
  * @return     Max length subarray with equal zeroes and ones
@@ -36,7 +36,7 @@ int longestSubarrayWithEqualNumberOfZeroesAndOnesNaive(int *arr, int size) {
  * @brief      Finds the longest subarray with equal number of zeroes and ones
  *             Q(n) time complexity and Q(1) space complexity.
  *
- * @param      arr   The arr
+ * @param      arr   The array
  * @param[in]  size  The size
  *
  * @return     Max length subarray with equal zeroes and ones

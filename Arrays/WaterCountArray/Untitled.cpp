@@ -4,7 +4,7 @@ using namespace std;
 /**
  * @brief      Calculates the water quantity in O(n^2) time compelxity.
  *
- * @param      arr   The arr
+ * @param      arr   The array
  * @param[in]  size  The size
  *
  * @return     The water quantity naive.
@@ -30,7 +30,7 @@ int calculateWaterQuantityNaive(int *arr, int size) {
 /**
  * @brief      Calculates the water quantity in O(n) time complexity.
  *
- * @param      arr   The arr
+ * @param      arr   The array
  * @param[in]  size  The size
  *
  * @return     The water quantity.

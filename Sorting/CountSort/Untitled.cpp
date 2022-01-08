@@ -34,7 +34,7 @@ int minElement(int *arr, int size) {
  *             instead of original values (i.e assuming things to be sorted are
  *             numbers)
  *
- * @param      arr   The arr
+ * @param      arr   The array
  * @param[in]  size  The size
  * @param[in]  max   The maximum
  */
@@ -65,7 +65,7 @@ void countSortNaive(int *arr, int size, int max) {
  *             O(n^2) and O(k) space complexity. The drawback of this approach
  *             is that it does not handle negative values.
  *
- * @param      arr   The arr
+ * @param      arr   The array
  * @param[in]  size  The size
  * @param[in]  max   The maximum value of array + 1
  */
@@ -105,7 +105,7 @@ void countSort(int *arr, int size, int max) {
  *             of the array so if k is bigger then it can perform worse than
  *             O(n^2) and O(k) space complexity.
  *
- * @param      arr   The arr
+ * @param      arr   The array
  * @param[in]  size  The size
  * @param[in]  max   The maximum value of array
  */

@@ -18,7 +18,7 @@ int findLargestLinear(int *arr, int size) {
 /**
  * @brief      Finds second largest in given array in O(n**2) complexity.
  *
- * @param      arr   The arr
+ * @param      arr   The array
  * @param[in]  size  The size of array
  *
  * @return     Second largest value from array
@@ -44,7 +44,7 @@ int findSecondLargestNaive(int *arr, int size) {
  * @brief      Finds second largest in O(n) time complexity by making using of
  *             linear find largest
  *
- * @param      arr   The arr
+ * @param      arr   The array
  * @param[in]  size  The size of array
  *
  * @return     Second largest value from array
@@ -68,7 +68,7 @@ int findSecondLargestLinear(int *arr, int size) {
 /**
  * @brief      Finds a second largest in O(n) time complexity.
  *
- * @param      arr   The arr
+ * @param      arr   The array
  * @param[in]  size  The size
  *
  * @return     Second largest value from array

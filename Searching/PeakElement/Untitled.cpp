@@ -6,7 +6,7 @@ using namespace std;
  *             peak elements are those elements in the array that are greater
  *             than their immediate previous and immediate next element
  *
- * @param      arr   The arr
+ * @param      arr   The array
  * @param[in]  size  The size
  *
  * @return     Peak element encountered first
@@ -36,7 +36,7 @@ int searchPeakElementNaive(int *arr, int size) {
  *             peak elements are those elements in the array that are greater
  *             than their immediate previous and immediate next element
  *
- * @param      arr   The arr
+ * @param      arr   The array
  * @param[in]  size  The size
  *
  * @return     Peak element encountered first

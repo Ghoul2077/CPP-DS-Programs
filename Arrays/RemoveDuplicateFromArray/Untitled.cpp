@@ -11,7 +11,7 @@ void deleteFromArrayIndex(int *arr, int size, int deleteIndex) {
  * @brief      Removes a duplicate from array in O(n^3) time complexity with
  *             O(n) auxillary space
  *
- * @param      arr   The arr
+ * @param      arr   The array
  * @param[in]  size  The size
  *
  * @return     Size of new array
@@ -30,7 +30,7 @@ int removeDuplicateNaive(int *arr, int size) {
 /**
  * @brief      Removes duplicate from array in O(n) time complexity.
  *
- * @param      arr   The arr
+ * @param      arr   The array
  * @param[in]  size  The size
  *
  * @return     Size of new array

@@ -9,7 +9,7 @@ typedef long long unsigned int bigInt;
  *             matrix. It's time compleixty is O((RC)^3) and space complexity is
  *             Q(1).
  *
- * @param      arr   The arr
+ * @param      arr   The array
  * @param[in]  rows  The rows
  * @param[in]  cols  The cols
  *
@@ -76,7 +76,7 @@ int rectangleOfMaxArea(int *arr, int size) {
  *             histogram. It's time complexity is Q(R * C) and space complexity
  *             is Q(C).
  *
- * @param      arr   The arr
+ * @param      arr   The array
  * @param[in]  rows  The rows
  * @param[in]  cols  The cols
  *

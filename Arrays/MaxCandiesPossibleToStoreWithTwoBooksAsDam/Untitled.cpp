@@ -6,7 +6,7 @@ using namespace std;
  *             need to find the maximum candies we can store with just two books
  *             used as dam. Time complexity is Q(n) and space complexity is Q(1)
  *
- * @param      arr   The arr
+ * @param      arr   The array
  * @param[in]  size  The size
  *
  * @return     Maximum number of canides possible

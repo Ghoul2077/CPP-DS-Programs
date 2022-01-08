@@ -5,7 +5,7 @@ using namespace std;
  * @brief      Calculate maximum number of consecutive ones appearing in a
  *             binary array in O(n^2) time complexity
  *
- * @param      arr   The arr
+ * @param      arr   The array
  * @param[in]  size  The size
  *
  * @return     Maximum number of ones
@@ -35,7 +35,7 @@ int maximumConsecutiveOneNaive(int *arr, int size) {
  * @brief      Calculate maximum number of consecutive ones appearing in a
  *             binary array in O(n) time complexity
  *
- * @param      arr   The arr
+ * @param      arr   The array
  * @param[in]  size  The size
  *
  * @return     Maximum number of ones

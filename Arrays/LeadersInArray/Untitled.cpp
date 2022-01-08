@@ -14,7 +14,7 @@ void reverseArray(int *arr,
  * @brief      Prints leaders in an array in O(n^2) time complexity and Q(1)
  *             auxillary space.
  *
- * @param      arr   The arr
+ * @param      arr   The array
  * @param[in]  size  The size
  */
 void printLeadersNaive(int *arr, int size) {
@@ -37,7 +37,7 @@ void printLeadersNaive(int *arr, int size) {
 /**
  * @brief      Prints leaders in O(n) time complexity and Q(1) auxillary space.
  *
- * @param      arr   The arr
+ * @param      arr   The array
  * @param[in]  size  The size
  */
 void printLeaderOptimized(int *arr, int size) {

@@ -11,7 +11,7 @@ void printMap(unordered_map<int, int> *map) {
  * @brief      Find the frequency of each distinct element in a given array in
  *             O(n^2) time complexity and Q(1) space complexity.
  *
- * @param      arr   The arr
+ * @param      arr   The array
  * @param[in]  size  The size
  */
 void frequencyOfDistinctElementsNaive(int *arr, int size) {
@@ -41,7 +41,7 @@ void frequencyOfDistinctElementsNaive(int *arr, int size) {
  * @brief      Find the frequency of each distinct element in a given array in
  *             Q(n) time complexity and O(n) space complexity.
  *
- * @param      arr   The arr
+ * @param      arr   The array
  * @param[in]  size  The size
  *
  * @return     The map containing frequency of distinct elements.

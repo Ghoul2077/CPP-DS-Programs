@@ -6,7 +6,7 @@ using namespace std;
  *             is like x, x + 1, x + 2...x + n no matter the order they occure.
  *             It's time complexity is O(nlogn) and space complexity is Q(1).
  *
- * @param      arr   The arr
+ * @param      arr   The array
  * @param[in]  size  The size
  *
  * @return     Size of longest subsequence
@@ -32,7 +32,7 @@ int longestConsecutiveSubsequenceNaive(int *arr, int size) {
  *             is like x, x + 1, x + 2...x + n no matter the order they occure.
  *             It's time complexity is O(2n) and space complexity is O(n).
  *
- * @param      arr   The arr
+ * @param      arr   The array
  * @param[in]  size  The size
  *
  * @return     Size of longest subsequence

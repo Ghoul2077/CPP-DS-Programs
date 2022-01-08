@@ -5,7 +5,7 @@ using namespace std;
  * @brief      Finds all pairs in an array with a given sum in O(n^2) time
  *             complexity and Q(1) space complexity.
  *
- * @param      arr   The arr
+ * @param      arr   The array
  * @param[in]  size  The size
  * @param[in]  sum   The sum
  *
@@ -31,7 +31,7 @@ bool findPairWithSumInArrayNaive(int *arr, int size, int sum) {
  *             O(nlogn) time complexity and Q(1) space complexity. It has
  *             advantage over hashmap method because of space complexity.
  *
- * @param      arr   The arr
+ * @param      arr   The array
  * @param[in]  size  The size
  * @param[in]  sum   The sum
  */
@@ -57,7 +57,7 @@ void findPairWithSumInArray(int *arr, int size, int sum) {
  * @brief      Finds all pairs in an array with a given sum using hashmap in
  *             Q(n) time complexity and O(n) space complexity.
  *
- * @param      arr   The arr
+ * @param      arr   The array
  * @param[in]  size  The size
  * @param[in]  sum   The sum
  *

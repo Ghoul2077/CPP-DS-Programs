@@ -13,7 +13,7 @@ void reverseArray(int *arr,
 /**
  * @brief      Rotate array counterclockwise once in O(n) time complexity
  *
- * @param      arr   The arr
+ * @param      arr   The array
  * @param[in]  size  The size
  */
 void LeftRotateArray(int *arr, int size) {
@@ -30,7 +30,7 @@ void LeftRotateArray(int *arr, int size) {
  * @brief      Rotate array counterclockwise by d characters in O(nd) time
  *             complexity
  *
- * @param      arr   The arr
+ * @param      arr   The array
  * @param[in]  size  The size
  * @param[in]  d     Number of elments to left shift by
  */
@@ -44,7 +44,7 @@ void LeftRotateArrayBydNaive(int *arr, int size, int d) {
  * @brief      Rotate array counterclockwise by d characters in O(n) time
  *             complexity and Q(d) auxillary space
  *
- * @param      arr   The arr
+ * @param      arr   The array
  * @param[in]  size  The size
  * @param[in]  d     Number of charaters to shift left by
  */
@@ -68,7 +68,7 @@ void LeftRotateArrayByd(int *arr, int size, int d) {
  * @brief      Rotate array counterclockwise by d characters in O(n) time
  *             complexity
  *
- * @param      arr   The arr
+ * @param      arr   The array
  * @param[in]  size  The size
  * @param[in]  d     Number of charaters to shift left by
  */

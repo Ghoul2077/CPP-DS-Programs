@@ -28,7 +28,7 @@ vector<int>flattenMatrix(vector<vector<int> > *arr) {
  * @brief      Finds the median of a matrix that has all rows sorted in
  *             O(R*Clog(R*C)) time complexity and Q(R*C) space complexity.
  *
- * @param      arr   The arr
+ * @param      arr   The array
  *
  * @return     Median of the matrix
  */
@@ -53,7 +53,7 @@ float medianOfRowSortedMatrixNaive(vector<vector<int> > *arr) {
  *             in number of elements in O(R*log(max - min)logC) time complexity
  *             and Q(1) space complexity.
  *
- * @param      arr   The arr
+ * @param      arr   The array
  *
  * @return     Median of the matrix
  */
@@ -105,10 +105,10 @@ float medianOfRowSortedMatrix(vector<vector<int> > *arr) {
 
 int main() {
    vector<vector<int> > arr = {
-      {  1, 2,  3,  4   },
-      {  5, 6,  7,  8   },
-      {  9, 10, 11, 12  },
-      { 13, 14, 15, 16  }
+      {  1, 2,  3,  4    },
+      {  5, 6,  7,  8    },
+      {  9, 10, 11, 12   },
+      { 13, 14, 15, 16   }
    };
 
    cout << medianOfRowSortedMatrix(&arr);

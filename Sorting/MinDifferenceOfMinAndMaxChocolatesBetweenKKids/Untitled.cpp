@@ -59,7 +59,7 @@ Begin:
  *             distribution need not be continuous. We find it in O(nlogn) time
  *             complexity
  *
- * @param      arr   The arr
+ * @param      arr   The array
  * @param[in]  size  The size
  * @param[in]  k     The number of kids
  *

@@ -12,7 +12,7 @@ void printArr(int *arr, int size) {
  *             and Q(1) space complexity. Inversion is when comparing a[m] and
  *             a[n] if a[m] > a[n] with m < n then m & n is called inversion.
  *
- * @param      arr   The arr
+ * @param      arr   The array
  * @param[in]  size  The size
  *
  * @return     Number of inversions in array.
@@ -74,7 +74,7 @@ int countInversionsInMergedArray(int *arr,
  *             and Q(n) space complexity. Inversion is when comparing a[m] and
  *             a[n] if a[m] > a[n] with m < n then m & n is called inversion.
  *
- * @param      arr   The arr
+ * @param      arr   The array
  * @param[in]  size  The size
  *
  * @return     Number of inversions in array.

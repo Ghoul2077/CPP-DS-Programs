@@ -4,7 +4,7 @@ using namespace std;
 /**
  * @brief      Finds maximum sum that subarray has in O(n^2) time complexity
  *
- * @param      arr   The arr
+ * @param      arr   The array
  * @param[in]  size  The size
  *
  * @return     Maximum sum of subarray
@@ -29,7 +29,7 @@ int maximumSumSubarrayNaive(int *arr, int size) {
 /**
  * @brief      Finds maximum sum that subarray has in O(n) time complexity
  *
- * @param      arr   The arr
+ * @param      arr   The array
  * @param[in]  size  The size
  *
  * @return     Maximum sum of subarray

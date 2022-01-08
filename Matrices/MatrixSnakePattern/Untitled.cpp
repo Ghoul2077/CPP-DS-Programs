@@ -6,7 +6,7 @@ using namespace std;
  *             next row from right to left and so on. It's time complexity is
  *             Q(R * C) where r is number of rows and c is number of columns.
  *
- * @param      arr   The arr
+ * @param      arr   The array
  */
 void printMatrixInSnakePattern(vector<vector<int> > *arr) {
    int counter = 0;
@@ -27,9 +27,9 @@ void printMatrixInSnakePattern(vector<vector<int> > *arr) {
 }
 
 int main() {
-   vector<vector<int> > arr = { { 1, 2,  3,  4  },
-      { 5, 6,  7,  8  },
-      { 9, 10, 11, 12 }
+   vector<vector<int> > arr = { { 1, 2,  3,  4   },
+      { 5, 6,  7,  8   },
+      { 9, 10, 11, 12  }
    };
 
    printMatrixInSnakePattern(&arr);

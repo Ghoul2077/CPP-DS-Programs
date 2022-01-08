@@ -71,7 +71,7 @@ void countSortHelperForRadixSort(int *arr, int size, int min, int max,
  *             time complexity but higher space complexity. This type of sorting
  *             fails when we have negative numbers.
  *
- * @param      arr   The arr
+ * @param      arr   The array
  * @param[in]  size  The size
  */
 void radixSort(int *arr, int size) {

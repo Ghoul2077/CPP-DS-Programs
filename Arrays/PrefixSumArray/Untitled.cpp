@@ -5,7 +5,7 @@ using namespace std;
  * @brief      Creates an array to store sum of all values from 0 to each index
  *             in O(n) time complexity
  *
- * @param      arr   The arr
+ * @param      arr   The array
  * @param[in]  size  The size
  *
  * @return     Prefix sum array pointer

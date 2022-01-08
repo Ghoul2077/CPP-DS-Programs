@@ -15,7 +15,7 @@ void printArr(int *arr, int size) {
  *             array sorting in form of cycles. This takes O(n^2) time
  *             complexity but this takes least amount of swaps.
  *
- * @param      arr   The arr
+ * @param      arr   The array
  * @param[in]  size  The size
  *
  * @return     Number of swaps taken to sort the array

@@ -8,7 +8,7 @@ typedef long long unsigned int bigInt;
  * @brief      Finds next greater elements to the right of every element. It's
  *             time complexity is O(n^2) and space complexity is Q(1).
  *
- * @param      arr   The arr
+ * @param      arr   The array
  * @param[in]  size  The size
  */
 void findNextGreaterElementsNaive(int *arr, int size) {
@@ -33,7 +33,7 @@ void findNextGreaterElementsNaive(int *arr, int size) {
  *             a variant of stock span problem. It's time complexity is O(n) and
  *             space complexity is Q(n).
  *
- * @param      arr   The arr
+ * @param      arr   The array
  * @param[in]  size  The size
  */
 void findNextGreaterElements(int *arr, int size) {

@@ -9,7 +9,7 @@ typedef long long unsigned int bigInt;
  *             as bars of histogram. It's time complexity is O(n^2) and space
  *             complexity is Q(1).
  *
- * @param      arr   The arr
+ * @param      arr   The array
  * @param[in]  size  The size
  *
  * @return     The maximum area of rectangle.
@@ -36,7 +36,7 @@ int getMaximumAreaOfRectangleNaive(int *arr, int size) {
  *             complexity is Q(n). The drawback of this approach is that it
  *             uses 4 individual loops and 2 vectors.
  *
- * @param      arr   The arr
+ * @param      arr   The array
  * @param[in]  size  The size
  *
  * @return     The maximum area of rectangle.
@@ -82,7 +82,7 @@ int getMaximumAreaOfRectangle(int *arr, int size) {
  *             complexity is Q(n). This is the most optimized approach as it
  *             only uses one stack and traverses the array only once.
  *
- * @param      arr   The arr
+ * @param      arr   The array
  * @param[in]  size  The size
  *
  * @return     The maximum area of rectangle.

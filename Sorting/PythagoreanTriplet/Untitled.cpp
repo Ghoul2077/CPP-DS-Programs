@@ -5,7 +5,7 @@ using namespace std;
  * @brief      Finds a pythagorean triplet in sorted array in O(n^2) time
  *             complexity & Q(1) space complexity using two pointer approach.
  *
- * @param      arr   The arr
+ * @param      arr   The array
  * @param[in]  size  The size
  */
 void findPythagoreanTripletInSortedArray(int *arr, int size) {
@@ -18,7 +18,7 @@ void findPythagoreanTripletInSortedArray(int *arr, int size) {
 
          if (sqrDiff == diff) {
             cout << arr[i] << "^2 + " << arr[low] << "^2 = " << arr[high] <<
-            "^2";
+               "^2";
             return;
          } else if (sqrDiff < diff) {
             low += 1;

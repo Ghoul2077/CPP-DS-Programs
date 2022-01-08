@@ -5,7 +5,7 @@ using namespace std;
  * @brief      Reverses input array in O(n) time complexity and O(1) auxillary
  *             space
  *
- * @param      arr   The arr
+ * @param      arr   The array
  * @param[in]  size  The size
  */
 void reverseArrayNaive(int *arr, int size) {

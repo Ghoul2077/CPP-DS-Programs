@@ -37,7 +37,7 @@ int searchInRotatedArrayNaive(int *arr, int size, int elem) {
  *             will be completely sorted and other will be not, so find the
  *             range in which your number lies then find it using binary search
  *
- * @param      arr   The arr
+ * @param      arr   The array
  * @param[in]  size  The size
  * @param[in]  elem  The element
  *

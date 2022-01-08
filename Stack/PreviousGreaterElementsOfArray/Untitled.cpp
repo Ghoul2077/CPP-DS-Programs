@@ -9,7 +9,7 @@ typedef long long unsigned int bigInt;
  *             array. It is the naive approach of this problem with where time
  *             complexity is O(n^2) and space complexity is O(1).
  *
- * @param      arr   The arr
+ * @param      arr   The array
  * @param[in]  size  The size
  */
 void findPreviousGreaterElementsNaive(int *arr, int size) {
@@ -35,7 +35,7 @@ void findPreviousGreaterElementsNaive(int *arr, int size) {
  *             complexity is O(n) because every element is inserted and removed
  *             only once and space complexity is O(n).
  *
- * @param      arr   The arr
+ * @param      arr   The array
  * @param[in]  size  The size
  */
 void findPreviousGreaterElements(int *arr, int size) {

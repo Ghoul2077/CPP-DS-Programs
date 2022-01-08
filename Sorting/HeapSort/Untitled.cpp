@@ -35,7 +35,7 @@ void buildHeap(int *arr, int size) {
  *             complexity in all cases but it is slower than merge sort and
  *             quick sort. (Creating a heap from array is O(n) time complexity).
  *
- * @param      arr   The arr
+ * @param      arr   The array
  * @param[in]  size  The size
  */
 void heapSort(int *arr, int size) {

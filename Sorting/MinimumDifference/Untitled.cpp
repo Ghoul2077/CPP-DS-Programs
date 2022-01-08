@@ -57,7 +57,7 @@ BEGIN:
  * @brief      Finds minimum difference of the given array in O(n^2) time
  *             time complexity Q(1) space complexity
  *
- * @param      arr   The arr
+ * @param      arr   The array
  * @param[in]  size  The size
  *
  * @return     Minimum difference
@@ -84,7 +84,7 @@ int minDifferenceNaive(int *arr, int size) {
  *             then traversing array from left to right. It's time complexity is
  *             O(logn) and space complexity is Q(1)
  *
- * @param      arr   The arr
+ * @param      arr   The array
  * @param[in]  size  The size
  *
  * @return     Minimum difference

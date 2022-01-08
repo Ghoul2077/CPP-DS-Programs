@@ -4,7 +4,7 @@ using namespace std;
 /**
  * @brief      Finds if array is sorted naive in O(n) time complexity.
  *
- * @param      arr   The arr
+ * @param      arr   The array
  * @param[in]  size  The size
  *
  * @return     True if sorted else False

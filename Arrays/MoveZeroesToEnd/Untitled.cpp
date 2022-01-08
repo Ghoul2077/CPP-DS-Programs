@@ -11,7 +11,7 @@ void swap(int *arr,
 /**
  * @brief      Move zeroes to end in O(n^2) time complexity
  *
- * @param      arr   The arr
+ * @param      arr   The array
  * @param[in]  size  The size
  */
 void moveZeroesToEndNaive(int *arr, int size) {
@@ -30,7 +30,7 @@ void moveZeroesToEndNaive(int *arr, int size) {
 /**
  * @brief      Move zeroes to end in O(n) time complexity
  *
- * @param      arr   The arr
+ * @param      arr   The array
  * @param[in]  size  The size
  */
 void moveZeroesToEnd(int *arr, int size) {

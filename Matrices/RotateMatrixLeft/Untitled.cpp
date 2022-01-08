@@ -14,7 +14,7 @@ void printMatrix(vector<vector<int> > *arr) {
  * @brief      Rotate matrix to left by 90 degree in O(R*C) time complexity and
  *             O(R*C) space complexity.
  *
- * @param      arr   The arr
+ * @param      arr   The array
  */
 void rotateLeftNaive(vector<vector<int> > *arr) {
    int numberOfColumns = arr->begin()->size();
@@ -35,7 +35,7 @@ void rotateLeftNaive(vector<vector<int> > *arr) {
  *             O(1) space complexity. We first transpose the matrix and then
  *             turn the column upside down.
  *
- * @param      arr   The arr
+ * @param      arr   The array
  */
 void rotateLeft(vector<vector<int> > *arr) {
    for (long long unsigned int i = 0; i < arr->size(); i++) {
@@ -57,10 +57,10 @@ void rotateLeft(vector<vector<int> > *arr) {
 
 int main() {
    vector<vector<int> > arr = {
-      {  1, 2,  3,  4  },
-      {  5, 6,  7,  8  },
-      {  9, 10, 11, 12 },
-      { 13, 14, 15, 16 }
+      {  1, 2,  3,  4   },
+      {  5, 6,  7,  8   },
+      {  9, 10, 11, 12  },
+      { 13, 14, 15, 16  }
    };
 
    rotateLeft(&arr);

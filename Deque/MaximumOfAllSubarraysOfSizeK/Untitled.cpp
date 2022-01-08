@@ -17,7 +17,7 @@ int getMax(int *arr, int size) {
  * @brief      Finds the maximum of each K sized subarray of given array arr.
  *             It's time complexity is O(n*k) and space complexity is Q(1).
  *
- * @param      arr   The arr
+ * @param      arr   The array
  * @param[in]  size  The size
  * @param[in]  k     size of subarrays
  */
@@ -33,7 +33,7 @@ void maximumOfAllSubarraysOfSizeKNaive(int *arr, int size, int k) {
  *             approach uses deque which allows insertion and deletion on front
  *             and back in O(1) time complexity.
  *
- * @param      arr   The arr
+ * @param      arr   The array
  * @param[in]  size  The size
  * @param[in]  k     size of subarrays
  */

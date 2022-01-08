@@ -5,7 +5,7 @@ using namespace std;
  * @brief      Counts the number of ones of a sorted boolean array in O(n) time
  *             complexity.
  *
- * @param      arr   The arr
+ * @param      arr   The array
  * @param[in]  size  The size
  *
  * @return     Number of ones.
@@ -25,7 +25,7 @@ int countNumberOfOnesNaive(int *arr, int size) {
  * @brief      Counts the number of ones of a sorted boolean array in O(logn)
  *             time complexity.
  *
- * @param      arr   The arr
+ * @param      arr   The array
  * @param[in]  size  The size
  *
  * @return     Number of ones.

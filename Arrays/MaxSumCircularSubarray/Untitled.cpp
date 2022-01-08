@@ -16,7 +16,7 @@ int maximumSumSubarray(int *arr, int size) {
 /**
  * @brief      Find maximum circular subarray sum in O(n^2) time complexity
  *
- * @param      arr   The arr
+ * @param      arr   The array
  * @param[in]  size  The size
  *
  * @return     Maximum sum of circular subarray
@@ -42,7 +42,7 @@ int maximumSumCircularSubarrayNaive(int *arr, int size) {
  *             max sum for circular array by subtracting minimum sum from total
  *             sum of array
  *
- * @param      arr   The arr
+ * @param      arr   The array
  * @param[in]  size  The size
  *
  * @return     Maximum sum of circular subarray

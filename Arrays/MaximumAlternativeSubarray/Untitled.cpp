@@ -5,7 +5,7 @@ using namespace std;
  * @brief      Find maximum length of even odd alternative subarray using
  *             Kaden's algorithm in O(n) time complexity
  *
- * @param      arr   The arr
+ * @param      arr   The array
  * @param[in]  size  The size
  *
  * @return     Maximum length of alternating subarray

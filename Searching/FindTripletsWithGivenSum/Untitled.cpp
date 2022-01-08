@@ -5,7 +5,7 @@ using namespace std;
  * @brief      Finds triplets with given sum in sorted array in O(n^3) time
  *             complexity and Q(1) space complexity.
  *
- * @param      arr   The arr
+ * @param      arr   The array
  * @param[in]  size  The size
  * @param[in]  sum   The sum
  */
@@ -28,7 +28,7 @@ void findTripletsWithSumInSortedArrayNaive(int *arr, int size, int sum) {
  * @brief      Finds triplets with given sum in sorted array in O(n^2) time
  *             complexity and Q(1) space complexity.
  *
- * @param      arr   The arr
+ * @param      arr   The array
  * @param[in]  size  The size
  * @param[in]  sum   The sum
  */

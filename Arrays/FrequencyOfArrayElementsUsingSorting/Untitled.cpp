@@ -57,7 +57,7 @@ void merge(int arr[], int start1, int end1, int start2, int end2) {
  * @brief      Print frequency of each unique element of a sorted array in Q(n)
  *             time complexity and Q(1) auxillary space complexity
  *
- * @param      arr   The arr
+ * @param      arr   The array
  * @param[in]  size  The size
  */
 void frequencySortedArray(int *arr, int size) {
@@ -90,7 +90,7 @@ void mergeSort(int *arr, int start, int end) {
  * @brief      Print frequency of each unique element of an unsorted array in
  *             O(nlogn) time complexity
  *
- * @param      arr   The arr
+ * @param      arr   The array
  * @param[in]  size  The size
  */
 void frequencyNaive(int *arr, int size) {

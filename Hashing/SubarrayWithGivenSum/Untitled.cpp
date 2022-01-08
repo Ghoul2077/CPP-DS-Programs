@@ -5,7 +5,7 @@ using namespace std;
  * @brief      Finds if given array contains any subarray with given sum in
  *             O(n^2) time complexity and Q(1) space complexity.
  *
- * @param      arr   The arr
+ * @param      arr   The array
  * @param[in]  size  The size
  * @param[in]  sum   The sum
  *
@@ -33,7 +33,7 @@ bool subarrayWithGivenSumNaive(int *arr, int size, int sum) {
  * @brief      Finds if given array contains any subarray with given sum in
  *             O(n) time complexity and O(n) space complexity.
  *
- * @param      arr   The arr
+ * @param      arr   The array
  * @param[in]  size  The size
  * @param[in]  sum   The sum
  *

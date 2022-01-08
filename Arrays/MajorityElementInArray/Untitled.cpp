@@ -43,7 +43,7 @@ int findMajorityCandidate(int *arr, int size) {
 /**
  * @brief      Finds the majority element in O(n) time complexity
  *
- * @param      arr   The arr
+ * @param      arr   The array
  * @param[in]  size  The size
  *
  * @return     Majority element if there is any otherwise 1

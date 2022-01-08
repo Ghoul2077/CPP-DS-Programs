@@ -77,7 +77,7 @@ Begin:
 /**
  * @brief      Finds a kth smallest element in O(nlogn) time complexity.
  *
- * @param      arr   The arr
+ * @param      arr   The array
  * @param[in]  size  The size
  * @param[in]  k     Kth smallest element to find
  *
@@ -94,7 +94,7 @@ int findKthSmallestElementNaive(int *arr, int size, int k) {
  *             partitioning like binary search until we get our kth smallest
  *             element as pivot index
  *
- * @param      arr   The arr
+ * @param      arr   The array
  * @param[in]  size  The size
  * @param[in]  k     Kth smallest element to find
  *

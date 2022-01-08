@@ -4,7 +4,7 @@ using namespace std;
 /**
  * @brief      Finds the largest in given array in O(n**2) complexity.
  *
- * @param      arr   The arr
+ * @param      arr   The array
  * @param[in]  size  The size of array
  *
  * @return     Biggest value from array
@@ -29,7 +29,7 @@ int findLargestNaive(int *arr, int size) {
 /**
  * @brief      Finds the largest in O(n) time complexity.
  *
- * @param      arr   The arr
+ * @param      arr   The array
  * @param[in]  size  The size of array
  *
  * @return     Biggest value from array

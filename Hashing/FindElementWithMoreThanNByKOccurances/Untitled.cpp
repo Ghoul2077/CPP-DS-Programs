@@ -6,7 +6,7 @@ using namespace std;
  *             in O(n^2) time complexity and space complexity is
  *             Q(1).
  *
- * @param      arr   The arr
+ * @param      arr   The array
  * @param[in]  size  The size
  * @param[in]  k     Deciding value for max number of occurances
  */
@@ -43,7 +43,7 @@ void findElementWithMoreThanNByKOcuuranceNaive(int *arr, int size, int k) {
  *             in O(nlogn) time complexity and space complexity is
  *             Q(1).
  *
- * @param      arr   The arr
+ * @param      arr   The array
  * @param[in]  size  The size
  * @param[in]  k     Deciding value for max number of occurances
  */
@@ -69,7 +69,7 @@ void findElementWithMoreThanNByKOcuurance(int *arr, int size, int k) {
  *             in O(n) time complexity and space complexity is
  *             Q(n).
  *
- * @param      arr   The arr
+ * @param      arr   The array
  * @param[in]  size  The size
  * @param[in]  k     Deciding value for max number of occurances
  */
@@ -101,7 +101,7 @@ void findElementWithMoreThanNByKOcuuranceOptimized(int *arr, int size, int k) {
  *             on the fact that there can be at max (k - 1) elements with
  *             frequency greater than n / k.
  *
- * @param      arr   The arr
+ * @param      arr   The array
  * @param[in]  size  The size
  * @param[in]  k     Deciding value for max number of occurances
  */

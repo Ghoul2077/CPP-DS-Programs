@@ -6,7 +6,7 @@ using namespace std;
  *             algorithm (Only works if all elements of array are positive) in
  *             O(n + n) == O(n) time compleity and Q(1) space complexity
  *
- * @param      arr   The arr
+ * @param      arr   The array
  * @param[in]  size  The size
  * @param[in]  sum   The sum
  *

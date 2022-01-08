@@ -19,7 +19,7 @@ void swap(int& num1, int& num2) {
  * @brief      This is naive because this uses O(n) space and for the same
  *             is not in place.
  *
- * @param      arr   The arr
+ * @param      arr   The array
  * @param[in]  size  The size
  */
 void segregatePositiveAndNegativeNaive(int *arr, int size) {

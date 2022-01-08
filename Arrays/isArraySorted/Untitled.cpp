@@ -24,7 +24,7 @@ bool findIfSortedReccursive(int arr[], int size, int startIndex = 0) {
 /**
  * @brief      Finds if array is sorted naive in O(n**2) time complexity.
  *
- * @param      arr   The arr
+ * @param      arr   The array
  * @param[in]  size  The size
  *
  * @return     True if sorted else False
@@ -46,7 +46,7 @@ bool findIfSortedNaive(int *arr, int size) {
 /**
  * @brief      Finds if array is sorted naive in O(n) time complexity.
  *
- * @param      arr   The arr
+ * @param      arr   The array
  * @param[in]  size  The size
  *
  * @return     True if sorted else False

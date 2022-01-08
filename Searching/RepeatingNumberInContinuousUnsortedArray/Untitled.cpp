@@ -65,7 +65,7 @@ void mergeSort(int arr[], int start, int end) {
  *             of those one number will repeat n times. The following algo takes
  *             O(n^2) time complexity and Q(1) space complexity.
  *
- * @param      arr   The arr
+ * @param      arr   The array
  * @param[in]  size  The size of array
  *
  * @return     The repeating element
@@ -87,7 +87,7 @@ int findRepeatingNumberSuperNaive(int *arr, int size) {
  *             of those one number will repeat n times. The following algo takes
  *             O(logn) time complexity and Q(n) space complexity.
  *
- * @param      arr   The arr
+ * @param      arr   The array
  * @param[in]  size  The size of array
  *
  * @return     The repeating element
@@ -109,7 +109,7 @@ int findRepeatingNumberNaive(int *arr, int size) {
  *             of those one number will repeat n times. The following algo takes
  *             O(n) time complexity and Q(1) space complexity.
  *
- * @param      arr   The arr
+ * @param      arr   The array
  * @param[in]  size  The size of array
  *
  * @return     The repeating element
@@ -137,7 +137,7 @@ int findRepeatingNumber(int *arr, int size) {
  *             O(n) time complexity and Q(1) space complexity using hare and
  *             tortoise method.
  *
- * @param      arr   The arr
+ * @param      arr   The array
  * @param[in]  size  The size of array
  *
  * @return     The repeating element
