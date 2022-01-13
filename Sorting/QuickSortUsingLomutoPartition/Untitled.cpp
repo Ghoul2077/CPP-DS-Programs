@@ -8,13 +8,6 @@ void printArr(int *arr, int size) {
    }
 }
 
-void swap(int& num1, int& num2) {
-   int temp = num1;
-
-   num1 = num2;
-   num2 = temp;
-}
-
 int lomutoPartition(int *arr, int start, int stop) {
    int pivot = arr[stop];
    int i     = start - 1;

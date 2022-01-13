@@ -1,21 +1,6 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-// Utility functions
-void swap(int *arr, int index1, int index2) {
-   int temp = arr[index1];
-
-   arr[index1] = arr[index2];
-   arr[index2] = temp;
-}
-
-void reverseArray(int *arr, int size) {
-   for (int i = 0; i < size / 2; i++) {
-      int indexToSwap = size - i - 1;
-      swap(arr, indexToSwap, i);
-   }
-}
-
 void printArr(int *arr, int size) {
    for (int i = 0; i < size; i++) {
       cout << arr[i] << " ";

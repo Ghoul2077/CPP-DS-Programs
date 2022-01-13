@@ -2,11 +2,12 @@
 using namespace std;
 
 // Utility functions
-void printArr(int *arr,
-              int  size);
-void swap(int *arr,
-          int  index1,
-          int  index2);
+void printArr(int *arr, int size) {
+   for (int i = 0; i < size; i++) {
+      cout << arr[i] << " ";
+   }
+   cout << endl;
+}
 
 /**
  * @brief      Move zeroes to end in O(n^2) time complexity
@@ -19,7 +20,7 @@ void moveZeroesToEndNaive(int *arr, int size) {
       if (arr[i] == 0) {
          for (int j = i + 1; j < size; j++) {
             if (arr[j] != 0) {
-               swap(arr, i, j);
+               swap(arr[i], arr[j]);
                break;
             }
          }
@@ -41,23 +42,9 @@ void moveZeroesToEnd(int *arr, int size) {
          zeroCount++;
       } else {
          const int replaceIndex = i - zeroCount;
-         swap(arr, i, replaceIndex);
+         swap(arr[i], arr[replaceIndex]);
       }
    }
-}
-
-void swap(int *arr, int index1, int index2) {
-   int temp = arr[index1];
-
-   arr[index1] = arr[index2];
-   arr[index2] = temp;
-}
-
-void printArr(int *arr, int size) {
-   for (int i = 0; i < size; i++) {
-      cout << arr[i] << " ";
-   }
-   cout << endl;
 }
 
 int main() {

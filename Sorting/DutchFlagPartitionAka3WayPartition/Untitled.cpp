@@ -7,13 +7,6 @@ void printArr(int *arr, int size) {
    }
 }
 
-void swap(int& num1, int& num2) {
-   int temp = num1;
-
-   num1 = num2;
-   num2 = temp;
-}
-
 /**
  * @brief      Partition given array into 3 parts based on 2 given pivot indexes
  *             first part contains number less than smaller pivot, 2nd part

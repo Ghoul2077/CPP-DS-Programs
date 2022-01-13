@@ -2,13 +2,12 @@
 using namespace std;
 
 // Utility functions
-void printArr(int *arr,
-              int  size);
-void swap(int *arr,
-          int  index1,
-          int  index2);
-void reverseArray(int *arr,
-                  int  size);
+void printArr(int *arr, int size) {
+   for (int i = 0; i < size; i++) {
+      cout << arr[i] << " ";
+   }
+   cout << endl;
+}
 
 /**
  * @brief      Prints leaders in an array in O(n^2) time complexity and Q(1)
@@ -41,18 +40,6 @@ void printLeadersNaive(int *arr, int size) {
  * @param[in]  size  The size
  */
 void printLeaderOptimized(int *arr, int size) {
-   // simplified version of uncommmented code below, it prints leaders in
-   // reverse order unlike the uncommented one
-
-   // int biggest = INT_MIN;
-
-   // for (int i = size - 1; i >= 0; i--) {
-   //    if (arr[i] > biggest) {
-   //       cout<<arr[i]<<" ";
-   //       biggest = arr[i];
-   //    }
-   // }
-
    int  biggest = INT_MIN;
    int *leaders = new int[size];
    int  counter = 0;
@@ -63,29 +50,8 @@ void printLeaderOptimized(int *arr, int size) {
       }
    }
 
-   reverseArray(leaders, counter);
+   reverse(leaders, leaders + counter);
    printArr(leaders, counter);
-}
-
-void reverseArray(int *arr, int size) {
-   for (int i = 0; i < size / 2; i++) {
-      int indexToSwap = size - i - 1;
-      swap(arr, indexToSwap, i);
-   }
-}
-
-void swap(int *arr, int index1, int index2) {
-   int temp = arr[index1];
-
-   arr[index1] = arr[index2];
-   arr[index2] = temp;
-}
-
-void printArr(int *arr, int size) {
-   for (int i = 0; i < size; i++) {
-      cout << arr[i] << " ";
-   }
-   cout << endl;
 }
 
 int main() {
