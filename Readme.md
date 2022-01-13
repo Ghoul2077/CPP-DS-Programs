@@ -1,3 +1,2 @@
 # Todo
---------
-> Rewrite merge intervals program
+> * Rewrite merge intervals program
