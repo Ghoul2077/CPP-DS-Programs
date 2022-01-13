@@ -1,5 +1,4 @@
 #include <bits/stdc++.h>
-#include <experimental/random>
 using namespace std;
 
 void printArr(int *arr, int size) {
@@ -29,9 +28,9 @@ int hoarePartition(int *arr, int start, int stop) {
 }
 
 int hoarePartitionOptimized(int *arr, int start, int stop) {
-   int randNum = std::experimental::randint(start, stop);
+   int randNum = rand() % (stop - start + 1);
 
-   swap(arr[randNum], arr[start]);
+   swap(arr[start + randNum], arr[start]);
    return (hoarePartition(arr, start, stop));
 }
 
@@ -99,6 +98,8 @@ int minDifference(int *arr, int size) {
 }
 
 int main() {
+   srand(time(0));
+
    int arr[] = { 15, 3, 8, 16, 0, 2, 99 };
    int size  = sizeof(arr) / sizeof(arr[0]);
 

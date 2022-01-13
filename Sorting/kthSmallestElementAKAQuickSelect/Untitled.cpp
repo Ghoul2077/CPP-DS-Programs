@@ -1,5 +1,4 @@
 #include <bits/stdc++.h>
-#include <experimental/random>
 using namespace std;
 
 void printArr(int *arr, int size) {
@@ -43,16 +42,16 @@ int lomutoPartition(int *arr, int start, int stop) {
 }
 
 int hoarePartitionOptimized(int *arr, int start, int stop) {
-   int randNum = std::experimental::randint(start, stop);
+   int randNum = rand() % (stop - start + 1);
 
-   swap(arr[randNum], arr[start]);
+   swap(arr[start + randNum], arr[start]);
    return (hoarePartition(arr, start, stop));
 }
 
 int lomutoPartitionOptimized(int *arr, int start, int stop) {
-   int randNum = std::experimental::randint(start, stop);
+   int randNum = rand() % (stop - start + 1);
 
-   swap(arr[randNum], arr[stop]);
+   swap(arr[stop - randNum], arr[stop]);
    return (lomutoPartition(arr, start, stop));
 }
 
@@ -112,6 +111,8 @@ int findKthSmallestElement(int *arr, int size, int k) {
 }
 
 int main() {
+   srand(time(0));
+
    int arr[] = { 3, 4, 1, 1, 6 };
    int size  = sizeof(arr) / sizeof(arr[0]);
    int k     = 4;

@@ -1,5 +1,4 @@
 #include <bits/stdc++.h>
-#include <experimental/random>
 using namespace std;
 
 void printArr(int *arr, int size) {
