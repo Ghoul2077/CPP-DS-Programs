@@ -35,6 +35,18 @@ private:
       return (root);
    }
 
+   Node* findPredecessorModified(Node *root) {
+      if ((root == NULL) || (root->left == NULL)) {
+         return (NULL);
+      }
+      Node *curr = root->left;
+
+      while (curr->right != NULL && curr->right != root) {
+         curr = curr->right;
+      }
+      return (curr);
+   }
+
    /**
     * @brief      Prints an inorder traversal of a given tree using iterations.
     *             The catch here is to use stack to store previously passed
@@ -44,7 +56,7 @@ private:
     *
     * @param      root  The root of binary tree
     */
-   void printInorderIterative(Node *root) {
+   void printInorderIterativeNaive(Node *root) {
       stack<Node *> st;
       Node *curr = root;
 
@@ -57,6 +69,47 @@ private:
          st.pop();
          cout << curr->data << " ";
          curr = curr->right;
+      }
+   }
+
+   /**
+    * @brief      Prints an preorder traversal of a given tree using iterations.
+    *             This is a special method called morris traversal and it has
+    *             O(1) space complexity but the idea is a bit tricky as we do
+    *             some modifications to the tree which are reverted back after
+    *             traversal. The idea behind this is to precompute the
+    *             predecessor of current node in advance if left child node
+    *             exists then point the right of this predecessor to the current
+    *             node so this makes a loop where we will return to the current
+    *             node after we have traversed the left subtree of the node.
+    *             When the right of predecessor is not null we know that this is
+    *             a node that we had previously modified to point to the current
+    *             node and we need to move to the right tree. Based on where you
+    *             put your print statement this same code can be used as inorder
+    *             or postorder traversal. This approach has a time complexity of
+    *             O(n) and it's time complexity is O(1).
+    *
+    * @param      root  The root of binary tree
+    */
+   void printInorderIterative(Node *root) {
+      Node *curr = root;
+
+      while (curr != NULL) {
+         if (curr->left == NULL) {
+            cout << curr->data << " ";
+            curr = curr->right;
+         } else {
+            Node *predecessor = findPredecessorModified(curr);
+
+            if (predecessor->right == NULL) {
+               predecessor->right = curr;
+               curr               = curr->left;
+            } else {
+               predecessor->right = NULL;
+               cout << curr->data << " ";
+               curr = curr->right;
+            }
+         }
       }
    }
 
