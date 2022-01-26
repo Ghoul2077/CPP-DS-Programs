@@ -7,8 +7,8 @@ using namespace std;
  *             should be same. Time complexity is O(n^2) and space complexity
  *             is Q(1).
  *
- * @param      arr1  The arr 1
- * @param      arr2  The arr 2
+ * @param      arr1  The array 1
+ * @param      arr2  The array 2
  * @param[in]  size  The size
  *
  * @return     Size of longest subarray
@@ -39,8 +39,8 @@ int longestSubarrayWithCommonSumNaive(int *arr1, int *arr2, int size) {
  *             to longest subarray with sum 0 by subtracting the 2 arrays.
  *             Time complexity is Q(n) and space complexity is Q(n).
  *
- * @param      arr1  The arr 1
- * @param      arr2  The arr 2
+ * @param      arr1  The array 1
+ * @param      arr2  The array 2
  * @param[in]  size  The size
  *
  * @return     Size of longest subarray

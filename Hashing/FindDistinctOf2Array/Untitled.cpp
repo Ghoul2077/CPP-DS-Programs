@@ -13,9 +13,9 @@ void printSet(unordered_set<int> *set) {
  *             O(n1^2 + n2 * (n1 + n2)) time complexity and Q(n1 + n2) space
  *             complexity.
  *
- * @param      arr1   The arr 1
+ * @param      arr1   The array 1
  * @param[in]  size1  The size 1
- * @param      arr2   The arr 2
+ * @param      arr2   The array 2
  * @param[in]  size2  The size 2
  *
  * @return     The count of total distinct elements in 2 arrays combined
@@ -61,9 +61,9 @@ int findDistinctOf2ArrayNaive(int *arr1, int size1, int *arr2, int size2) {
  * @brief      Finds a distinct of 2 given arrays combined in Q(n1 + n2)
  *             time complexity and O(n1 + n2) space complexity.
  *
- * @param      arr1   The arr 1
+ * @param      arr1   The array 1
  * @param[in]  size1  The size 1
- * @param      arr2   The arr 2
+ * @param      arr2   The array 2
  * @param[in]  size2  The size 2
  *
  * @return     The count of total distinct elements in 2 arrays combined

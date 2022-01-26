@@ -51,7 +51,7 @@ int findLargestLinear(int *arr, int size) {
 /**
  * @brief      Finds the largest using reccursion in O(n).
  *
- * @param      arr    The arr
+ * @param      arr    The array
  * @param[in]  start  The starting index
  * @param[in]  stop   The last / ending index
  *

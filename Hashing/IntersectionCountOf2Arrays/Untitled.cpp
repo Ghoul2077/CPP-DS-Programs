@@ -17,9 +17,9 @@ unordered_set<int>* findDistinctElements(int *arr, int size) {
  * @brief      Finds a number of intersections between 2 given arrays in
  *             O(n1*n2) time complexity and Q(1) space complexity.
  *
- * @param      arr1   The arr 1
+ * @param      arr1   The array 1
  * @param[in]  size1  The size of array 1
- * @param      arr2   The arr 2
+ * @param      arr2   The array 2
  * @param[in]  size2  The size of array 2
  *
  * @return     Number of intersections
@@ -56,9 +56,9 @@ int findNumberOfIntersectionsNaive(int *arr1, int size1, int *arr2, int size2) {
  *             O(n1 + n2) time complexity but with 3 traversals and Q(n1 + n2)
  *             space complexity.
  *
- * @param      arr1   The arr 1
+ * @param      arr1   The array 1
  * @param[in]  size1  The size of array 1
- * @param      arr2   The arr 2
+ * @param      arr2   The array 2
  * @param[in]  size2  The size of array 2
  *
  * @return     Number of intersections
@@ -82,9 +82,9 @@ int findNumberOfIntersections(int *arr1, int size1, int *arr2, int size2) {
  *             O(n1 + n2) time complexity but with 2 traversals and Q(n1 + n2)
  *             space complexity.
  *
- * @param      arr1   The arr 1
+ * @param      arr1   The array 1
  * @param[in]  size1  The size of array 1
- * @param      arr2   The arr 2
+ * @param      arr2   The array 2
  * @param[in]  size2  The size of array 2
  *
  * @return     Number of intersections

@@ -33,7 +33,7 @@ int lomutoPartitionOptimized(int *arr, int start, int stop) {
  *             complexity and O(n^2) in worst case when not using optimised
  *             partitioning which chooses pivot at random.
  *
- * @param      arr    The arr
+ * @param      arr    The array
  * @param[in]  start  The start
  * @param[in]  stop   The stop
  */

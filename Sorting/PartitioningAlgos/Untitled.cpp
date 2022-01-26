@@ -12,7 +12,7 @@ void printArr(int *arr, int size) {
  *             place with all smaller elements to its left and all greater elements
  *             to its right in O(n) time complexity and Q(n) space complexity.
  *
- * @param      arr         The arr
+ * @param      arr         The array
  * @param[in]  start       The start
  * @param[in]  stop        The stop
  * @param[in]  pivotIndex  The pivot index
@@ -53,7 +53,7 @@ int naivePartitioning(int *arr, int start, int stop, int pivotIndex) {
  *             place with all smaller elements to its left and all greater elements
  *             to its right in O(n) time complexity and Q(1) space complexity.
  *
- * @param      arr         The arr
+ * @param      arr         The array
  * @param[in]  start       The start
  * @param[in]  stop        The stop
  * @param[in]  pivotIndex  The pivot index
@@ -80,7 +80,7 @@ int lomutoPartition(int *arr, int start, int stop) {
  *             does not ensure that smaller elements are to the left and greater
  *             to the right in process of finding final index.
  *
- * @param      arr         The arr
+ * @param      arr         The array
  * @param[in]  start       The start
  * @param[in]  stop        The stop
  * @param[in]  pivotIndex  The pivot index

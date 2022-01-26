@@ -4,7 +4,7 @@ using namespace std;
 /**
  * @brief      Determines if array is sorted reccursively.
  *
- * @param      arr         The arr
+ * @param      arr         The array
  * @param[in]  size        The size
  * @param[in]  startIndex  The start index
  *

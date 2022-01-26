@@ -14,7 +14,7 @@ void printArr(vector<pair<int, int> > *arr) {
  * @brief      Merge overlapping intervals by first sorting and then traversing.
  *             It takes O(nlogn) time complexity and O(n) space complexity
  *
- * @param[in]  arr   The arr
+ * @param[in]  arr   The array
  *
  * @return     Vector which contains merged intervals
  */

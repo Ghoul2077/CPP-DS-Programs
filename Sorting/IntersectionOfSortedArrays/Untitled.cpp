@@ -28,9 +28,9 @@ bool binarySearch(int *arr, int size, int val) {
  * @brief      Find the intersection between 2 sorted array using binary search
  *             in O(n^2) time complexity and Q(1) space complexity
  *
- * @param      arr1   The arr 1
+ * @param      arr1   The array 1
  * @param[in]  size1  The size 1
- * @param      arr2   The arr 2
+ * @param      arr2   The array 2
  * @param[in]  size2  The size 2
  */
 void intersectionOfSortedArrayNaive(int *arr1, int size1, int *arr2,
@@ -54,9 +54,9 @@ void intersectionOfSortedArrayNaive(int *arr1, int size1, int *arr2,
  *             in O(n) time complexity and Q(1) space complexity using the
  *             algo from merge technique of merge sort.
  *
- * @param      arr1   The arr 1
+ * @param      arr1   The array 1
  * @param[in]  size1  The size 1
- * @param      arr2   The arr 2
+ * @param      arr2   The array 2
  * @param[in]  size2  The size 2
  */
 void intersectionOfSortedArrayEfficient(int *arr1,

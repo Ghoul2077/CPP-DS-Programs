@@ -7,7 +7,7 @@ using namespace std;
  *             This method is better than reccursive because it take Q(1) space
  *             as compared to O(n) space
  *
- * @param      arr     The arr
+ * @param      arr     The array
  * @param[in]  size    The size
  * @param[in]  toFind  To find
  *
@@ -40,7 +40,7 @@ int findFirstOccurance(int *arr, int size, int toFind) {
  *             This method is better than reccursive because it take Q(1) space
  *             as compared to O(n) space
  *
- * @param      arr     The arr
+ * @param      arr     The array
  * @param[in]  size    The size
  * @param[in]  toFind  To find
  *
@@ -73,7 +73,7 @@ int main() {
    const int size = sizeof(arr) / sizeof(arr[0]);
 
    cout << "First occurance : " <<
-   findFirstOccurance(arr, size, element) << endl;
+      findFirstOccurance(arr, size, element) << endl;
    cout << "Last occurance  : " << findLastOccurance(arr, size, element);
    return (0);
 }

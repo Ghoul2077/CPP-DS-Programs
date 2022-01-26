@@ -6,7 +6,7 @@ using namespace std;
  *             one at a time. it's time complexity is O((n - k) * k * k) where
  *             n is size of array and k is window size. Space complexity is Q(1)
  *
- * @param      arr         the arr
+ * @param      arr         the array
  * @param[in]  size        the size
  * @param[in]  windowsize  the window size
  */
@@ -38,7 +38,7 @@ void countOfDistinctElementsInWindowsOfKSizeNaive(int *arr, int size,
  *             one at a time. it's time complexity is Q(n) where n is the size
  *             of array and k is window size. Space complexity is O(k)
  *
- * @param      arr         the arr
+ * @param      arr         the array
  * @param[in]  size        the size
  * @param[in]  windowsize  the window size
  */

@@ -12,7 +12,7 @@ void printArr(int *arr, int size) {
  * @brief      Function to calculate maximum profit from buying and selling
  *             stocks with array being costs per day using Dynamic Programming
  *
- * @param      arr    The arr
+ * @param      arr    The array
  * @param[in]  start  The start
  * @param[in]  end    The end
  *
@@ -45,7 +45,7 @@ int maximizeProfitNaive(int *arr, int start, int end) {
  * @brief      Function to calculate maximum profit from buying and selling
  *             stocks with array being costs per day using iteration in O(n) time
  *
- * @param      arr    The arr
+ * @param      arr    The array
  * @param[in]  start  The start
  * @param[in]  end    The end
  *

@@ -24,7 +24,7 @@ int sum(int *arr, int size) {
  *             number of student gets to read in O(numberOfStudents(C)books)
  *             time complexity using reccursion
  *
- * @param      arr               The arr
+ * @param      arr               The array
  * @param[in]  size              The size
  * @param[in]  numberOfStudents  The number of students
  *
@@ -75,7 +75,7 @@ bool isFeasibleSolution(int *arr, int size, int numberOfStudents, int val) {
  *             lies between the maximum of the array and sum of the array & then
  *             checking each value between that range for feasability.
  *
- * @param      arr               The arr
+ * @param      arr               The array
  * @param[in]  size              The size
  * @param[in]  numberOfStudents  The number of students
  *

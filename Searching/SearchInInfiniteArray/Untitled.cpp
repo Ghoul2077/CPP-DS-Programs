@@ -5,7 +5,7 @@ using namespace std;
  * @brief      Search for an element in an array of infinite size (Which means
  *             size will be unknown) in O(pos) time complexity
  *
- * @param      arr      The arr
+ * @param      arr      The array
  * @param[in]  size     The size
  * @param[in]  element  The element
  *
@@ -45,7 +45,7 @@ int binarySearch(int *arr, int start, int stop, int element) {
  *             size will be unknown) in O(logPos) time complexity by using binary
  *             search while getting upperbound beforehand
  *
- * @param      arr      The arr
+ * @param      arr      The array
  * @param[in]  size     The size
  * @param[in]  element  The element
  *

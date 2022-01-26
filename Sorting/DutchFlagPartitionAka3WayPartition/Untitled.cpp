@@ -15,7 +15,7 @@ void printArr(int *arr, int size) {
  *             larger pivot. And this algo does this in O(4n) time complexity and
  *             Q(n) space complexity
  *
- * @param      arr          The arr
+ * @param      arr          The array
  * @param[in]  size         The size
  * @param[in]  pivotIndex1  The pivot index 1
  * @param[in]  pivotIndex2  The pivot index 2
@@ -64,7 +64,7 @@ void partitionAroundThreePivotsNaive(int *arr,
  *             larger pivot. And this algo does this in O(n) time complexity and
  *             Q(1) space complexity using method inspired from hoare's partition
  *
- * @param      arr          The arr
+ * @param      arr          The array
  * @param[in]  size         The size
  * @param[in]  pivotIndex1  The pivot index 1
  * @param[in]  pivotIndex2  The pivot index 2

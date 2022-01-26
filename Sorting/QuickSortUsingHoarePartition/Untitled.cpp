@@ -40,7 +40,7 @@ int hoarePartitionOptimized(int *arr, int start, int stop) {
  *             faster. It has O(n^2) time complexity in worst case if not used
  *             optimised partitioning i.e choosing pivot at random.
  *
- * @param      arr    The arr
+ * @param      arr    The array
  * @param[in]  start  The start
  * @param[in]  stop   The stop
  */
