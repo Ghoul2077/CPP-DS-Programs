@@ -90,7 +90,7 @@ void printKLargestElementFromUnsortedArrayUsingMinHeap(int *arr, int size,
                                                        int k) {
    buildMinHeap(arr, size);
 
-   for (int i = size - k; i < size; i++) {
+   for (int i = k; i < size; i++) {
       if (arr[i] > arr[0]) {
          swap(arr[i], arr[0]);
          heapify(arr, k, 0);
