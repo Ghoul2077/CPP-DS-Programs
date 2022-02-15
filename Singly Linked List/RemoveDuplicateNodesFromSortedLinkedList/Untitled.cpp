@@ -54,7 +54,7 @@ void printLL(Node *head) {
  * @param      head  The head of linked list
  *
  */
-void removeDuplicateFromSortedLL(Node *head) {
+Node* removeDuplicateFromSortedLL(Node *head) {
    if (head == NULL) {
       return (head);
    }

@@ -10,6 +10,10 @@ typedef long long unsigned int bigInt;
    for (int i = 0; i < size; i++) cout << arr[i] << " "; cout << endl;
 
 
+/**
+ * @brief      This class describes a 2d array element. It is to be used with
+ *             min heap.
+ */
 class MultiArrayElement {
 public:
    int value;
