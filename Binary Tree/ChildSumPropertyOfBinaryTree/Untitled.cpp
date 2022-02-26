@@ -38,8 +38,8 @@ private:
 
    /**
     * @brief      Finds if the binary tree follows child sum property i.e is
-    *             every parent sum of it's child nodes. It's time complexity is
-    *             O(n) and it's space complexity is O(h).
+    *             every parent is sum of it's child nodes. It's time complexity
+    *             is O(n) and it's space complexity is O(h).
     *
     * @param      root  The root
     *
