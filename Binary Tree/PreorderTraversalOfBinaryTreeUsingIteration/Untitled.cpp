@@ -134,7 +134,9 @@ private:
          } else {
             Node *predecessor = findPredecessorModified(curr);
 
-            if (predecessor->right == NULL) {
+            if (predecessor == NULL) {
+               curr = curr->right;
+            } else if (predecessor->right == NULL) {
                predecessor->right = curr;
                cout << curr->data << " ";
                curr = curr->left;

@@ -101,7 +101,9 @@ private:
          } else {
             Node *predecessor = findPredecessorModified(curr);
 
-            if (predecessor->right == NULL) {
+            if (predecessor == NULL) {
+               curr = curr->right;
+            } else if (predecessor->right == NULL) {
                predecessor->right = curr;
                curr               = curr->left;
             } else {
