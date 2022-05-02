@@ -15,7 +15,7 @@ typedef long long unsigned int bigInt;
  *             the following example :
  *
  *             Input String : program
-
+ *
  *             Output :
  *
  *             p     p
