@@ -21,7 +21,7 @@ int factorial(int num) {
  *
  * @param      str   The string
  *
- * @return     { description_of_the_return_value }
+ * @return     Rank of the string
  */
 int lexographicRankOfString(string& str) {
    int count[128]   = { 0 };
