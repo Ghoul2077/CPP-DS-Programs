@@ -50,36 +50,6 @@ void printLL(Node *head) {
 }
 
 /**
- * @brief      Finds if a linked list contains loop in O(n^2) time complexity
- *             and Q(1) space complexity.
- *
- * @param      head  The head
- *
- * @return     True if loop exists, false otherwise
- */
-bool containsLoopNaive(Node *head) {
-   Node *currHead  = head;
-   bool  loopFound = false;
-
-   while (currHead != NULL) {
-      Node *curr = currHead->next;
-
-      while (curr != NULL && curr->next != currHead) {
-         curr = curr->next;
-      }
-
-      if (curr != NULL) {
-         cout << "Loop Found" << endl;
-         loopFound = true;
-         break;
-      }
-      currHead = currHead->next;
-   }
-
-   return (loopFound);
-}
-
-/**
  * @brief      Finds if a linked list contains loop in O(n) time complexity
  *             and Q(1) space complexity. But this approach requires one to
  *             modify the structure of linked list and add a property isVisited
