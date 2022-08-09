@@ -128,7 +128,7 @@ public:
       if (size != capacity) {
          arr[size] = data;
 
-         for (int i = size; arr[i] != 0 && arr[getParent(i)] < arr[i];) {
+         for (int i = size; i != 0 && arr[getParent(i)] < arr[i];) {
             swap(arr[getParent(i)], arr[i]);
             i = getParent(i);
          }

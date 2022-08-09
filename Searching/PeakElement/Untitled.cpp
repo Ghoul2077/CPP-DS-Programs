@@ -36,6 +36,16 @@ int searchPeakElementNaive(int *arr, int size) {
  *             peak elements are those elements in the array that are greater
  *             than their immediate previous and immediate next element
  *
+ *             Here's one way to look at how the decision is made at each midpoint.
+ *
+ *             Imagine you went hiking into the woods and after walking on the trail for a bit, you realized that you wanted to climb a peak. Before you start looking for one, you know that in order to reach a peak, you need to climb up a slope. Here's how the rest of the story plays out (in a 1D world) -
+ *
+ *             You look to left first (or to the right, if you prefer that).
+ *             If the ground is higher to your left, you walk up that slope. As long as you keep walking up the slope, you are climbing uphill and are guaranteed to reach a peak. It doesn't matter if it's Big or small.
+ *             If the ground is lower to the left, you are on a slope. You don't want to go there. So, you turn around and look to the right in the hope of finding a peak.
+ *             If the ground is higher on the right, you walk up in that direction so that you approach a peak
+ *             If the ground is sloping to the right as well, you are already on a peak
+ *
  * @param      arr   The array
  * @param[in]  size  The size
  *
