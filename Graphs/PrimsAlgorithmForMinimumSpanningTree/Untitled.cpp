@@ -31,7 +31,7 @@ void addEdge(vector<pair<int, int> > *adj, int start, int stop, int weight) {
  *             The idea is to use prim's algorithm where we do a breadth first
  *             search starting from 0th index and for each vertex we take the
  *             minimum weight edge that is adjacent to it. Rather than using
- *             traditional breadth first search here we use a loop to loop
+ *             traditional breadth first search here we use first loop to go
  *             through all the vertices and 2 loops inside of it where the first
  *             loop is used to pick up the next vertex that we add to our
  *             spanning tree and second loop to update the smallest edges

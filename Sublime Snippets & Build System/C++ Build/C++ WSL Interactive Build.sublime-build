@@ -1,0 +1,10 @@
+{
+    "shell_cmd": "ubuntu run g++ -std=c++17 \"${file_name}\" -o \"${file_base_name}.out\" && ubuntu run ./\"${file_base_name}.out\"",
+    "file_regex": "^(..[^:]*):([0-9]+):?([0-9]+)?:? (.*)$",
+    "auto_close": false,
+    "focus": true,
+    "working_dir": "$file_path",
+    "selector": "source.c, source.c++",
+    "target" : "terminus_open",
+    "cancel": "terminus_cancel_build"
+}
