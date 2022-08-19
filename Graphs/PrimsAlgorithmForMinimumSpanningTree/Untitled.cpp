@@ -12,10 +12,10 @@ typedef long long unsigned int bigInt;
 
 void printGraph(vector<pair<int, int> > *adj, int vertices) {
    for (int i = 0; i < vertices; i++) {
-      cout << i << " : ";
+      cout << i << " : " << endl;
 
       for (auto j : adj[i]) {
-         cout << j << " ";
+         cout << "Vertex : " << j.first << " Weight : " << j.second;
       }
       cout << endl;
    }
