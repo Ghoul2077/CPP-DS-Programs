@@ -10,23 +10,6 @@ int linearSearch(int *arr, int size, int elem) {
    return (-1);
 }
 
-int binarySearch(int *arr, int size, int elem) {
-   int start = 0, stop = size;
-
-   while (start <= stop) {
-      int mid = (start + stop) / 2;
-
-      if (arr[mid] < elem) {
-         start = mid + 1;
-      } else if (arr[mid] > elem) {
-         stop = mid - 1;
-      } else {
-         return (mid);
-      }
-   }
-   return (-1);
-}
-
 int searchInRotatedArrayNaive(int *arr, int size, int elem) {
    return (linearSearch(arr, size, elem));
 }
@@ -44,28 +27,25 @@ int searchInRotatedArrayNaive(int *arr, int size, int elem) {
  * @return     Index of element if found else  -1
  */
 int searchInRotatedArray(int *arr, int size, int elem) {
-   int mid = (size - 1) / 2;
+   int l = 0, h = size - 1;
 
-   if (arr[mid] == elem) {
-      return (mid);
-   }
+   while (l <= h) {
+      int mid = (l + h) / 2;
 
-   if ((arr[mid] > arr[0]) && (arr[mid] >= elem) && (arr[0] <= elem)) {
-      return (binarySearch(arr, mid + 1, elem));
-   } else if ((arr[mid] < arr[size - 1]) && (arr[mid] <= elem) &&
-              (arr[size - 1] >= elem)) {
-      return (binarySearch(&arr[mid], mid + 1, elem));
-   } else {
-      int res;
-
-      if (arr[mid] > arr[0]) {
-         res = searchInRotatedArray(&arr[mid + 1], mid, elem);
-      } else if (arr[mid] < arr[size - 1]) {
-         res = searchInRotatedArray(arr, mid - 1, elem);
-      }
-
-      if (res != -1) {
-         return (res + mid + 1);
+      if (arr[mid] == elem) {
+         return (mid);
+      } else if (arr[mid] >= arr[l]) {
+         if ((elem >= arr[l]) && (elem < arr[mid])) {
+            h = mid - 1;
+         } else {
+            l = mid + 1;
+         }
+      } else {
+         if ((elem > arr[mid]) && (elem <= arr[h])) {
+            l = mid + 1;
+         } else {
+            h = mid - 1;
+         }
       }
    }
 

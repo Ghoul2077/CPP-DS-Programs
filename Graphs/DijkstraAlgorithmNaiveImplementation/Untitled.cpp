@@ -43,7 +43,8 @@ void dijkstraAlgorithm(vector<vector<int> >& adj, int vertices, int source) {
    int res[vertices];
 
    fill(res, res + sizeof(res) / sizeof(int), INT_MAX);
-   bool visited[vertices] = { false };
+   bool *visited = new bool[vertices];
+   fill(visited, visited + vertices * sizeof(bool), false);
 
    res[source] = 0;
 
